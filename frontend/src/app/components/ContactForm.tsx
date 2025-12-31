@@ -60,19 +60,19 @@ export function ContactForm() {
           {/* Contact Info Cards */}
           <div className="bg-gray-50 dark:bg-gray-900 p-6 rounded-lg">
             <Mail className="w-8 h-8 mb-4" style={{ color: 'var(--primary-blue)' }} />
-            <h3 style={{ fontFamily: 'Poppins, sans-serif' }} className="font-semibold mb-2">Email</h3>
+            <h3 style={{ fontFamily: 'Poppins, sans-serif' }} className="font-semibold dark:text-amber-50 mb-2">Email</h3>
             <p className="text-gray-600 dark:text-gray-400">contact@orphansofafrica21.org</p>
           </div>
 
           <div className="bg-gray-50 dark:bg-gray-900 p-6 rounded-lg">
             <Phone className="w-8 h-8 mb-4" style={{ color: 'var(--primary-orange)' }} />
-            <h3 style={{ fontFamily: 'Poppins, sans-serif' }} className="font-semibold mb-2">Phone</h3>
-            <p className="text-gray-600 dark:text-gray-400">+1 (555) 123-4567</p>
+            <h3 style={{ fontFamily: 'Poppins, sans-serif' }} className="font-semibold dark:text-amber-50 mb-2">Phone</h3>
+            <p className="text-gray-600 dark:text-gray-400">+265 994 284 001</p>
           </div>
 
           <div className="bg-gray-50 dark:bg-gray-900 p-6 rounded-lg">
             <MapPin className="w-8 h-8 mb-4" style={{ color: 'var(--primary-green)' }} />
-            <h3 style={{ fontFamily: 'Poppins, sans-serif' }} className="font-semibold mb-2">Location</h3>
+            <h3 style={{ fontFamily: 'Poppins, sans-serif' }} className="font-semibold dark:text-amber-50 mb-2">Location</h3>
             <p className="text-gray-600 dark:text-gray-400">Bwengu, Rumphi, Malawi</p>
           </div>
         </div>

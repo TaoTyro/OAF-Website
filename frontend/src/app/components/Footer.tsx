@@ -23,7 +23,9 @@ export function Footer() {
           {/* Logo and Description */}
           <div className="md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <img src="/src/assets/logo.png" alt="Orphans of Africa" className="w-20 h-20" />
+              <a href="#hero">
+              <img src="/src/assets/logo.png" alt="Orphans of Africa" className="w-11 h-11 gap-2 hover:opacity-80 transition-opacity" />
+              </a>
               <span style={{ fontFamily: 'Poppins, sans-serif' }} className=' font-bold'>Orphans Of Africa Foundation</span>
             </div>
             <p className=" mb-4 ">

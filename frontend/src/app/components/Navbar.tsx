@@ -10,6 +10,7 @@ export function Navbar() {
   const { isDark, toggleTheme } = useTheme();
 
   const navLinks = [
+    { label: 'Home', href: '#hero' },
     { href: '#about', label: 'About' },
     { href: '#programs', label: 'Programs' },
     { href: '#impact-stats', label: 'Impact' },

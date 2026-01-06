@@ -3,7 +3,7 @@ import { Heart, Mail, Phone, MapPin, Facebook, Instagram, Linkedin } from 'lucid
 const quickLinks = [
   { label: 'About Us', href: '#about' },
   { label: 'Programs', href: '#programs' },
-  { label: 'Impact', href: '#impact' },
+  { label: 'Impact', href: '#impact-stats' },
   { label: 'Get Involved', href: '#get-involved' },
   { label: 'News & Updates', href: '#blog' },
   { label: 'Contact', href: '#contact' }

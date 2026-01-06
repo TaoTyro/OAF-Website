@@ -5,7 +5,7 @@ const quickLinks = [
   { label: 'Programs', href: '#programs' },
   { label: 'Impact', href: '#impact' },
   { label: 'Get Involved', href: '#get-involved' },
-  { label: 'News & Updates', href: '#news' },
+  { label: 'News & Updates', href: '#blog' },
   { label: 'Contact', href: '#contact' }
 ];
 

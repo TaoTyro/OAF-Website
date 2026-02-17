@@ -51,7 +51,7 @@ export function MissionSnapshot() {
             <div className="mb-12">
               <h2 
                 style={{ fontFamily: 'Poppins, sans-serif' }} 
-                className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4"
+                className="text-4xl md:text-5xl font-bold text-blue-400 dark:text-white mb-4"
               >
                 Our Mission
               </h2>

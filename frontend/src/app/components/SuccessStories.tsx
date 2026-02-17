@@ -19,7 +19,7 @@ const stories = [
   },
   {
     title: 'From no Fees to Full Scholarship',
-    child: 'Chikumbutso, Age 8',
+    child: 'Chikumbutso, Age 22',
     location: 'Mzuzu University, Malawi',
     image: chikuImage,
     story: 'While in his early school years, Chiku was lacking tuition fees until we found him. Today, he\'s continuing his studies and excelling in school and moving towards his dreams of becoming a leader in his community.',
@@ -31,7 +31,7 @@ const stories = [
   },
   {
     title: 'From no Fees to Full Scholarship',
-    child: 'Bernadettah, Age 15',
+    child: 'Bernadettah, Age 19',
     location: 'Mzuzu University, Malawi',
     image: bernadettahImage,
     story: 'While in her school years, Bernadettah was lacking tuition fees until we found her. Today, she\'s continuing her studies and excelling in school and moving towards her dreams of becoming an advocate for girls\' education in her community.',
@@ -43,7 +43,7 @@ const stories = [
   },
   {
     title: 'From no Fees to Full Scholarship',
-    child: 'Archangel, Age 10',
+    child: 'Archangel, Age 20',
     location: 'Mzuzu University, Malawi',
     image: archangelImage,
     story: 'While in her school years, Archangel was lacking tuition fees until we found him. Today, he\'s continuing his studies and excelling in school and moving towards his dreams of becoming a confident and successful student with a bright outlook on life.',

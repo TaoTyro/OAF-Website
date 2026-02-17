@@ -36,7 +36,7 @@ const programs = [
 
 export function Programs() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8   bg-gradient-to-t from-blue-100 to-yellow-100 dark:from-gray-900 dark:to-gray-800" id="programs">
+    <section className="py-20 px-4 sm:px-6 lg:px-8   bg-white dark:from-gray-900 dark:to-gray-800" id="programs">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '2.5rem', color: 'var(--primary-blue)'}} className="font-bold">Our Programs</h2>

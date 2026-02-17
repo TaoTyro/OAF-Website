@@ -1,37 +1,57 @@
-import { Star, MapPin } from 'lucide-react';
+import { Star, MapPin, Book, TrendingUp, Zap, Heart, Home, Smile, Megaphone, Users, Award, Brain, Handshake } from 'lucide-react';
+import janeImage from '../../assets/jane.jpg';
+import chikuImage from '../../assets/Chikumbutso-student.jpg';
+import bernadettahImage from '../../assets/bernadettah-luhanga.jpg';
+import archangelImage from '../../assets/archangel-chagwa.jpg';
 
 const stories = [
   {
-    title: 'From Street to School',
-    child: 'Amara, Age 12',
-    location: 'Uganda',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.0.3&q=80&w=800',
-    story: 'Amara was living on the streets until we found her. Today, she\'s excelling in school and dreams of becoming a teacher. With proper nutrition and education, she\'s transformed her entire future.',
-    impact: '📚 Now in secondary school | 📈 Top 5% grades | 💪 Mentoring younger children'
+    title: 'From no Fees to Full Scholarship',
+    child: 'Jane, Age 21',
+    location: 'Mzuzu University, Malawi',
+    image: janeImage,
+    story: 'While in her second year at Mzuzu University, Jane was lacking tuition fees until we found her. Today, she\'s continuing her studies and excelling in school and moving towards her dreams of becoming a teacher.',
+    impact: [
+      { icon: Book, text: 'Continuing with her studies at Mzuzu University', color: 'var(--primary-blue)' },
+      { icon: Award, text: 'Scholarship recipient', color: 'var(--primary-orange)' },
+      { icon: Brain, text: 'Emotional healing', color: 'var(--primary-green)' }
+    ]
   },
   {
-    title: 'A Second Chance at Life',
-    child: 'David, Age 8',
-    location: 'Kenya',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.0.3&q=80&w=800',
-    story: 'David lost both parents to illness. Our care center provided him with shelter, healthcare, and love. His health has improved dramatically, and he\'s become a joyful, confident child.',
-    impact: '❤️ Fully recovered health | 🏠 Safe home provided | 😊 Regained childhood'
+    title: 'From no Fees to Full Scholarship',
+    child: 'Chikumbutso, Age 8',
+    location: 'Mzuzu University, Malawi',
+    image: chikuImage,
+    story: 'While in his early school years, Chiku was lacking tuition fees until we found him. Today, he\'s continuing his studies and excelling in school and moving towards his dreams of becoming a leader in his community.',
+    impact: [
+      { icon: Book, text: 'Continuing with his studies', color: 'var(--primary-blue)' },
+      { icon: Award, text: 'Scholarship recipient', color: 'var(--primary-orange)' },
+      { icon: Brain, text: 'Emotional healing', color: 'var(--primary-green)' }
+    ]
   },
   {
-    title: 'Breaking the Cycle',
-    child: 'Grace, Age 15',
-    location: 'Tanzania',
-    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.0.3&q=80&w=800',
-    story: 'Grace was at risk of child marriage. We enrolled her in our leadership program where she\'s learned skills and confidence. She\'s now an advocate for girls\' education in her community.',
-    impact: '📢 Community advocate | 👧 Helping 20+ girls | 🎓 Scholarship recipient'
+    title: 'From no Fees to Full Scholarship',
+    child: 'Bernadettah, Age 15',
+    location: 'Mzuzu University, Malawi',
+    image: bernadettahImage,
+    story: 'While in her school years, Bernadettah was lacking tuition fees until we found her. Today, she\'s continuing her studies and excelling in school and moving towards her dreams of becoming an advocate for girls\' education in her community.',
+    impact: [
+      { icon: Book, text: 'Continuing with her studies', color: 'var(--primary-blue)' },
+      { icon: Award, text: 'Scholarship recipient', color: 'var(--primary-orange)' },
+      { icon: Brain, text: 'Emotional healing', color: 'var(--primary-green)' }
+    ]
   },
   {
-    title: 'Healing Through Education',
-    child: 'Michael, Age 10',
-    location: 'Rwanda',
-    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.0.3&q=80&w=800',
-    story: 'Michael struggled with trauma from loss. Our counseling and education programs helped him process his grief. He\'s now a confident student with a bright outlook on life.',
-    impact: '🧠 Emotional healing | 🎓 Academic improvement | 🤝 Social integration'
+    title: 'From no Fees to Full Scholarship',
+    child: 'Archangel, Age 10',
+    location: 'Mzuzu University, Malawi',
+    image: archangelImage,
+    story: 'While in her school years, Archangel was lacking tuition fees until we found him. Today, he\'s continuing his studies and excelling in school and moving towards his dreams of becoming a confident and successful student with a bright outlook on life.',
+    impact: [
+      { icon: Book, text: 'Continuing with his studies', color: 'var(--primary-blue)' },
+      { icon: Award, text: 'Scholarship recipient', color: 'var(--primary-orange)' },
+      { icon: Brain, text: 'Emotional healing', color: 'var(--primary-green)' }
+    ]
   }
 ];
 
@@ -52,7 +72,7 @@ export function SuccessStories() {
           {stories.map((story, index) => (
             <div
               key={index}
-              className=" overflow-hidden bg-white dark:bg-gray-800 p-8 rounded-lg dark:hover:shadow-cyan-600 hover:translate-1 hover:shadow-lg duration-300 transition-transform"
+              className="group overflow-hidden bg-white dark:bg-gray-800 p-8 rounded-lg dark:hover:shadow-cyan-600 hover:translate-1 hover:shadow-lg duration-300 transition-transform"
             >
               {/* Image */}
               <div className="aspect-video overflow-hidden">
@@ -69,12 +89,12 @@ export function SuccessStories() {
                   <div>
                     <h3
                       style={{ fontFamily: 'Poppins, sans-serif' }}
-                      className="font-bold text-xl mb-1 text-white-400 dark:text-amber-50"
+                      className="font-bold text-xl mb-1 text-white-400 dark:text-amber-50 group-hover:text-blue-400 transition-colors duration-300"
                     >
                       {story.title}
                     </h3>
                     <div className="flex items-center gap-2 text-sm text-white-600 dark:text-gray-400">
-                      <MapPin className="w-4 h-4" />
+                      <MapPin className="w-4 h-4 text-purple-500" />
                       <span>{story.location}</span>
                     </div>
                   </div>
@@ -90,23 +110,17 @@ export function SuccessStories() {
 
                 {/* Impact Highlights */}
                 <div className="bg-blue-50 dark:bg-gray-700 p-4 rounded-lg mb-4">
-                  <div className="text-sm text-gray-700 dark:text-gray-300 space-y-1">
-                    {story.impact.split(' | ').map((item, i) => (
-                      <div key={i}>{item}</div>
-                    ))}
+                  <div className="text-sm text-gray-700 dark:text-gray-300 space-y-2">
+                    {story.impact.map((item, i) => {
+                      const IconComponent = item.icon;
+                      return (
+                        <div key={i} className="flex items-center gap-2">
+                          <IconComponent className="w-4 h-4 flex-shrink-0" style={{ color: item.color }} />
+                          <span>{item.text}</span>
+                        </div>
+                      );
+                    })}
                   </div>
-                </div>
-
-                {/* Rating */}
-                <div className="flex gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className="w-4 h-4"
-                      style={{ color: 'var(--primary-orange)' }}
-                      fill="currentColor"
-                    />
-                  ))}
                 </div>
               </div>
             </div>

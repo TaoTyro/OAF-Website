@@ -1,5 +1,7 @@
 import { motion } from 'motion/react';
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { UpcomingEventsSidebar } from './UpcomingEventsSidebar';
 
 const backgroundImages = [
   'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1200&h=600&fit=crop',
@@ -11,6 +13,7 @@ export function Hero() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [nextImageIndex, setNextImageIndex] = useState(1);
   const [fadeOut, setFadeOut] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -27,6 +30,8 @@ export function Hero() {
 
   return (
     <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden " id="hero">
+      <UpcomingEventsSidebar />
+      
       {/* Background Image Container */}
       <div className="absolute inset-0">
         {/* Current Image */}
@@ -70,12 +75,14 @@ export function Hero() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button 
+              onClick={() => navigate('/#contact')}
               className="px-8 py-3 rounded-lg text-white transition-all hover:opacity-85 shadow-lg"
               style={{ backgroundColor: 'var(--primary-orange)' }}
             >
               Donate Now
             </button>
             <button 
+              onClick={() => navigate('/get-involved')}
               className="px-8 py-3 rounded-lg border-2 transition-all hover:bg-white/20 text-white backdrop-blur-sm shadow-lg"
               style={{ 
                 borderColor: 'white'

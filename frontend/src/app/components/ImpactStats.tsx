@@ -57,7 +57,7 @@ function CountingNumber({ target, symbol = '' }: { target: number; symbol?: stri
 
 export function ImpactStats() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8  bg-gradient-to-t from-blue-100 to-yellow-100 dark:from-gray-900 dark:to-gray-800" id="impact-stats">
+    <section className="py-20 px-4 sm:px-6 lg:px-8  bg-white dark:from-gray-900 dark:to-gray-800" id="impact-stats">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 style={{ fontFamily: 'Poppins, sans-serif' }} className="text-4xl md:text-5xl font-bold text-blue-400 dark:text-white mb-4">Our Impact</h2>

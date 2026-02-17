@@ -70,7 +70,7 @@ export function Blog() {
     <section className="py-20 px-4 sm:px-6 lg:px-8  bg-gradient-to-t from-blue-100 to-yellow-100 dark:from-gray-900 dark:to-gray-800" id="blog">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '2.5rem', color: 'var(--primary-blue)' }} className="font-bold">
+          <h2 style={{ fontFamily: 'Poppins, sans-serif' }} className="text-4xl md:text-5xl font-bold text-blue-400 dark:text-white mb-4">
             Latest News & Stories
           </h2>
           <p className="text-gray-600 dark:text-gray-400 mt-2">

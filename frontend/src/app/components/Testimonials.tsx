@@ -23,7 +23,7 @@ export function Testimonials() {
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-green-50/30">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '2.5rem' }}>Stories of Hope</h2>
+          <h2 style={{ fontFamily: 'Poppins, sans-serif' }} className="text-4xl md:text-5xl font-bold text-blue-400 dark:text-white mb-4">Stories of Hope</h2>
           <p className="text-gray-600 mt-2">Hear from our community</p>
         </div>
 

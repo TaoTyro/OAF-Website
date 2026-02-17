@@ -66,7 +66,7 @@ export function DonateModal({ isOpen, onClose }: DonateModalProps) {
 
         <div className="flex items-center gap-2 mb-6">
           <Heart className="w-6 h-6" style={{ color: 'var(--primary-orange)' }} fill="currentColor" />
-          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.5rem' }} className="font-bold">
+          <h2 style={{ fontFamily: 'Poppins, sans-serif' }} className="text-4xl md:text-5xl font-bold text-blue-400 dark:text-white mb-4">
             Make a Donation
           </h2>
         </div>

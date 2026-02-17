@@ -69,7 +69,7 @@ export function Impact() {
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white" id="impact">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '2.5rem' }}>Our Impact</h2>
+          <h2 style={{ fontFamily: 'Poppins, sans-serif' }} className="text-4xl md:text-5xl font-bold text-blue-400 dark:text-white mb-4">Our Impact</h2>
           <p className="text-gray-600 mt-2">Real change, measurable results</p>
         </div>
 

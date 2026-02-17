@@ -84,7 +84,7 @@ export default function NewsletterSignup() {
                 </motion.div>
               </div>
 
-              <h2 className="text-3xl md:text-4xl font-bold text-blue-600 mb-4">
+              <h2 style={{ fontFamily: 'Poppins, sans-serif' }} className="text-4xl md:text-5xl font-bold text-blue-400 dark:text-white mb-4">
                 Stay Informed
               </h2>
               <p className="text-gray-600 dark:text-gray-300 text-lg mb-4">

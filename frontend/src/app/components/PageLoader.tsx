@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import logo from '../../assets/logo.png';
 
 export function PageLoader() {
   return (
@@ -11,15 +12,14 @@ export function PageLoader() {
       <div className="flex flex-col items-center gap-4">
         {/* Animated Logo */}
         <motion.div
-          animate={{ scale: [1, 1.2, 1] }}
+          animate={{ scale: [1, 1.1, 1] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
-          <div 
-            className="w-16 h-16 rounded-full flex items-center justify-center text-white"
-            style={{ backgroundColor: 'var(--primary-blue)' }}
-          >
-            <span style={{ fontSize: '2rem' }}>❤️</span>
-          </div>
+          <img 
+            src={logo} 
+            alt="Organization Logo"
+            className="w-20 h-20 object-contain"
+          />
         </motion.div>
 
         {/* Loading Text */}

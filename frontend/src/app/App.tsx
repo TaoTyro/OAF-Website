@@ -1,9 +1,10 @@
-import { useEffect, lazy, Suspense } from 'react';
-import { Routes, Route } from 'react-router-dom';
-import { motion } from 'motion/react';
+import { useEffect, lazy, Suspense, useState } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { motion, AnimatePresence } from 'motion/react';
 import { Navbar } from './components/Navbar';
 import { ContactForm } from './components/ContactForm';
 import ScrollToTopButton from './components/ScrollToTopButton';
+import { PageLoader } from './components/PageLoader';
 import { SkeletonSection, SkeletonImpact } from './components/Skeleton';
 import { useTheme } from '../hooks/useTheme';
 import { ProgramsPage } from './pages/ProgramsPage';
@@ -116,6 +117,14 @@ function HomePage() {
 
 export default function App() {
   const { isDark } = useTheme();
+  const [isPageLoading, setIsPageLoading] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    setIsPageLoading(true);
+    const timer = setTimeout(() => setIsPageLoading(false), 800);
+    return () => clearTimeout(timer);
+  }, [location.pathname]);
 
   useEffect(() => {
     const saved = localStorage.getItem('theme');
@@ -129,17 +138,22 @@ export default function App() {
   }, []);
 
   return (
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/programs" element={<ProgramsPage />} />
-      <Route path="/blog" element={<BlogPage />} />
-      <Route path="/team" element={<TeamPage />} />
-      <Route path="/events" element={<EventsPage />} />
-      <Route path="/get-involved" element={<GetInvolvedPage />} />
-      <Route path="/faq" element={<FAQPage />} />
-      <Route path="/partners" element={<PartnersPage />} />
-      <Route path="/newsletter" element={<NewsletterPage />} />
-      <Route path="*" element={<NotFoundPage />} />
-    </Routes>
+    <>
+      <AnimatePresence mode="wait">
+        {isPageLoading && <PageLoader key="loader" />}
+      </AnimatePresence>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/programs" element={<ProgramsPage />} />
+        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/team" element={<TeamPage />} />
+        <Route path="/events" element={<EventsPage />} />
+        <Route path="/get-involved" element={<GetInvolvedPage />} />
+        <Route path="/faq" element={<FAQPage />} />
+        <Route path="/partners" element={<PartnersPage />} />
+        <Route path="/newsletter" element={<NewsletterPage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </>
   );
 }

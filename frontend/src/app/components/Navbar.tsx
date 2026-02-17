@@ -42,7 +42,7 @@ export function Navbar() {
             <button 
               onClick={() => setIsDonateModalOpen(true)}
               className="px-6 py-2 rounded-lg text-white transition-all hover:opacity-90"
-              style={{ backgroundColor: 'var(--primary-blue)' }}
+              style={{ backgroundColor: '#1B82F1' }}
             >
               Donate
             </button>

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Star, MapPin, Book, TrendingUp, Zap, Heart, Home, Smile, Megaphone, Users, Award, Brain, Handshake, ChevronDown, ChevronUp } from 'lucide-react';
+import { MapPin, Book, Award, Brain, Handshake, ChevronDown, ChevronUp, HeartHandshake } from 'lucide-react';
 import janeImage from '../../assets/jane.jpg';
 import chikuImage from '../../assets/Chikumbutso-student.jpg';
 import bernadettahImage from '../../assets/bernadettah-luhanga.jpg';
@@ -19,7 +19,8 @@ const stories = [
     impact: [
       { icon: Book, text: 'Continuing with her studies at Mzuzu University', color: 'var(--primary-blue)' },
       { icon: Award, text: 'Scholarship recipient', color: 'var(--primary-orange)' },
-      { icon: Brain, text: 'Emotional healing', color: 'var(--primary-green)' }
+      { icon: Brain, text: 'Emotional healing', color: 'var(--primary-green)' },
+      { icon: HeartHandshake, text: 'Emotional support and connection', color: 'var(--primary-purple)' }
     ]
   },
   {
@@ -31,7 +32,8 @@ const stories = [
     impact: [
       { icon: Book, text: 'Continuing with his studies', color: 'var(--primary-blue)' },
       { icon: Award, text: 'Scholarship recipient', color: 'var(--primary-orange)' },
-      { icon: Brain, text: 'Emotional healing', color: 'var(--primary-green)' }
+      { icon: Brain, text: 'Emotional healing', color: 'var(--primary-green)' },
+      { icon: HeartHandshake, text: 'Emotional support and connection', color: 'var(--primary-purple)' }
     ]
   },
   {
@@ -43,7 +45,8 @@ const stories = [
     impact: [
       { icon: Book, text: 'Continuing with her studies', color: 'var(--primary-blue)' },
       { icon: Award, text: 'Scholarship recipient', color: 'var(--primary-orange)' },
-      { icon: Brain, text: 'Emotional healing', color: 'var(--primary-green)' }
+      { icon: Brain, text: 'Emotional healing', color: 'var(--primary-green)' },
+      { icon: HeartHandshake, text: 'Emotional support and connection', color: 'var(--primary-purple)' }
     ]
   },
   {
@@ -55,7 +58,8 @@ const stories = [
     impact: [
       { icon: Book, text: 'Continuing with his studies', color: 'var(--primary-blue)' },
       { icon: Award, text: 'Scholarship recipient', color: 'var(--primary-orange)' },
-      { icon: Brain, text: 'Emotional healing', color: 'var(--primary-green)' }
+      { icon: Brain, text: 'Emotional healing', color: 'var(--primary-green)' },
+      { icon: HeartHandshake, text: 'Emotional support and connection', color: 'var(--primary-purple)' }
     ]
   },
   {
@@ -67,7 +71,8 @@ const stories = [
     impact: [
       { icon: Book, text: 'Continuing with her studies', color: 'var(--primary-blue)' },
       { icon: Award, text: 'Scholarship recipient', color: 'var(--primary-orange)' },
-      { icon: Brain, text: 'Emotional healing', color: 'var(--primary-green)' }
+      { icon: Brain, text: 'Emotional healing', color: 'var(--primary-green)' },
+      { icon: HeartHandshake, text: 'Emotional support and connection', color: 'var(--primary-purple)' }
     ]
   },
   {
@@ -79,7 +84,8 @@ const stories = [
     impact: [
       { icon: Book, text: 'Continuing with her studies', color: 'var(--primary-blue)' },
       { icon: Award, text: 'Scholarship recipient', color: 'var(--primary-orange)' },
-      { icon: Brain, text: 'Emotional healing', color: 'var(--primary-green)' }
+      { icon: Brain, text: 'Emotional healing', color: 'var(--primary-green)' },
+      { icon: HeartHandshake, text: 'Emotional support and connection', color: 'var(--primary-purple)' }
     ]
   },
   {
@@ -91,7 +97,8 @@ const stories = [
     impact: [
       { icon: Book, text: 'Continuing with his studies', color: 'var(--primary-blue)' },
       { icon: Award, text: 'Scholarship recipient', color: 'var(--primary-orange)' },
-      { icon: Brain, text: 'Emotional healing', color: 'var(--primary-green)' }
+      { icon: Brain, text: 'Emotional healing', color: 'var(--primary-green)' },
+      { icon: HeartHandshake, text: 'Emotional support and connection', color: 'var(--primary-purple)' }
     ]
   },
   {
@@ -103,7 +110,8 @@ const stories = [
     impact: [
       { icon: Book, text: 'Continuing with her studies', color: 'var(--primary-blue)' },
       { icon: Award, text: 'Scholarship recipient', color: 'var(--primary-orange)' },
-      { icon: Brain, text: 'Emotional healing', color: 'var(--primary-green)' }
+      { icon: Brain, text: 'Emotional healing', color: 'var(--primary-green)' },
+      { icon: Handshake, text: 'Emotional support and connection', color: 'var(--primary-purple)' }
     ]
   }
 ];

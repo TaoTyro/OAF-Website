@@ -4,8 +4,6 @@ import { useState, useEffect } from 'react';
 const backgroundImages = [
   'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1200&h=600&fit=crop',
   'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1200&h=600&fit=crop',
-  'https://images.unsplash.com/photo-1559027615-cd2628902d4a?w=1200&h=600&fit=crop',
-  'https://images.unsplash.com/photo-1559622649-cd4628902d4a?w=1200&h=600&fit=crop',
   'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1200&h=600&fit=crop'
 ];
 

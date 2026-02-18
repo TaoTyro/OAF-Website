@@ -127,12 +127,10 @@ export default function App() {
   }, [location.pathname]);
 
   useEffect(() => {
-    const saved = localStorage.getItem('theme');
+    document.documentElement.classList.remove('dark');
+    localStorage.setItem('theme', 'light');
+  }, []);
 
-    const shouldBeDark = saved === 'dark'; // default = light
-
-    document.documentElement.classList.toggle('dark', shouldBeDark);
-   }, []);
 
 
   return (

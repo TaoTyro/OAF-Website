@@ -128,14 +128,12 @@ export default function App() {
 
   useEffect(() => {
     const saved = localStorage.getItem('theme');
-    const shouldBeDark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
-    if (shouldBeDark) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }, []);
+
+    const shouldBeDark = saved === 'dark'; // default = light
+
+    document.documentElement.classList.toggle('dark', shouldBeDark);
+   }, []);
+
 
   return (
     <>

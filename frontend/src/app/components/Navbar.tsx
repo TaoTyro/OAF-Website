@@ -8,7 +8,7 @@ import { DonateModal } from './DonateModal';
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDonateModalOpen, setIsDonateModalOpen] = useState(false);
-  const { isDark, toggleTheme } = useTheme();
+  // const { isDark, toggleTheme } = useTheme();
 
   const handleHashScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
@@ -77,7 +77,7 @@ export function Navbar() {
               Donate
             </button>
 
-            {/* Theme Toggle Button */}
+            { /*Theme Toggle Button }
             <button
               onClick={toggleTheme}
               className="p-2 rounded-lg bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"
@@ -89,6 +89,8 @@ export function Navbar() {
                 <Moon className="w-5 h-5 text-gray-700" />
               )}
             </button>
+            
+            /*}
 
             {/* Mobile Menu Button */}
             <button

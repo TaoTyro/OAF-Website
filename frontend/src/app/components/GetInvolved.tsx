@@ -26,7 +26,7 @@ const ways = [
 
 export function GetInvolved() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8  bg-gradient-to-t from-blue-100 to-yellow-100 dark:from-gray-900 dark:to-gray-800" id="get-involved">
+    <section className="py-20 px-4 sm:px-6 lg:px-8  bg-gradient-to-br from-white via-blue-50 to-white dark:from-gray-900 dark:to-gray-800" id="get-involved">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 style={{ fontFamily: 'Poppins, sans-serif' }} className="text-4xl md:text-5xl font-bold text-blue-400 dark:text-white mb-4">Get Involved</h2>

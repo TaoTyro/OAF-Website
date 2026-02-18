@@ -117,7 +117,7 @@ const getCategoryColor = (category: string) => {
 
 export default function EventsCalendar() {
   return (
-    <section className="min-h-screen py-20 px-4 bg-gradient-to-t from-blue-100 to-yellow-100 dark:from-gray-900 dark:to-gray-800">
+    <section className="min-h-screen py-20 px-4  bg-gradient-to-br from-white via-blue-50 to-white dark:from-gray-900 dark:to-gray-800">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: -20 }}

@@ -70,7 +70,7 @@ export function ImpactStats() {
             return (
               <div
                 key={index}
-                className="bg-white dark:bg-gray-800 p-8 rounded-lg text-center dark:hover:shadow-cyan-600 hover:translate-1 hover:shadow-lg duration-300 transition-transform"
+                className="bg-gray-50 dark:bg-gray-800 p-8 rounded-lg text-center dark:hover:shadow-cyan-600 border border-gray-200 hover:translate-1 hover:border-gray-300 duration-300 transition-transform"
               >
                 <Icon
                   className="w-12 h-12 mx-auto mb-4"

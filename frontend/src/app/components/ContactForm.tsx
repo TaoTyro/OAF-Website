@@ -43,6 +43,7 @@ export function ContactForm() {
     } catch (error) {
       console.error('Error submitting form:', error);
       setSubmitStatus('error');
+      setTimeout(() => setSubmitStatus('idle'), 5000);
     } finally {
       setIsSubmitting(false);
     }

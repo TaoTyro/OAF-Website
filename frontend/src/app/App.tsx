@@ -16,6 +16,16 @@ import { FAQPage } from './pages/FAQPage';
 import { PartnersPage } from './pages/PartnersPage';
 import { NewsletterPage } from './pages/NewsletterPage';
 import { NotFoundPage } from './pages/NotFoundPage';
+import { AboutUsPage } from './pages/AboutUsPage';
+import { LeadershipPage } from './pages/LeadershipPage';
+import { ExecutiveStaffPage } from './pages/ExecutiveStaffPage';
+import { FundingTransparencyPage } from './pages/FundingTransparencyPage';
+import { GalleryPage } from './pages/GalleryPage';
+import { ProjectsPage } from './pages/ProjectsPage';
+import { MetricsPage } from './pages/MetricsPage';
+import { VolunteerPage } from './pages/VolunteerPage';
+import { BecomeDonorPage } from './pages/BecomeDonorPage';
+import { BecomePartnerPage } from './pages/BecomePartnerPage';
 
 // Lazy load components for homepage
 const Hero = lazy(() => import('./components/Hero').then(m => ({ default: m.Hero })));
@@ -140,10 +150,20 @@ export default function App() {
       </AnimatePresence>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/about-us" element={<AboutUsPage />} />
+        <Route path="/leadership" element={<LeadershipPage />} />
+        <Route path="/executive-staff" element={<ExecutiveStaffPage />} />
+        <Route path="/funding-transparency" element={<FundingTransparencyPage />} />
         <Route path="/programs" element={<ProgramsPage />} />
+        <Route path="/gallery" element={<GalleryPage />} />
+        <Route path="/projects" element={<ProjectsPage />} />
+        <Route path="/metrics" element={<MetricsPage />} />
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/team" element={<TeamPage />} />
         <Route path="/events" element={<EventsPage />} />
+        <Route path="/volunteer" element={<VolunteerPage />} />
+        <Route path="/donate" element={<BecomeDonorPage />} />
+        <Route path="/become-partner" element={<BecomePartnerPage />} />
         <Route path="/get-involved" element={<GetInvolvedPage />} />
         <Route path="/faq" element={<FAQPage />} />
         <Route path="/partners" element={<PartnersPage />} />

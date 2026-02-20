@@ -1,14 +1,16 @@
-import { Heart, Menu, X, Moon, Sun } from 'lucide-react';
+import { Heart, Menu, X, Moon, Sun, ChevronDown } from 'lucide-react';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useTheme } from '../../hooks/useTheme';
 import logoImg from '../../assets/logo.png';
 import { DonateModal } from './DonateModal';
+import { motion, AnimatePresence } from 'motion/react';
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDonateModalOpen, setIsDonateModalOpen] = useState(false);
-  // const { isDark, toggleTheme } = useTheme();
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const navigate = useNavigate();
 
   const handleHashScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
@@ -18,19 +20,75 @@ export function Navbar() {
       element.scrollIntoView({ behavior: 'smooth' });
     }
     setIsMenuOpen(false);
+    setActiveDropdown(null);
   };
 
-  const navLinks = [
-    { label: 'Home', href: '/' },
-    { label: 'About', href: '#about' },
-    { label: 'Programs', href: '/programs' },
-    { label: 'Impact', href: '#impact-stats' },
-    { label: 'Get Involved', href: '/get-involved' },
-    { label: 'Contact', href: '#contact' },
+  const mainNavLinks = [
+    {
+      label: 'About Us',
+      href: null,
+      dropdown: [
+        { label: 'Who we are', href: '/about-us' },
+        { label: 'Leadership', href: '/leadership' },
+        { label: 'Executive Staff', href: '/executive-staff' },
+        { label: 'Partners', href: '/partners' },
+        { label: 'Funding Transparency', href: '/funding-transparency' },
+      ]
+    },
+    {
+      label: 'Our Work',
+      href: null,
+      dropdown: [
+        { label: 'Our Mission', href: '#about' },
+        { label: 'Programs', href: '/programs' },
+        { label: 'Gallery', href: '/gallery' },
+      ]
+    },
+    {
+      label: 'Our Impact',
+      href: null,
+      dropdown: [
+        { label: 'Our Projects', href: '/projects' },
+        { label: 'Performance metrics', href: '/metrics' },
+        { label: 'Success stories', href: '#success-stories' },
+        { label: 'Blog', href: '/blog' },
+      ]
+    },
+    {
+      label: 'Get Involved',
+      href: null,
+      dropdown: [
+        { label: 'Volunteer', href: '/volunteer' },
+        { label: 'Become a donor', href: '/donate' },
+        { label: 'Become a partner', href: '/become-partner' },
+      ]
+    },
+    {
+      label: 'Contact Details',
+      href: null,
+      dropdown: [
+        { label: 'Our contacts', href: '#contact' },
+      ]
+    },
   ];
 
   const handleNavClick = () => {
     setIsMenuOpen(false);
+    setActiveDropdown(null);
+  };
+
+  const handleDropdownLink = (href: string) => {
+    if (href.startsWith('#')) {
+      const id = href.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      navigate(href);
+    }
+    setIsMenuOpen(false);
+    setActiveDropdown(null);
   };
 
   return (
@@ -40,57 +98,50 @@ export function Navbar() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
             <img src={logoImg} alt="Orphans of Africa" className="w-10 h-10 rounded-full object-cover" />
-            <span className="font-semibold text-gray-900 dark:text-white" style={{ fontFamily: 'Poppins, sans-serif' }}>Orphans of Africa Foundation</span>
+            <span className="font-semibold text-gray-900 dark:text-white hidden sm:inline" style={{ fontFamily: 'Poppins, sans-serif' }}>Orphans of Africa</span>
           </Link>
 
           {/* Navigation Links - Desktop */}
           <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              link.href.startsWith('#') ? (
-                <a 
-                  key={link.href} 
-                  href={link.href}
-                  onClick={(e) => handleHashScroll(e, link.href)}
-                  className="text-gray-700 dark:text-gray-300 dark:hover:text-yellow-500 hover:text-yellow-500 transition-opacity transform-all cursor-pointer"
+            {mainNavLinks.map((link) => (
+              <div key={link.label} className="relative group">
+                <button
+                  className="flex items-center gap-1 text-gray-700 dark:text-gray-300 dark:hover:text-yellow-500 hover:text-yellow-500 transition-colors py-2"
                 >
                   {link.label}
-                </a>
-              ) : (
-                <Link 
-                  key={link.href} 
-                  to={link.href} 
-                  className="text-gray-700 dark:text-gray-300 dark:hover:text-yellow-500 hover:text-yellow-500 transition-opacity transform-all"
+                  <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform duration-300" />
+                </button>
+
+                {/* Desktop Dropdown */}
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  whileHover={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute left-0 mt-0 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
                 >
-                  {link.label}
-                </Link>
-              )
+                  {link.dropdown && link.dropdown.map((item, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => handleDropdownLink(item.href)}
+                      className="w-full text-left px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-yellow-50 dark:hover:bg-gray-700 hover:text-yellow-600 transition-colors first:rounded-t-lg last:rounded-b-lg"
+                    >
+                      {item.label}
+                    </button>
+                  ))}
+                </motion.div>
+              </div>
             ))}
           </div>
 
-          {/* Right Section - Donate + Theme Toggle + Mobile Menu Button */}
+          {/* Right Section - Donate + Mobile Menu Button */}
           <div className="flex items-center gap-4">
             <button 
               onClick={() => setIsDonateModalOpen(true)}
-              className="px-6 py-2 rounded-lg text-white transition-all hover:opacity-90"
+              className="px-6 py-2 rounded-lg text-white transition-all hover:opacity-90 whitespace-nowrap"
               style={{ backgroundColor: '#1B82F1' }}
             >
               Donate
             </button>
-
-            { /*Theme Toggle Button }
-            <button
-              onClick={toggleTheme}
-              className="p-2 rounded-lg bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"
-              aria-label="Toggle dark mode"
-            >
-              {isDark ? (
-                <Sun className="w-5 h-5 text-yellow-500" />
-              ) : (
-                <Moon className="w-5 h-5 text-gray-700" />
-              )}
-            </button>
-            
-            /*}
 
             {/* Mobile Menu Button */}
             <button
@@ -108,31 +159,54 @@ export function Navbar() {
         </div>
 
         {/* Mobile Navigation Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden pb-4 border-t border-gray-200 dark:border-gray-800">
-            {navLinks.map((link) => (
-              link.href.startsWith('#') ? (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={(e) => handleHashScroll(e, link.href)}
-                  className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer"
-                >
-                  {link.label}
-                </a>
-              ) : (
-                <Link
-                  key={link.href}
-                  to={link.href}
-                  className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-                  onClick={handleNavClick}
-                >
-                  {link.label}
-                </Link>
-              )
-            ))}
-          </div>
-        )}
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+              className="md:hidden pb-4 border-t border-gray-200 dark:border-gray-800"
+            >
+              {mainNavLinks.map((link) => (
+                <div key={link.label}>
+                  <button
+                    onClick={() => setActiveDropdown(activeDropdown === link.label ? null : link.label)}
+                    className="w-full text-left px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors flex items-center justify-between"
+                  >
+                    {link.label}
+                    <ChevronDown 
+                      className={`w-4 h-4 transition-transform duration-300 ${activeDropdown === link.label ? 'rotate-180' : ''}`} 
+                    />
+                  </button>
+
+                  {/* Mobile Dropdown */}
+                  <AnimatePresence>
+                    {activeDropdown === link.label && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="bg-gray-50 dark:bg-gray-800"
+                      >
+                        {link.dropdown && link.dropdown.map((item, idx) => (
+                          <button
+                            key={idx}
+                            onClick={() => handleDropdownLink(item.href)}
+                            className="w-full text-left px-8 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-yellow-600 transition-colors"
+                          >
+                            {item.label}
+                          </button>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         <DonateModal isOpen={isDonateModalOpen} onClose={() => setIsDonateModalOpen(false)} />
       </div>

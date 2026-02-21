@@ -103,18 +103,9 @@ export function MissionSnapshot() {
           initial="hidden"
           animate={headerInView ? "visible" : "hidden"}
           className="text-center max-w-3xl mx-auto mb-24"
-        >
-          {/* Brand color accent line */}
-          <motion.div 
-            className="w-24 h-0.5 mx-auto mb-8"
-            style={{ backgroundColor: brandColor }}
-            initial={{ scaleX: 0 }}
-            animate={headerInView ? { scaleX: 1 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          />
-          
+        >          
           <h2 
-            className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 tracking-tight"
+            className="text-5xl md:text-6xl font-bold text-[#5AAFD1] mb-6 tracking-tight"
             style={{ fontFamily: 'Poppins, sans-serif' }}
           >
             Our Mission

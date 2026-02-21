@@ -249,20 +249,6 @@ export default function PartnersSponsors() {
             transition={{ duration: 0.6 }}
             className="text-center max-w-4xl mx-auto"
           >
-            {/* Brand Accent */}
-            <div className="flex justify-center gap-2 mb-6">
-              <div className="w-12 h-1 bg-[#F97316] rounded-full" />
-              <div className="w-12 h-1 bg-[#0EA5E9] rounded-full" />
-              <div className="w-12 h-1 bg-[#22C55E] rounded-full" />
-            </div>
-
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-              className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-[#F97316] to-[#0EA5E9] rounded-2xl flex items-center justify-center"
-            >
-              <Handshake className="w-10 h-10 text-white" />
-            </motion.div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
               Our Partners & Sponsors

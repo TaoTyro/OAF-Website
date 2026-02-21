@@ -621,18 +621,18 @@ export default function PartnersSponsors() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-3 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition-all hover:scale-105 flex items-center justify-center gap-2">
+              <button className="px-8 py-3 bg-transparent border-1 border-white text-white rounded-lg font-semibold hover:text-[#0EA5E9] transition-all hover:scale-105 flex items-center justify-center gap-2">
                 <Mail className="w-5 h-5" />
                 Become a Partner
               </button>
-              <button className="px-8 py-3 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition-all hover:scale-105 flex items-center justify-center gap-2">
+              <button className="px-8 py-3 bg-transparent border-1 border-white text-white rounded-lg font-semibold hover:text-[#0EA5E9] transition-all hover:scale-105 flex items-center justify-center gap-2">
                 <Phone className="w-5 h-5" />
                 Schedule a Call
               </button>
             </div>
 
             <p className="text-sm text-white/80 mt-6">
-              Already a partner? <a href="#" className="underline hover:text-white">Access partner resources</a>
+              Already a partner? <a href="#" className="underline hover:text-[#0EA5E9]">Access partner resources</a>
             </p>
           </motion.div>
         </div>

@@ -170,11 +170,11 @@ export function LeadershipPage() {
             >
               {/* Image Placeholder */}
               <div className="bg-gradient-to-br from-[#F97316] to-[#0EA5E9] rounded-xl aspect-square mb-6 flex items-center justify-center">
-                <div className="text-center text-white p-6">
-                  <UserCheck className="w-16 h-16 mx-auto mb-3" />
-                  <p className="text-sm">CEO Image</p>
-                  <p className="text-xs opacity-75">/images/leadership/timothy-mwale.jpg</p>
-                </div>
+                <img 
+                src="/images/leadership/timothy-mwale.jpg" 
+                alt="Timothy Mwale"
+                className="w-full h-full object-cover rounded-xl"
+                />
               </div>
 
               {/* Contact Info */}
@@ -182,11 +182,11 @@ export function LeadershipPage() {
                 <h3 className="font-semibold text-gray-900">Contact</h3>
                 <div className="flex items-center gap-3 text-sm">
                   <Mail className="w-4 h-4 text-[#F97316]" />
-                  <span className="text-gray-600">timothy@orphansofafrica21.org</span>
+                  <span className="text-gray-600">mwale7410@gmail.com</span>
                 </div>
                 <div className="flex items-center gap-3 text-sm">
                   <Phone className="w-4 h-4 text-[#0EA5E9]" />
-                  <span className="text-gray-600">+265 999 123 456</span>
+                  <span className="text-gray-600">+265 886 69 14 92</span>
                 </div>
                 <div className="flex items-center gap-3 text-sm">
                   <MapPin className="w-4 h-4 text-[#22C55E]" />

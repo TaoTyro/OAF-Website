@@ -1,4 +1,4 @@
-import { Heart, Mail, Phone, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react';
+import { Mail, Phone, MapPin, Facebook,  Linkedin, X} from 'lucide-react';
 
 const quickLinks = [
   { label: 'About Us', href: '#about' },
@@ -11,8 +11,7 @@ const quickLinks = [
 
 const socialLinks = [
   { icon: Facebook, href: 'https://web.facebook.com/profile.php?id=100066903646147', label: 'Facebook' },
-  { icon: Instagram, href: '#', label: 'Instagram' },
-  { icon: Linkedin, href: 'https://www.linkedin.com/company/orphans-of-africa-foundation/', label: 'LinkedIn', target: '_blank' }
+  { icon: Linkedin, href: 'https://www.linkedin.com/company/orphans-of-africa-foundation/', label: 'LinkedIn', target: '_blank' },
 ];
 
 export function Footer() {
@@ -74,7 +73,7 @@ export function Footer() {
                 <a
                   key={index}
                   href={social.href}
-                  className="w-10 h-10 rounded-full bg-white text-[#0EA5E9] hover:translate-0.5 hover:text-white hover:bg-[#0EA5E9] flex items-center justify-center duration-300 transition-all"
+                  className="w-10 h-10 rounded-full bg-white text-[#0EA5E9] hover:translate-0.5 hover:text-white hover:ring-1 hover:bg-[#0EA5E9] flex items-center justify-center duration-300 transition-all"
                   aria-label={social.label}
                 >
                   <social.icon className="w-5 h-5 " />

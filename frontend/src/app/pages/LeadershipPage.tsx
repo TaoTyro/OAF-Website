@@ -89,6 +89,12 @@ const Counter = ({ end, duration = 2, suffix = "" }: { end: number; duration?: n
 
 // Key Achievements Data
 const achievements = [
+    {
+     icon: GraduationCap,
+     stat: "27+",
+     label: "Students at Mzuzu University and one at University of Malawi have received fully funded Scholarships ",
+     color: brandColors.brightGreen,
+    },
   {
     icon: School,
     stat: "20",
@@ -113,7 +119,7 @@ const achievements = [
     icon: Users,
     stat: "10,000+",
     label: "Vulnerable people directly impacted",
-    color: brandColors.green,
+    color: brandColors.lightBlue,
   },
 ];
 
@@ -190,7 +196,7 @@ export function LeadershipPage() {
               className="md:col-span-1"
             >
               {/* Image Placeholder */}
-              <div className="bg-gradient-to-br from-[#F97316] to-[#0EA5E9] rounded-xl aspect-square mb-6 overflow-hidden">
+              <div className=" rounded-xl aspect-square mb-6 overflow-hidden">
                 <img 
                   src="/images/leadership/timothy-mwale.jpg" 
                   alt="Timothy Mwale"

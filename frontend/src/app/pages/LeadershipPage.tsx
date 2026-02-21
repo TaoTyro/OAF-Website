@@ -3,509 +3,298 @@ import { Footer } from '../components/Footer';
 import ScrollToTopButton from '../components/ScrollToTopButton';
 import { motion } from 'motion/react';
 import { useInView } from 'react-intersection-observer';
-import { 
-  Mail, 
-  MapPin, 
-  Linkedin, 
-  Twitter, 
-  Award, 
-  Target, 
-  Heart, 
-  Users, 
+import { useState, useEffect } from 'react';
+import {
+  Award,
+  Target,
+  Heart,
+  Users,
   Briefcase,
   Quote,
-  ChevronRight,
-  Star,
-  Clock,
-  Shield,
-  Globe,
-  BookOpen,
-  TrendingUp,
   CheckCircle,
-  Sparkles,
   UserCheck,
+  Mail,
+  Phone,
+  GraduationCap,
+  BookOpen,
+  Globe,
+  TrendingUp,
+  Shield,
+  Medal,
+  Trophy,
+  MapPin,
   Calendar,
-  Phone
+  Sparkles,
+  Leaf,
+  Stethoscope,
+  HandHeart,
+  School,
+  Droplet,
+  Mic,
+  PenTool,
+  Building2,
+  Landmark,
+  Linkedin,
+  Twitter,
+  MessageCircle,
+  Download,
+  ExternalLink,
+  ChevronRight,
 } from 'lucide-react';
 
 // Brand Colors
 const brandColors = {
-  orange: {
-    primary: "#F97316",
-    light: "#FED7AA",
-    dark: "#C2410C",
-    bg: "#FFF7ED",
-  },
-  lightBlue: {
-    primary: "#0EA5E9",
-    light: "#E0F2FE",
-    dark: "#0369A1",
-    bg: "#F0F9FF",
-  },
-  brightGreen: {
-    primary: "#22C55E",
-    light: "#DCFCE7",
-    dark: "#15803D",
-    bg: "#F0FDF4",
-  },
-  green: {
-    primary: "#10B981",
-    light: "#D1FAE5",
-    dark: "#047857",
-    bg: "#ECFDF5",
-  },
+  orange: "#F97316",
+  lightBlue: "#0EA5E9",
+  brightGreen: "#22C55E",
+  green: "#10B981",
 };
 
-// Types
-interface Leader {
-  id: string;
-  name: string;
-  role: string;
-  title: string;
-  bio: string;
-  longBio?: string;
-  email: string;
-  phone?: string;
-  expertise: string[];
-  education?: string[];
-  achievements?: string[];
-  social?: {
-    linkedin?: string;
-    twitter?: string;
-  };
-  imagePlaceholder: string; // Path to custom image: e.g., "/images/leadership/timothy-mwale.jpg"
-  joinDate?: string;
-}
+// Counter Component
+const Counter = ({ end, duration = 2, suffix = "" }: { end: number; duration?: number; suffix?: string }) => {
+  const [count, setCount] = useState(0);
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.3 });
 
-interface Principle {
-  icon: React.ElementType;
-  title: string;
-  description: string;
-  color: string;
-}
+  useEffect(() => {
+    if (!inView) return;
+    let startTime: number | null = null;
+    let animationFrame: number;
 
-// Leadership Data
-const leadershipTeam: Leader[] = [
-  {
-    id: "timothy-mwale",
-    name: "Timothy Mwale",
-    role: "Founder & Executive Director",
-    title: "Executive Director",
-    bio: "Founded OAF at 16 years old, transforming a personal vision into a registered organization impacting thousands of lives across Malawi.",
-    longBio: "Timothy's journey began when he witnessed children in his community dropping out of school due to lack of resources. At just 16, he started a small initiative that would grow into The Orphans of Africa Foundation. His leadership has guided OAF from a youth-led idea to a recognized organization working across 42 villages, partnering with schools, government institutions, and international supporters.",
-    email: "timothy@orphansofafrica21.org",
-    phone: "+265 999 123 456",
-    expertise: [
-      "Strategic Leadership",
-      "Community Development",
-      "Non-Profit Management",
-      "Advocacy & Policy"
-    ],
-    education: [
-      "Bachelor's in Development Studies",
-      "Certificate in Non-Profit Management"
-    ],
-    achievements: [
-      "Founded OAF at age 16",
-      "Secured official registration in 2021",
-      "Expanded to 42 villages in 3 years"
-    ],
-    social: {
-      linkedin: "#",
-      twitter: "#",
-    },
-    imagePlaceholder: "/images/leadership/timothy-mwale.jpg", // Replace with your CEO's image path
-    joinDate: "2018"
-  },
-  {
-    id: "board-chair",
-    name: "Dr. Elizabeth Banda",
-    role: "Board Chair",
-    title: "Board of Directors",
-    bio: "Experienced educator and community leader with over 20 years in educational policy and child welfare advocacy in Malawi.",
-    email: "board@orphansofafrica21.org",
-    expertise: [
-      "Educational Policy",
-      "Governance",
-      "Strategic Planning",
-      "Child Welfare"
-    ],
-    achievements: [
-      "Former Education Ministry Advisor",
-      "PhD in Educational Development",
-      "Awarded for child advocacy work"
-    ],
-    imagePlaceholder: "/images/leadership/elizabeth-banda.jpg", // Replace with actual image path
-  },
-  {
-    id: "treasurer",
-    name: "James Phiri",
-    role: "Treasurer",
-    title: "Board of Directors",
-    bio: "Financial expert specializing in non-profit financial management and sustainable funding strategies for community organizations.",
-    email: "finance@orphansofafrica21.org",
-    expertise: [
-      "Financial Management",
-      "Fund Development",
-      "Risk Assessment",
-      "Audit & Compliance"
-    ],
-    achievements: [
-      "15+ years in financial sector",
-      "Certified Public Accountant",
-      "Managed $2M+ in development funds"
-    ],
-    imagePlaceholder: "/images/leadership/james-phiri.jpg", // Replace with actual image path
-  },
-  {
-    id: "secretary",
-    name: "Grace Mkandawire",
-    role: "Secretary",
-    title: "Board of Directors",
-    bio: "Human rights lawyer passionate about gender justice and legal protection for vulnerable children in rural communities.",
-    email: "legal@orphansofafrica21.org",
-    expertise: [
-      "Legal Advocacy",
-      "Gender Justice",
-      "Child Protection",
-      "Policy Development"
-    ],
-    achievements: [
-      "Human Rights Law Specialist",
-      "Led 5 policy reform initiatives",
-      "Community legal aid pioneer"
-    ],
-    imagePlaceholder: "/images/leadership/grace-mkandawire.jpg", // Replace with actual image path
-  }
-];
+    const startCounting = (timestamp: number) => {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / (duration * 1000), 1);
+      setCount(Math.floor(progress * end));
+      if (progress < 1) {
+        animationFrame = requestAnimationFrame(startCounting);
+      } else {
+        setCount(end);
+      }
+    };
 
-const leadershipPrinciples: Principle[] = [
+    animationFrame = requestAnimationFrame(startCounting);
+    return () => cancelAnimationFrame(animationFrame);
+  }, [inView, end, duration]);
+
+  return <span ref={ref}>{count}{suffix}</span>;
+};
+
+// Key Achievements Data
+const achievements = [
   {
-    icon: Target,
-    title: "Vision-Led",
-    description: "Every decision guided by our mission to create lasting change for orphans and vulnerable children.",
-    color: brandColors.orange.primary
+    icon: School,
+    stat: "20",
+    label: "Orphans supported through secondary education",
+    sub: "4 now qualified teachers",
+    color: brandColors.lightBlue,
   },
   {
-    icon: Shield,
-    title: "Accountable",
-    description: "Transparent governance with clear reporting to communities, donors, and stakeholders.",
-    color: brandColors.lightBlue.primary
+    icon: TrendingUp,
+    stat: "45% → 75%",
+    label: "Primary school pass rate increase across 8 schools",
+    color: brandColors.orange,
+  },
+  {
+    icon: Droplet,
+    stat: "7,000+",
+    label: "Clean birthing kits distributed to expectant mothers",
+    sub: "In partnership with district health authorities",
+    color: brandColors.brightGreen,
   },
   {
     icon: Users,
-    title: "Community-First",
-    description: "Leadership rooted in understanding and responding to community needs and priorities.",
-    color: brandColors.brightGreen.primary
+    stat: "10,000+",
+    label: "Vulnerable people directly impacted",
+    color: brandColors.green,
   },
-  {
-    icon: Heart,
-    title: "Compassionate",
-    description: "Empathy-driven approach ensuring the most vulnerable are always prioritized.",
-    color: brandColors.green.primary
-  }
 ];
 
-const milestones = [
-  { year: "2018", event: "Founded by Timothy Mwale", icon: Star },
-  { year: "2021", event: "Official NGO Registration", icon: Shield },
-  { year: "2022", event: "First University Scholarships", icon: Award },
-  { year: "2024", event: "42 Villages Reached", icon: Globe },
+// Global Recognition Data
+const recognitions = [
+  { name: "Tällberg-SNF-Eliasson Global Leadership Prize", year: "2025", highlight: true, icon: Medal },
+  { name: "World Bank Group Youth Summit", year: "2023", icon: Landmark },
+  { name: "African Climate Summit", year: "2023", icon: Leaf },
+  { name: "UNCTAD Youth Forum", year: "2024", icon: Globe },
+];
+
+// Certifications Data
+const certifications = [
+  { title: "Organizational Development", icon: Building2 },
+  { title: "Leadership & Communication", icon: Mic },
+  { title: "Environmental Protection", icon: Leaf },
+  { title: "Emerging Technologies", icon: PenTool },
+];
+
+// Partnerships Data
+const partnerships = [
+  "International Organizations",
+  "Government Departments",
+  "Traditional Leaders",
+  "Community Structures",
 ];
 
 export function LeadershipPage() {
-  const [heroRef, heroInView] = useInView({ threshold: 0.1 });
-  const [principlesRef, principlesInView] = useInView({ triggerOnce: true, threshold: 0.1 });
+  const [metricsRef, metricsInView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="relative pt-24 pb-16 bg-gradient-to-b from-white to-gray-50">
+      {/* Header */}
+      <section className="pt-24 pb-12 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center max-w-4xl mx-auto"
+            className="flex items-center gap-2 mb-4"
           >
-            {/* Brand accent */}
-            <div className="flex justify-center gap-2 mb-6">
-              <div className="w-12 h-1 bg-[#F97316] rounded-full" />
-              <div className="w-12 h-1 bg-[#0EA5E9] rounded-full" />
-              <div className="w-12 h-1 bg-[#22C55E] rounded-full" />
-            </div>
-
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-              Leadership That
-              <span className="block text-[#F97316]">Inspires Change</span>
-            </h1>
-
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-              Meet the dedicated team guiding OAF's mission to transform lives 
-              and create sustainable impact in communities across Malawi.
-            </p>
-
-            {/* Quick stats */}
-            <div className="grid grid-cols-3 gap-4 max-w-2xl mx-auto mt-8">
-              <div className="bg-white p-4 rounded-lg shadow-sm">
-                <div className="text-2xl font-bold text-[#0EA5E9]">2018</div>
-                <div className="text-sm text-gray-500">Founded</div>
-              </div>
-              <div className="bg-white p-4 rounded-lg shadow-sm">
-                <div className="text-2xl font-bold text-[#22C55E]">42</div>
-                <div className="text-sm text-gray-500">Villages</div>
-              </div>
-              <div className="bg-white p-4 rounded-lg shadow-sm">
-                <div className="text-2xl font-bold text-[#F97316]">1500+</div>
-                <div className="text-sm text-gray-500">Lives Impacted</div>
-              </div>
-            </div>
+            <div className="w-8 h-1 bg-[#F97316] rounded-full" />
+            <div className="w-8 h-1 bg-[#0EA5E9] rounded-full" />
+            <div className="w-8 h-1 bg-[#22C55E] rounded-full" />
           </motion.div>
+          
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Timothy Mwale</h1>
+          <p className="text-xl text-[#F97316] font-medium mb-2">Founder & Executive Director</p>
+          <p className="text-gray-600 max-w-3xl">Orphans of Africa Foundation (OAF)</p>
         </div>
       </section>
 
-      {/* Founder Spotlight - Executive Director */}
-      <section className="py-16 bg-white">
+      {/* Main Profile Section */}
+      <section className="py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="grid lg:grid-cols-2 gap-12 items-center"
-          >
-            {/* Image Column - CEO Image Placeholder */}
-            <div className="relative">
-              <div className="aspect-w-4 aspect-h-5 rounded-2xl overflow-hidden shadow-xl">
-                {/* 
-                  REPLACE THIS DIV WITH YOUR CEO'S IMAGE:
-                  <img 
-                    src={leadershipTeam[0].imagePlaceholder} 
-                    alt="Timothy Mwale - Founder & Executive Director"
-                    className="w-full h-full object-cover"
-                  />
-                */}
-                <div className="w-full h-full bg-gradient-to-br from-[#F97316] to-[#0EA5E9] flex items-center justify-center">
-                  <div className="text-center text-white">
-                    <UserCheck className="w-16 h-16 mx-auto mb-4" />
-                    <p className="text-lg font-medium">CEO Image Placeholder</p>
-                    <p className="text-sm opacity-80">Replace with: /images/leadership/timothy-mwale.jpg</p>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Decorative elements */}
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-[#22C55E]/10 rounded-full blur-2xl" />
-              <div className="absolute -top-4 -left-4 w-32 h-32 bg-[#F97316]/10 rounded-full blur-2xl" />
-            </div>
-
-            {/* Content Column */}
-            <div>
-              <span className="text-sm font-semibold text-[#F97316] mb-2 block">FOUNDER & EXECUTIVE DIRECTOR</span>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                {leadershipTeam[0].name}
-              </h2>
-              
-              <div className="space-y-6">
-                <p className="text-lg text-gray-700 leading-relaxed">
-                  {leadershipTeam[0].longBio || leadershipTeam[0].bio}
-                </p>
-
-                {/* Key Achievements */}
-                <div className="bg-gray-50 p-6 rounded-xl">
-                  <h3 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                    <Award className="w-5 h-5 text-[#F97316]" />
-                    Key Achievements
-                  </h3>
-                  <ul className="space-y-3">
-                    {leadershipTeam[0].achievements?.map((achievement, index) => (
-                      <li key={index} className="flex items-start gap-2">
-                        <CheckCircle className="w-5 h-5 text-[#22C55E] flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-700">{achievement}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Contact & Expertise */}
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-[#F0F9FF] p-4 rounded-lg">
-                    <Mail className="w-5 h-5 text-[#0EA5E9] mb-2" />
-                    <p className="text-sm text-gray-600">Email</p>
-                    <p className="text-sm font-medium text-gray-900 break-all">
-                      {leadershipTeam[0].email}
-                    </p>
-                  </div>
-                  {leadershipTeam[0].phone && (
-                    <div className="bg-[#FFF7ED] p-4 rounded-lg">
-                      <Phone className="w-5 h-5 text-[#F97316] mb-2" />
-                      <p className="text-sm text-gray-600">Phone</p>
-                      <p className="text-sm font-medium text-gray-900">
-                        {leadershipTeam[0].phone}
-                      </p>
-                    </div>
-                  )}
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Board of Directors */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Board of Directors</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Seasoned professionals providing strategic governance and expertise
-            </p>
-          </motion.div>
-
           <div className="grid md:grid-cols-3 gap-8">
-            {leadershipTeam.slice(1).map((leader, index) => (
-              <motion.div
-                key={leader.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
-              >
-                {/* Image placeholder for board members */}
-                <div className="h-48 bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
-                  {/*
-                    REPLACE WITH ACTUAL IMAGES:
-                    <img 
-                      src={leader.imagePlaceholder} 
-                      alt={leader.name}
-                      className="w-full h-full object-cover"
-                    />
-                  */}
-                  <div className="text-center text-gray-500">
-                    <Users className="w-12 h-12 mx-auto mb-2" />
-                    <p className="text-sm">Board Member Image</p>
-                  </div>
+            {/* Left Column - Image & Contact */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              className="md:col-span-1"
+            >
+              {/* Image Placeholder */}
+              <div className="bg-gradient-to-br from-[#F97316] to-[#0EA5E9] rounded-xl aspect-square mb-6 flex items-center justify-center">
+                <div className="text-center text-white p-6">
+                  <UserCheck className="w-16 h-16 mx-auto mb-3" />
+                  <p className="text-sm">CEO Image</p>
+                  <p className="text-xs opacity-75">/images/leadership/timothy-mwale.jpg</p>
+                </div>
+              </div>
+
+              {/* Contact Info */}
+              <div className="bg-gray-50 p-6 rounded-xl space-y-4">
+                <h3 className="font-semibold text-gray-900">Contact</h3>
+                <div className="flex items-center gap-3 text-sm">
+                  <Mail className="w-4 h-4 text-[#F97316]" />
+                  <span className="text-gray-600">timothy@orphansofafrica21.org</span>
+                </div>
+                <div className="flex items-center gap-3 text-sm">
+                  <Phone className="w-4 h-4 text-[#0EA5E9]" />
+                  <span className="text-gray-600">+265 999 123 456</span>
+                </div>
+                <div className="flex items-center gap-3 text-sm">
+                  <MapPin className="w-4 h-4 text-[#22C55E]" />
+                  <span className="text-gray-600">Malawi</span>
+                </div>
+                
+                {/* Social Links */}
+                <div className="flex gap-3 pt-4">
+                  <a href="#" className="w-8 h-8 bg-white rounded-full flex items-center justify-center hover:shadow-md">
+                    <Linkedin className="w-4 h-4 text-[#0EA5E9]" />
+                  </a>
+                  <a href="#" className="w-8 h-8 bg-white rounded-full flex items-center justify-center hover:shadow-md">
+                    <Twitter className="w-4 h-4 text-[#F97316]" />
+                  </a>
+                  <a href="#" className="w-8 h-8 bg-white rounded-full flex items-center justify-center hover:shadow-md">
+                    <MessageCircle className="w-4 h-4 text-[#22C55E]" />
+                  </a>
                 </div>
 
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-1">{leader.name}</h3>
-                  <p className="text-[#F97316] font-semibold text-sm mb-3">{leader.role}</p>
-                  <p className="text-gray-600 text-sm mb-4">{leader.bio}</p>
+                <button className="w-full mt-2 px-4 py-2 bg-[#F97316] text-white rounded-lg text-sm font-medium hover:bg-[#EA580C] transition-colors flex items-center justify-center gap-2">
+                  <Download className="w-4 h-4" />
+                  Download Bio
+                </button>
+              </div>
+            </motion.div>
 
-                  {/* Expertise tags */}
-                  <div className="mb-4">
-                    <p className="text-xs font-semibold text-gray-500 mb-2">EXPERTISE</p>
-                    <div className="flex flex-wrap gap-2">
-                      {leader.expertise.slice(0, 2).map((item, i) => (
-                        <span key={i} className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full">
-                          {item}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
+            {/* Right Column - Bio & Details */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              className="md:col-span-2 space-y-8"
+            >
+              {/* Executive Summary */}
+              <div className="bg-white p-6 rounded-xl border border-gray-100">
+                <p className="text-gray-700 leading-relaxed">
+                  Timothy Mwale is a social worker and communications specialist with extensive experience 
+                  in youth leadership, community development, and nonprofit management. As Founder and 
+                  Executive Director of the Orphans of Africa Foundation (OAF), established in 2018, he 
+                  leads a youth-led organization working across Malawi and other African countries to 
+                  support orphans, youth, and women.
+                </p>
+              </div>
 
-                  {/* Contact */}
-                  <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <Mail className="w-4 h-4 text-[#0EA5E9]" />
-                    <span className="truncate">{leader.email}</span>
-                  </div>
+              {/* Quick Stats */}
+              <div ref={metricsRef} className="grid grid-cols-2 gap-4">
+                <div className="bg-[#F0F9FF] p-4 rounded-lg">
+                  <div className="text-2xl font-bold text-[#0EA5E9]"><Counter end={2018} /></div>
+                  <div className="text-sm text-gray-600">Founded OAF</div>
                 </div>
-              </motion.div>
-            ))}
+                <div className="bg-[#FFF7ED] p-4 rounded-lg">
+                  <div className="text-2xl font-bold text-[#F97316]"><Counter end={10} suffix="k+" /></div>
+                  <div className="text-sm text-gray-600">Lives Impacted</div>
+                </div>
+                <div className="bg-[#F0FDF4] p-4 rounded-lg">
+                  <div className="text-2xl font-bold text-[#22C55E]"><Counter end={42} /></div>
+                  <div className="text-sm text-gray-600">Villages Reached</div>
+                </div>
+                <div className="bg-gray-50 p-4 rounded-lg">
+                  <div className="text-2xl font-bold text-[#10B981]"><Counter end={8} /></div>
+                  <div className="text-sm text-gray-600">Partner Schools</div>
+                </div>
+              </div>
+
+              {/* Bio */}
+              <div className="space-y-4 text-gray-600">
+                <p>
+                  His professional background spans education, climate action, health and maternal care, 
+                  gender-based violence prevention, and social justice advocacy. Through OAF, he has 
+                  designed and led multi-sectoral projects impacting over 10,000 vulnerable people.
+                </p>
+                <p>
+                  Timothy has strong expertise in grant writing, project design, M&E, fundraising, and 
+                  stakeholder engagement. He has mobilized partnerships with international organizations, 
+                  government departments, traditional leaders, and community structures for sustainable, 
+                  community-driven interventions.
+                </p>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Leadership Journey Timeline */}
-      <section className="py-16 bg-white">
+      {/* Key Achievements */}
+      <section className="py-12 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Leadership Journey</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Key milestones in OAF's growth under dedicated leadership
-            </p>
-          </motion.div>
-
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gray-200" />
-
-            <div className="space-y-12">
-              {milestones.map((milestone, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className={`relative flex items-center ${
-                    index % 2 === 0 ? "justify-start" : "justify-end"
-                  }`}
-                >
-                  <div className={`w-5/12 ${index % 2 === 0 ? "text-right pr-8" : "pl-8"}`}>
-                    <div className="bg-gray-50 p-6 rounded-xl shadow-sm">
-                      <span className="text-2xl font-bold text-[#F97316]">{milestone.year}</span>
-                      <p className="text-gray-700 mt-2">{milestone.event}</p>
-                    </div>
-                  </div>
-
-                  <div className="absolute left-1/2 transform -translate-x-1/2">
-                    <div className="w-10 h-10 rounded-full bg-white border-4 border-[#0EA5E9] flex items-center justify-center">
-                      <milestone.icon className="w-4 h-4 text-[#0EA5E9]" />
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Leadership Principles */}
-      <section ref={principlesRef} className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={principlesInView ? { opacity: 1, y: 0 } : {}}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Leadership Principles</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              The values that guide every decision and action at OAF
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {leadershipPrinciples.map((principle, index) => {
-              const Icon = principle.icon;
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Key Achievements</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            {achievements.map((item, index) => {
+              const Icon = item.icon;
               return (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={principlesInView ? { opacity: 1, y: 0 } : {}}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                   className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow"
                 >
-                  <div 
-                    className="w-12 h-12 rounded-lg flex items-center justify-center mb-4"
-                    style={{ backgroundColor: `${principle.color}15` }}
-                  >
-                    <Icon className="w-6 h-6" style={{ color: principle.color }} />
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-lg flex items-center justify-center" style={{ backgroundColor: `${item.color}15` }}>
+                      <Icon className="w-6 h-6" style={{ color: item.color }} />
+                    </div>
+                    <div>
+                      <div className="text-2xl font-bold mb-1" style={{ color: item.color }}>{item.stat}</div>
+                      <p className="text-gray-700 mb-2">{item.label}</p>
+                      {item.sub && <p className="text-sm text-gray-500">{item.sub}</p>}
+                    </div>
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{principle.title}</h3>
-                  <p className="text-sm text-gray-600">{principle.description}</p>
                 </motion.div>
               );
             })}
@@ -513,112 +302,115 @@ export function LeadershipPage() {
         </div>
       </section>
 
-      {/* Advisory & Governance Structure */}
-      <section className="py-16 bg-white">
+      {/* Professional Background */}
+      <section className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Governance Structure</h2>
-              <p className="text-gray-700 mb-6 leading-relaxed">
-                OAF operates under a robust governance framework that ensures accountability, 
-                transparency, and effective decision-making at all levels.
-              </p>
-
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Education */}
+            <div>
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">Education</h2>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-full bg-[#F97316]/10 flex items-center justify-center flex-shrink-0">
-                    <Shield className="w-4 h-4 text-[#F97316]" />
-                  </div>
+                  <GraduationCap className="w-5 h-5 text-[#0EA5E9] mt-1" />
                   <div>
-                    <h3 className="font-semibold text-gray-900">Board of Directors</h3>
-                    <p className="text-sm text-gray-600">Provides strategic oversight and governance</p>
+                    <p className="font-medium">BA in Communication Studies</p>
+                    <p className="text-sm text-gray-500">Mzuzu University (In Progress)</p>
                   </div>
                 </div>
-                
                 <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-full bg-[#0EA5E9]/10 flex items-center justify-center flex-shrink-0">
-                    <Briefcase className="w-4 h-4 text-[#0EA5E9]" />
-                  </div>
+                  <Briefcase className="w-5 h-5 text-[#F97316] mt-1" />
                   <div>
-                    <h3 className="font-semibold text-gray-900">Executive Leadership</h3>
-                    <p className="text-sm text-gray-600">Manages daily operations and implementation</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-full bg-[#22C55E]/10 flex items-center justify-center flex-shrink-0">
-                    <Users className="w-4 h-4 text-[#22C55E]" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900">Community Advisory Board</h3>
-                    <p className="text-sm text-gray-600">Ensures community voices guide our work</p>
+                    <p className="font-medium">BBA</p>
+                    <p className="text-sm text-gray-500">University of the People, USA (In Progress)</p>
                   </div>
                 </div>
               </div>
-            </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="bg-gray-50 p-8 rounded-xl"
-            >
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Why Our Leadership Matters</h3>
-              <ul className="space-y-4">
-                <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-[#22C55E] flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Youth-led perspective with mature governance</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-[#22C55E] flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Diverse expertise across education, finance, and law</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-[#22C55E] flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Deep community connections and understanding</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-[#22C55E] flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Proven track record of sustainable impact</span>
-                </li>
-              </ul>
-            </motion.div>
+              {/* Certifications */}
+              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-6">Certifications</h2>
+              <div className="grid grid-cols-2 gap-3">
+                {certifications.map((cert, index) => {
+                  const Icon = cert.icon;
+                  return (
+                    <div key={index} className="flex items-center gap-2 bg-gray-50 p-3 rounded-lg">
+                      <Icon className="w-4 h-4 text-[#22C55E]" />
+                      <span className="text-sm">{cert.title}</span>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Global Recognition */}
+            <div>
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">Global Recognition</h2>
+              <div className="space-y-3">
+                {recognitions.map((item, index) => {
+                  const Icon = item.icon;
+                  return (
+                    <div key={index} className={`bg-white p-4 rounded-lg border ${item.highlight ? 'border-l-4 border-[#F97316]' : 'border-gray-100'}`}>
+                      <div className="flex items-start gap-3">
+                        <Icon className="w-5 h-5 text-[#0EA5E9] mt-0.5" />
+                        <div>
+                          <p className="font-medium">{item.name}</p>
+                          <p className="text-sm text-gray-500">{item.year}</p>
+                          {item.highlight && (
+                            <span className="inline-block mt-2 text-xs bg-[#F97316] text-white px-2 py-1 rounded-full">Nomination</span>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Partnerships */}
+              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-6">Key Partnerships</h2>
+              <div className="flex flex-wrap gap-2">
+                {partnerships.map((item, index) => (
+                  <span key={index} className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">{item}</span>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Contact Leadership CTA */}
-      <section className="py-16 bg-gradient-to-r from-[#F97316] to-[#0EA5E9]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Connect With Our Leadership
-            </h2>
-            <p className="text-xl mb-8 text-white/90">
-              Interested in partnerships, collaborations, or learning more about our work?
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-3 bg-white text-[#F97316] rounded-lg font-semibold hover:shadow-xl transition-shadow">
-                Contact Executive Director
-              </button>
-              <button className="px-8 py-3 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition-colors">
-                Board Inquiries
-              </button>
-            </div>
+      {/* Expertise Areas */}
+      <section className="py-12 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Areas of Expertise</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              "Grant Writing", "Project Design", "M&E", "Fundraising",
+              "Stakeholder Engagement", "Youth Leadership", "Community Development", "Nonprofit Management"
+            ].map((item, index) => (
+              <div key={index} className="bg-white p-3 rounded-lg text-center text-sm font-medium text-gray-700">
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            <p className="text-sm text-white/80 mt-6">
-              Or email us directly at: leadership@orphansofafrica21.org
-            </p>
-          </motion.div>
+      {/* Quote */}
+      <section className="py-12">
+        <div className="max-w-3xl mx-auto px-4 text-center">
+          <Quote className="w-8 h-8 text-[#F97316] mx-auto mb-4" />
+          <p className="text-lg text-gray-700 italic">
+            "Every child deserves access to education, healthcare, and equal opportunity to break the cycle of poverty."
+          </p>
+          <p className="text-sm text-gray-500 mt-4">— Timothy Mwale</p>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-8 bg-gradient-to-r from-[#F97316] to-[#0EA5E9]">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <p className="text-white text-lg mb-4">For partnerships, speaking engagements, or collaboration</p>
+          <button className="px-6 py-2 bg-white text-[#F97316] rounded-lg font-medium hover:shadow-lg transition-shadow">
+            Contact Timothy
+          </button>
         </div>
       </section>
 

@@ -162,8 +162,7 @@ export function ContactForm() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full px-6 py-3 rounded-lg text-white font-medium transition-all hover:opacity-90 disabled:opacity-50"
-              style={{ backgroundColor: 'var(--primary-blue)' }}
+              className="w-full px-6 py-3 rounded-lg bg-[#0EA5E9] text-white font-medium transition-all hover:opacity-90 disabled:opacity-50"
             >
               {isSubmitting ? 'Sending...' : 'Send Message'}
             </button>

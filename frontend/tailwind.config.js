@@ -2,7 +2,11 @@
 export default {
   darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+  backgroundImage: {
+    'topography': "url('/patterns/topography.svg')",
+  }
+   }
   },
   plugins: [],
 }

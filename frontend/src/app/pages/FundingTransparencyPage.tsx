@@ -409,39 +409,40 @@ export function FundingTransparencyPage() {
         </div>
       </section>
 
-        {/* Finance CTA with Background Image */}
-      <section className="relative h-[40vh] overflow-hidden">
-        <img 
-            src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2011&q=80"
-            alt="Finance team providing clarity and support"
-            className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-          <div className="text-center text-white max-w-3xl px-6">
-             <h3 className="text-2xl font-bold mb-3">Have Questions About Our Finances?</h3>
-             <p className="text-white/90 text-sm mb-5">
-             We're here to provide clarity and answer any questions you may have.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a 
-                href="mailto:finance@orphansofafrica21.org" 
-                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#0EA5E9] text-white text-sm font-medium hover:bg-[#0284C7] transition-colors"
-            >
-            <Mail className="w-4 h-4" />
-                Email Finance Team
-            </a>
-            <a 
-                href="#" 
-                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 border border-white/70 text-white text-sm font-medium hover:bg-white/10 transition-colors"
-           >
+    {/* Finance CTA with Custom SVG Background */}
+<section 
+  className="relative h-[40vh] overflow-hidden bg-center bg-[#DFDBE5]" 
+  style={{ 
+    backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Cpath fill='%230EA5E9' fill-opacity='0.4' d='M600 325.1v-1.17c-6.5 3.83-13.06 7.64-14.68 8.64-10.6 6.56-18.57 12.56-24.68 19.09-5.58 5.95-12.44 10.06-22.42 14.15-1.45.6-2.96 1.2-4.83 1.9l-4.75 1.82c-9.78 3.75-14.8 6.27-18.98 10.1-4.23 3.88-9.65 6.6-16.77 8.84-1.95.6-3.99 1.17-6.47 1.8l-6.14 1.53c-5.29 1.35-8.3 2.37-10.54 3.78-3.08 1.92-6.63 3.26-12.74 5.03...'/%3E%3C/svg%3E")`
+  }}
+>
+  <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+    <div className="text-center text-white max-w-3xl px-6">
+      <h3 className="text-2xl font-bold mb-3">Have Questions About Our Finances?</h3>
+      <p className="text-white/90 text-sm mb-5">
+        We're here to provide clarity and answer any questions you may have.
+      </p>
+      <div className="flex flex-col sm:flex-row gap-3 justify-center">
+        <a 
+          href="mailto:finance@orphansofafrica21.org" 
+          className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#0EA5E9] text-white text-sm font-medium hover:bg-[#0284C7] transition-colors"
+        >
+          <Mail className="w-4 h-4" />
+          Email Finance Team
+        </a>
+        <a 
+          href="#" 
+          className="inline-flex items-center justify-center gap-2 px-5 py-2.5 border border-white/70 text-white text-sm font-medium hover:bg-white/10 transition-colors"
+        >
           <Phone className="w-4 h-4" />
-            Schedule a Call
-             </a>
-           </div>
-           </div>
-        </div>
-      </section>
-      
+          Schedule a Call
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
       <Footer />
       <ScrollToTopButton />
     </div>

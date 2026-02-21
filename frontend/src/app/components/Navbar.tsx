@@ -28,10 +28,10 @@ export function Navbar() {
       label: 'About Us',
       href: null,
       dropdown: [
-        { label: 'Who we are', href: '/about-us' },
+        { label: 'Who We Are', href: '/about-us' },
         { label: 'Leadership', href: '/leadership' },
         { label: 'Executive Staff', href: '/executive-staff' },
-        { label: 'Partners', href: '/partners' },
+        { label: 'Our Partners', href: '/partners' },
         { label: 'Funding Transparency', href: '/funding-transparency' },
       ]
     },
@@ -49,8 +49,8 @@ export function Navbar() {
       href: null,
       dropdown: [
         { label: 'Our Projects', href: '/projects' },
-        { label: 'Performance metrics', href: '/metrics' },
-        { label: 'Success stories', href: '#success-stories' },
+        { label: 'Impact Statistics', href: '/metrics' },
+        { label: 'Success Stories', href: '#success-stories' },
         { label: 'Blog', href: '/blog' },
       ]
     },
@@ -59,15 +59,15 @@ export function Navbar() {
       href: null,
       dropdown: [
         { label: 'Volunteer', href: '/volunteer' },
-        { label: 'Become a donor', href: '/donate' },
-        { label: 'Become a partner', href: '/become-partner' },
+        { label: 'Become a Donor', href: '/donate' },
+        { label: 'Become a Partner', href: '/become-partner' },
       ]
     },
     {
       label: 'Contact Details',
       href: null,
       dropdown: [
-        { label: 'Our contacts', href: '#contact' },
+        { label: 'Our Contacts', href: '#contact' },
       ]
     },
   ];

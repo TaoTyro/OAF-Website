@@ -65,7 +65,7 @@ const ScrollToTopButton = () => {
         flex items-center justify-center
         h-12 w-12
         rounded-full
-        bg-blue-600 text-white
+        bg-[#0EA5E9] text-white
         shadow-lg
         opacity-0 pointer-events-none
       "

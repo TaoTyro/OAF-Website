@@ -60,9 +60,9 @@ export function FundingTransparencyPage() {
       <Navbar />
 
       {/* Hero Section with Unsplash Image */}
-      <section className="relative h-[60vh] flex items-center overflow-hidden">
+      <section className="relative h-[100vh] flex items-center overflow-hidden">
         {/* Unsplash Image - Transparency/Glass concept */}
-        <div className="absolute inset-0">
+        <div className="absolute inset-0" style={{ backgroundAttachment: 'fixed' }}>
           <img 
             src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
             alt="Transparent glass building representing clarity and openness"
@@ -254,8 +254,8 @@ export function FundingTransparencyPage() {
               className="order-2 lg:order-1"
             >
               <img 
-                src="https://images.unsplash.com/photo-1554224154-39132dabc1b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80"
-                alt="Financial documents and calculator representing accountability"
+                src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80"
+                alt="Financial transparency and accountability"
                 className="w-full h-80 object-cover rounded-lg shadow-lg"
               />
             </motion.div>
@@ -309,8 +309,8 @@ export function FundingTransparencyPage() {
       {/* Transparency in Action - Unsplash Image */}
       <section className="relative h-[40vh] overflow-hidden">
         <img 
-          src="https://images.unsplash.com/photo-1573164713988-9665fc3c4c27?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80"
-          alt="Business professionals reviewing documents together"
+          src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80"
+          alt="Community working together with transparency and trust"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/50 flex items-center justify-center">

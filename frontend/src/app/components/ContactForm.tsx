@@ -60,7 +60,7 @@ export function ContactForm() {
         <div className="grid md:grid-cols-3 gap-8 mb-12">
           {/* Contact Info Cards */}
           <div className="bg-gray-50 dark:bg-gray-900 p-6 rounded-lg">
-            <Mail className="w-8 h-8 mb-4" style={{ color: 'var(--primary-blue)' }} />
+            <Mail className="w-8 h-8 mb-4 text-[#0EA5E9]" />
             <h3 style={{ fontFamily: 'Poppins, sans-serif' }} className="font-semibold dark:text-amber-50 mb-2">Email</h3>
             <p className="text-gray-600 dark:text-gray-400">contact@orphansofafrica21.org</p>
           </div>

@@ -187,7 +187,7 @@ const heroBackgroundImages = [
 // Partnership Category Images
 const partnershipImages = {
   health: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=500&h=400&fit=crop', // Healthcare
-  education: 'https://images.unsplash.com/photo-1427504494785-cddb76a7d516?w=500&h=400&fit=crop', // Education/books
+  education: 'https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=500&h=400&fit=crop', // Students/learning
   sports: 'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=500&h=400&fit=crop', // Sports/children
   university: 'https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=500&h=400&fit=crop', // University/learning
 };

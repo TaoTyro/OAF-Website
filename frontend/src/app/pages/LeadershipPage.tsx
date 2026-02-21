@@ -172,19 +172,9 @@ export function LeadershipPage() {
 
       {/* Header */}
       <section className="pt-24 pb-12 bg-gradient-to-b from-white to-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="flex items-center gap-2 mb-4"
-          >
-            <div className="w-8 h-1 bg-[#F97316] rounded-full" />
-            <div className="w-8 h-1 bg-[#0EA5E9] rounded-full" />
-            <div className="w-8 h-1 bg-[#22C55E] rounded-full" />
-          </motion.div>
-          
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Timothy Mwale</h1>
-          <p className="text-xl text-[#F97316] font-medium mb-2">Founder & Executive Director</p>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">   
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-600 mb-4">Timothy Mwale</h1>
+          <p className="text-xl text-[#5AAFD1] font-medium mb-2">Founder & Executive Director</p>
           <p className="text-gray-600 max-w-3xl">Orphans of Africa Foundation (OAF)</p>
         </div>
       </section>
@@ -204,7 +194,7 @@ export function LeadershipPage() {
                 <img 
                   src="/images/leadership/timothy-mwale.jpg" 
                   alt="Timothy Mwale"
-                  className="w-full h-full object-cover rounded-xl"
+                  className="w-full h-full object-cover rounded-full"
                 />
               </div>
 
@@ -215,7 +205,7 @@ export function LeadershipPage() {
                   onClick={() => window.location.href = 'mailto:mwale7410@gmail.com'}
                   className="flex items-center gap-3 text-sm hover:text-[#F97316] transition-colors group cursor-pointer bg-transparent border-none p-0"
                 >
-                  <Mail className="w-4 h-4 text-[#F97316]" />
+                  <Mail className="w-4 h-4 text-[#3B9BC2]" />
                   <span className="text-gray-600 group-hover:underline">{EMAIL}</span>
                 </button>
                 <a 
@@ -453,7 +443,7 @@ export function LeadershipPage() {
                   className="bg-white p-4 rounded-lg text-center hover:shadow-lg hover:-translate-y-1 transition-all"
                 >
                   <div className="w-12 h-12 rounded-lg flex items-center justify-center mx-auto mb-3" style={{ backgroundColor: `${item.color}15` }}>
-                    <Icon className="w-6 h-6" style={{ color: item.color }} />
+                    <Icon className="w-6 h-6 " style={{ color: item.color }} fill="currentColor" />
                   </div>
                   <p className="text-sm font-semibold text-gray-900">{item.title}</p>
                 </motion.div>

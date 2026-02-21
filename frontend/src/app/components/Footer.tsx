@@ -12,7 +12,7 @@ const quickLinks = [
 const socialLinks = [
   { icon: Facebook, href: 'https://web.facebook.com/profile.php?id=100066903646147', label: 'Facebook' },
   { icon: Linkedin, href: 'https://www.linkedin.com/company/orphans-of-africa-foundation/', label: 'LinkedIn', target: '_blank' },
-  { icon: Instagram, href: 'https://www.instagram.com/orphansofafrica21/', label: 'Instagram', target: '_blank' },
+  { icon: Instagram, href: 'https://x.com/orphans_of_africa', label: 'X (Twitter)', target: '_blank' }
 ];
 
 export function Footer() {

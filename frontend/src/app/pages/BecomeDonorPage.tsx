@@ -75,7 +75,7 @@ export function BecomeDonorPage() {
                 }`}
               >
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{level.level}</h3>
-                <p className="text-3xl font-bold" style={{ color: 'var(--primary-orange)' }} className="mb-6">{level.amount}</p>
+                <p className="text-3xl font-bold mb-6" style={{ color: 'var(--primary-orange)' }}>{level.amount}</p>
                 <ul className="space-y-3">
                   {level.benefits.map((benefit, bidx) => (
                     <li key={bidx} className="flex items-start gap-3 text-gray-700 dark:text-gray-300">

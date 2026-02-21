@@ -40,6 +40,14 @@ import {
   Download,
   ExternalLink,
   ChevronRight,
+  FileText,
+  Lightbulb,
+  BarChart3,
+  DollarSign,
+  Handshake,
+  Users2,
+  Network,
+  Zap,
 } from 'lucide-react';
 
 // Brand Colors
@@ -126,10 +134,22 @@ const certifications = [
 
 // Partnerships Data
 const partnerships = [
-  "International Organizations",
-  "Government Departments",
-  "Traditional Leaders",
-  "Community Structures",
+  { name: "International Organizations", icon: Globe, color: brandColors.lightBlue },
+  { name: "Government Departments", icon: Building2, color: brandColors.orange },
+  { name: "Traditional Leaders", icon: Shield, color: brandColors.brightGreen },
+  { name: "Community Structures", icon: Users, color: brandColors.green },
+];
+
+// Areas of Expertise Data
+const expertiseAreas = [
+  { title: "Grant Writing", icon: FileText, color: brandColors.lightBlue },
+  { title: "Project Design", icon: Lightbulb, color: brandColors.orange },
+  { title: "M&E", icon: BarChart3, color: brandColors.brightGreen },
+  { title: "Fundraising", icon: DollarSign, color: brandColors.green },
+  { title: "Stakeholder Engagement", icon: Handshake, color: brandColors.lightBlue },
+  { title: "Youth Leadership", icon: Users2, color: brandColors.orange },
+  { title: "Community Development", icon: Network, color: brandColors.brightGreen },
+  { title: "Nonprofit Management", icon: Zap, color: brandColors.green },
 ];
 
 export function LeadershipPage() {
@@ -366,10 +386,18 @@ export function LeadershipPage() {
 
               {/* Partnerships */}
               <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-6">Key Partnerships</h2>
-              <div className="flex flex-wrap gap-2">
-                {partnerships.map((item, index) => (
-                  <span key={index} className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">{item}</span>
-                ))}
+              <div className="grid grid-cols-2 gap-3">
+                {partnerships.map((item, index) => {
+                  const Icon = item.icon;
+                  return (
+                    <div key={index} className="flex items-center gap-2 bg-white p-3 rounded-lg border border-gray-100 hover:shadow-md transition-shadow">
+                      <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ backgroundColor: `${item.color}15` }}>
+                        <Icon className="w-4 h-4" style={{ color: item.color }} />
+                      </div>
+                      <span className="text-sm font-medium text-gray-700">{item.name}</span>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -381,14 +409,24 @@ export function LeadershipPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Areas of Expertise</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[
-              "Grant Writing", "Project Design", "M&E", "Fundraising",
-              "Stakeholder Engagement", "Youth Leadership", "Community Development", "Nonprofit Management"
-            ].map((item, index) => (
-              <div key={index} className="bg-white p-3 rounded-lg text-center text-sm font-medium text-gray-700">
-                {item}
-              </div>
-            ))}
+            {expertiseAreas.map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="bg-white p-4 rounded-lg text-center hover:shadow-lg hover:-translate-y-1 transition-all"
+                >
+                  <div className="w-12 h-12 rounded-lg flex items-center justify-center mx-auto mb-3" style={{ backgroundColor: `${item.color}15` }}>
+                    <Icon className="w-6 h-6" style={{ color: item.color }} />
+                  </div>
+                  <p className="text-sm font-semibold text-gray-900">{item.title}</p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>

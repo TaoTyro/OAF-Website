@@ -1,15 +1,10 @@
 import { BookOpen, Heart, Scale, Leaf } from 'lucide-react';
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
-// Brand Colors
-const brandColors = {
-  orange: "#F97316",
-  lightBlue: "#0EA5E9",
-  brightGreen: "#22C55E",
-  green: "#10B981",
-};
+// Single brand color
+const brandColor = "#5AAFD1";
 
 // Mission Data
 const missions = [
@@ -18,7 +13,6 @@ const missions = [
     icon: BookOpen,
     title: 'Literacy Education',
     description: 'Providing quality education, learning materials, and scholarships to orphans and vulnerable children in rural Malawi.',
-    color: brandColors.lightBlue,
     imageUrl: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2022&q=80',
     altText: 'Children reading books in classroom',
     stats: '1,500+ students supported',
@@ -28,7 +22,6 @@ const missions = [
     icon: Heart,
     title: 'Health Care',
     description: 'Ensuring access to maternal health, clean birthing kits, and reproductive health education for rural communities.',
-    color: brandColors.orange,
     imageUrl: 'https://images.unsplash.com/photo-1584515933487-779824d29309?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
     altText: 'Healthcare worker with mother and child',
     stats: '7,000+ birthing kits distributed',
@@ -38,7 +31,6 @@ const missions = [
     icon: Scale,
     title: 'Social Justice',
     description: 'Advocating for gender equality, preventing GBV, and protecting the rights of vulnerable children and women.',
-    color: brandColors.brightGreen,
     imageUrl: 'https://images.unsplash.com/photo-1526676037777-05a232554f77?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
     altText: 'Community gathering advocating for rights',
     stats: '42 villages reached',
@@ -48,7 +40,6 @@ const missions = [
     icon: Leaf,
     title: 'Sustainable Climate Solutions',
     description: 'Creating environmental resilience through tree planting, sustainable agriculture, and climate education.',
-    color: brandColors.green,
     imageUrl: 'https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
     altText: 'Children planting trees',
     stats: '1,000+ trees planted',
@@ -56,37 +47,39 @@ const missions = [
 ];
 
 // Animation Variants
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-      delayChildren: 0.2,
-    },
-  },
-};
-
-const itemVariants = {
+const headerVariants = {
   hidden: { opacity: 0, y: 30 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.6,
+      duration: 0.8,
     },
   },
 };
 
-const headerVariants = {
+const textRevealVariants = {
   hidden: { opacity: 0, y: 20 },
-  visible: {
+  visible: (delay: number) => ({
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.6,
+      duration: 0.7,
+      delay: delay,
     },
-  },
+  }),
+};
+
+const statVariants = {
+  hidden: { opacity: 0, scale: 0.9 },
+  visible: (index: number) => ({
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.5,
+      delay: 0.8 + index * 0.1,
+    },
+  }),
 };
 
 export function MissionSnapshot() {
@@ -95,166 +88,314 @@ export function MissionSnapshot() {
     threshold: 0.2,
   });
 
-  const [cardsRef, cardsInView] = useInView({
+  const [statementRef, statementInView] = useInView({
     triggerOnce: true,
-    threshold: 0.1,
+    threshold: 0.3,
   });
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
+    <section className="py-32 px-6 sm:px-8 lg:px-12 bg-white">
+      <div className="max-w-6xl mx-auto">
+        {/* Header - Newspaper Style */}
         <motion.div
           ref={headerRef}
           variants={headerVariants}
           initial="hidden"
           animate={headerInView ? "visible" : "hidden"}
-          className="text-center max-w-3xl mx-auto mb-16"
+          className="text-center max-w-3xl mx-auto mb-24"
         >
-          {/* Brand Accent */}
-          <div className="flex justify-center gap-2 mb-6">
-            <div className="w-12 h-1 bg-[#F97316] rounded-full" />
-            <div className="w-12 h-1 bg-[#0EA5E9] rounded-full" />
-            <div className="w-12 h-1 bg-[#22C55E] rounded-full" />
-          </div>
-
+          {/* Brand color accent line */}
+          <motion.div 
+            className="w-24 h-0.5 mx-auto mb-8"
+            style={{ backgroundColor: brandColor }}
+            initial={{ scaleX: 0 }}
+            animate={headerInView ? { scaleX: 1 } : {}}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          />
+          
           <h2 
-            className="text-4xl md:text-5xl font-bold text-gray-900 mb-4"
+            className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 tracking-tight"
             style={{ fontFamily: 'Poppins, sans-serif' }}
           >
             Our Mission
           </h2>
           
-          <p className="text-lg text-gray-600 leading-relaxed">
-            We are committed to creating lasting positive change through four core interventions 
-            that address the root causes of poverty and vulnerability.
-          </p>
+          <motion.p 
+            className="text-xl text-gray-500 leading-relaxed"
+            variants={textRevealVariants}
+            initial="hidden"
+            animate={headerInView ? "visible" : "hidden"}
+            custom={0.3}
+          >
+            Four pillars guiding our work to create lasting change 
+            for children and communities across Malawi.
+          </motion.p>
+          
+          {/* Decorative line */}
+          <motion.div 
+            className="w-16 h-0.5 bg-gray-200 mx-auto mt-8"
+            initial={{ opacity: 0 }}
+            animate={headerInView ? { opacity: 1 } : {}}
+            transition={{ delay: 0.5 }}
+          />
         </motion.div>
 
-        {/* Mission Cards Grid */}
-        <motion.div
-          ref={cardsRef}
-          variants={containerVariants}
-          initial="hidden"
-          animate={cardsInView ? "visible" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8"
-        >
-          {missions.map((mission) => {
-            const Icon = mission.icon;
-            
+        {/* Mission Articles - Newspaper Feature Style */}
+        <div className="space-y-32 md:space-y-40">
+          {missions.map((mission, index) => {
+            const [imageRef, imageInView] = useInView({
+              triggerOnce: false,
+              threshold: 0.3,
+              rootMargin: "-100px 0px",
+            });
+
+            const [contentRef, contentInView] = useInView({
+              triggerOnce: false,
+              threshold: 0.2,
+              rootMargin: "-100px 0px",
+            });
+
+            // Determine layout alternation
+            const isEven = index % 2 === 0;
+
             return (
-              <motion.div
+              <motion.article
                 key={mission.id}
-                variants={itemVariants}
-                className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
+                className="grid md:grid-cols-2 gap-12 md:gap-16 items-center"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.8 }}
               >
-                {/* Image Container */}
-                <div className="relative h-56 overflow-hidden">
-                  <img
-                    src={mission.imageUrl}
-                    alt={mission.altText}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
-                  />
-                  {/* Overlay with color gradient */}
-                  <div 
-                    className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500"
-                    style={{ 
-                      background: `linear-gradient(135deg, ${mission.color} 0%, transparent 100%)` 
+                {/* Image Column with Parallax */}
+                <div 
+                  ref={imageRef}
+                  className={`${isEven ? 'md:order-1' : 'md:order-2'}`}
+                >
+                  <motion.div
+                    className="relative overflow-hidden bg-gray-100"
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={imageInView ? { 
+                      opacity: 1, 
+                      scale: 1,
+                      transition: { 
+                        duration: 1.2,
+                        ease: [0.25, 0.1, 0.25, 1]
+                      }
+                    } : {}}
+                    whileInView={{
+                      opacity: 1,
+                      scale: 1,
+                      transition: { duration: 1.2 }
                     }}
-                  />
-                  
-                  {/* Stats Badge */}
-                  <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
-                    <p className="text-sm font-medium" style={{ color: mission.color }}>
-                      {mission.stats}
-                    </p>
-                  </div>
+                    viewport={{ once: true, margin: "-150px" }}
+                  >
+                    {/* Main Image with Parallax Scale */}
+                    <motion.img
+                      src={mission.imageUrl}
+                      alt={mission.altText}
+                      className="w-full h-[400px] object-cover"
+                      style={{
+                        scale: imageInView ? 1.15 : 1,
+                        y: imageInView ? -20 : 0,
+                      }}
+                      transition={{
+                        duration: 1.4,
+                        ease: [0.25, 0.1, 0.25, 1],
+                      }}
+                      animate={{
+                        scale: imageInView ? 1.15 : 1,
+                        y: imageInView ? -20 : 0,
+                      }}
+                    />
+                    
+                    {/* Subtle overlay that appears on hover */}
+                    <motion.div 
+                      className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-700"
+                      whileHover={{ opacity: 1 }}
+                    />
+                  </motion.div>
+
+                  {/* Image Caption */}
+                  <motion.div
+                    className="mt-3 flex items-center gap-2 text-sm"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={imageInView ? { 
+                      opacity: 1, 
+                      y: 0,
+                      transition: { duration: 0.6, delay: 0.2 }
+                    } : {}}
+                  >
+                    <span className="text-gray-400">—</span>
+                    <span style={{ color: brandColor }}>Feature</span>
+                    <span className="text-gray-400">|</span>
+                    <span className="text-gray-500">{mission.stats}</span>
+                  </motion.div>
                 </div>
 
-                {/* Content Container */}
-                <div className="p-6">
-                  {/* Icon and Title Row */}
-                  <div className="flex items-center gap-3 mb-4">
-                    <div 
-                      className="w-12 h-12 rounded-xl flex items-center justify-center"
-                      style={{ backgroundColor: `${mission.color}15` }}
-                    >
-                      <Icon className="w-6 h-6" style={{ color: mission.color }} />
-                    </div>
-                    <h3 
-                      className="text-xl font-bold text-gray-900"
-                      style={{ fontFamily: 'Poppins, sans-serif' }}
-                    >
-                      {mission.title}
-                    </h3>
-                  </div>
+                {/* Content Column */}
+                <div 
+                  ref={contentRef}
+                  className={`${isEven ? 'md:order-2' : 'md:order-1'}`}
+                >
+                  {/* Section Label */}
+                  <motion.div
+                    className="text-sm text-gray-400 mb-4 flex items-center gap-2"
+                    initial={{ opacity: 0, x: isEven ? 20 : -20 }}
+                    animate={contentInView ? { 
+                      opacity: 1, 
+                      x: 0,
+                      transition: { duration: 0.6, delay: 0.1 }
+                    } : {}}
+                  >
+                    <span className="w-8 h-px bg-gray-300" />
+                    <span>MISSION {index + 1} OF 4</span>
+                  </motion.div>
+
+                  {/* Title */}
+                  <motion.h3
+                    className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight"
+                    style={{ fontFamily: 'Poppins, sans-serif' }}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={contentInView ? { 
+                      opacity: 1, 
+                      y: 0,
+                      transition: { duration: 0.7, delay: 0.15 }
+                    } : {}}
+                  >
+                    {mission.title}
+                  </motion.h3>
 
                   {/* Description */}
-                  <p className="text-gray-600 leading-relaxed">
+                  <motion.p
+                    className="text-lg text-gray-700 leading-relaxed mb-6"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={contentInView ? { 
+                      opacity: 1, 
+                      y: 0,
+                      transition: { duration: 0.7, delay: 0.25 }
+                    } : {}}
+                  >
                     {mission.description}
-                  </p>
+                  </motion.p>
 
-                  {/* Bottom Accent - Animated on hover */}
+                  {/* Stats Highlight */}
+                  <motion.div
+                    className="mt-6"
+                    initial={{ opacity: 0, y: 15 }}
+                    animate={contentInView ? { 
+                      opacity: 1, 
+                      y: 0,
+                      transition: { duration: 0.6, delay: 0.35 }
+                    } : {}}
+                  >
+                    <span 
+                      className="text-sm font-semibold tracking-wider uppercase"
+                      style={{ color: brandColor }}
+                    >
+                      Impact: {mission.stats}
+                    </span>
+                  </motion.div>
+
+                  {/* Decorative line */}
                   <motion.div 
-                    className="mt-4 h-0.5 w-0 group-hover:w-full transition-all duration-500"
-                    style={{ backgroundColor: mission.color }}
+                    className="mt-6 w-16 h-0.5"
+                    style={{ backgroundColor: brandColor }}
+                    initial={{ scaleX: 0, originX: 0 }}
+                    animate={contentInView ? { 
+                      scaleX: 1,
+                      transition: { duration: 0.8, delay: 0.45 }
+                    } : {}}
                   />
                 </div>
-              </motion.div>
+              </motion.article>
             );
           })}
-        </motion.div>
+        </div>
 
-        {/* Impact Statement - Appears on scroll */}
+        {/* Impact Statement - Newspaper Editorial Style */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-20 text-center max-w-4xl mx-auto"
+          ref={statementRef}
+          initial={{ opacity: 0 }}
+          animate={statementInView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.8 }}
+          className="mt-40 text-center max-w-4xl mx-auto"
         >
           <div className="relative">
-            {/* Decorative line */}
-            <div className="absolute left-1/2 -translate-x-1/2 -top-8 w-16 h-0.5 bg-gradient-to-r from-[#F97316] via-[#0EA5E9] to-[#22C55E]" />
+            {/* Decorative lines */}
+            <motion.div 
+              className="absolute left-1/2 -translate-x-1/2 -top-12 w-24 h-px"
+              style={{ backgroundColor: brandColor }}
+              initial={{ scaleX: 0 }}
+              animate={statementInView ? { scaleX: 1 } : {}}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            />
             
-            <p className="text-2xl md:text-3xl font-light text-gray-700 leading-relaxed">
+            <motion.p 
+              className="text-2xl md:text-3xl font-light text-gray-700 leading-relaxed"
+              initial={{ opacity: 0, y: 20 }}
+              animate={statementInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            >
               Together, we're building a future where every child has access to 
-              <span className="font-semibold text-[#F97316]"> education</span>, 
-              <span className="font-semibold text-[#0EA5E9]"> healthcare</span>, 
-              <span className="font-semibold text-[#22C55E]"> justice</span>, and 
-              <span className="font-semibold text-[#10B981]"> a sustainable environment</span>.
-            </p>
+              <span className="font-semibold" style={{ color: brandColor }}> education</span>, 
+              <span className="font-semibold" style={{ color: brandColor }}> healthcare</span>, 
+              <span className="font-semibold" style={{ color: brandColor }}> justice</span>, and 
+              <span className="font-semibold" style={{ color: brandColor }}> a sustainable environment</span>.
+            </motion.p>
           </div>
         </motion.div>
 
-        {/* Quick Stats Row */}
+        {/* Quick Stats Row - Newspaper Footer Style */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6"
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="mt-32 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-gray-100 pt-16"
         >
           {[
-            { number: '1,500+', label: 'Students', color: brandColors.lightBlue },
-            { number: '7,000+', label: 'Birthing Kits', color: brandColors.orange },
-            { number: '42', label: 'Villages', color: brandColors.brightGreen },
-            { number: '1,000+', label: 'Trees Planted', color: brandColors.green },
+            { number: '1,500+', label: 'Students', description: 'Supported through education programs' },
+            { number: '7,000+', label: 'Birthing Kits', description: 'Distributed to rural health centers' },
+            { number: '42', label: 'Villages', description: 'Reached with community programs' },
+            { number: '1,000+', label: 'Trees Planted', description: 'Through climate initiatives' },
           ].map((stat, index) => (
             <motion.div
               key={index}
-              whileHover={{ y: -5 }}
-              className="text-center"
+              variants={statVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              custom={index}
+              className="text-left"
             >
-              <div className="text-2xl md:text-3xl font-bold mb-1" style={{ color: stat.color }}>
+              <div 
+                className="text-3xl md:text-4xl font-bold mb-2"
+                style={{ color: brandColor }}
+              >
                 {stat.number}
               </div>
-              <div className="text-sm text-gray-500 uppercase tracking-wider">
+              <div className="text-sm font-semibold text-gray-800 uppercase tracking-wider mb-1">
                 {stat.label}
+              </div>
+              <div className="text-xs text-gray-400">
+                {stat.description}
               </div>
             </motion.div>
           ))}
         </motion.div>
+
+        {/* Fine Print */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-16 text-center text-xs text-gray-300"
+        >
+          <p>All figures verified as of December 2024. Each number represents real lives changed.</p>
+        </motion.div>
+
       </div>
     </section>
   );

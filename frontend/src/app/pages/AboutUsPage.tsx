@@ -821,51 +821,59 @@ export function AboutUsPage() {
         </div>
       </section>
 
-      {/* Call to Action - Executive */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Join Us in Breaking the Cycle
-            </h2>
-            
-            <p className="text-xl text-gray-600 mb-8">
-              Your support can transform a child's future and create lasting change in their community.
-            </p>
+     {/* Call to Action - Executive with Contour SVG Background */}
+<section 
+  className="relative py-20 overflow-hidden bg-center" 
+  style={{ 
+    backgroundColor: "#DFDBE5",
+    backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Cpath fill='%237bc8ed' fill-opacity='0.54' d='M600 325.1v-1.17c-6.5 3.83-13.06 7.64 ...'%3E%3C/path%3E%3C/svg%3E")`
+  }}
+>
+  <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+    >
+      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        Join Us in Breaking the Cycle
+      </h2>
+      
+      <p className="text-xl text-gray-600 mb-8">
+        Your support can transform a child's future and create lasting change in their community.
+      </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-3 bg-[#F97316] text-white rounded-lg font-semibold hover:bg-[#EA580C] transition-colors flex items-center justify-center gap-2 group">
-                <span>Partner With Us</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
-              
-              <button className="px-8 py-3 border-2 border-[#0EA5E9] text-[#0EA5E9] rounded-lg font-semibold hover:bg-[#0EA5E9] hover:text-white transition-colors">
-                View Our Impact Report
-              </button>
-            </div>
+      <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <button className="px-8 py-3 bg-[#F97316] text-white rounded-lg font-semibold hover:bg-[#EA580C] transition-colors flex items-center justify-center gap-2 group">
+          <span>Partner With Us</span>
+          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+        </button>
+        
+        <button className="px-8 py-3 border-2 border-[#0EA5E9] text-[#0EA5E9] rounded-lg font-semibold hover:bg-[#0EA5E9] hover:text-white transition-colors">
+          View Our Impact Report
+        </button>
+      </div>
 
-            {/* Trust indicators */}
-            <div className="flex justify-center gap-8 mt-12 text-sm text-gray-500">
-              <div className="flex items-center gap-2">
-                <Shield className="w-4 h-4 text-[#22C55E]" />
-                <span>Registered Non-Profit</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Award className="w-4 h-4 text-[#F97316]" />
-                <span>Verified Impact</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Users className="w-4 h-4 text-[#0EA5E9]" />
-                <span>Community-Led</span>
-              </div>
-            </div>
-          </motion.div>
+      {/* Trust indicators */}
+      <div className="flex justify-center gap-8 mt-12 text-sm text-gray-500">
+        <div className="flex items-center gap-2">
+          <Shield className="w-4 h-4 text-[#22C55E]" />
+          <span>Registered Non-Profit</span>
         </div>
-      </section>
+        <div className="flex items-center gap-2">
+          <Award className="w-4 h-4 text-[#F97316]" />
+          <span>Verified Impact</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <Users className="w-4 h-4 text-[#0EA5E9]" />
+          <span>Community-Led</span>
+        </div>
+      </div>
+    </motion.div>
+  </div>
+</section>
+
+
 
       <Footer />
       <ScrollToTopButton />

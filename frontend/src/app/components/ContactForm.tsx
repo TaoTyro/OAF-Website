@@ -53,7 +53,7 @@ export function ContactForm() {
     <section className="py-20 px-4 sm:px-6 lg:px-8  bg-gradient-to-br from-white via-blue-50 to-white dark:from-gray-900 dark:to-gray-800" id="contact">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <h2 style={{ fontFamily: 'Poppins, sans-serif' }} className="text-4xl md:text-5xl font-bold text-blue-400 dark:text-white mb-4">Get In Touch</h2>
+          <h2 style={{ fontFamily: 'Poppins, sans-serif' }} className="text-4xl md:text-5xl font-bold text-[#0EA5E9] dark:text-white mb-4">Get In Touch</h2>
           <p className="text-gray-600 dark:text-gray-400 mt-2">We'd love to hear from you. Reach out with any questions or inquiries.</p>
         </div>
 

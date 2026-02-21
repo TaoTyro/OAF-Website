@@ -409,26 +409,39 @@ export function FundingTransparencyPage() {
         </div>
       </section>
 
-      {/* Simple CTA */}
-      <section className="py-12 bg-white">
-        <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
-          <h3 className="text-xl font-bold text-gray-900 mb-3">Have Questions About Our Finances?</h3>
-          <p className="text-gray-600 text-sm mb-5">
-            We're here to provide clarity and answer any questions you may have.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a href="mailto:finance@orphansofafrica21.org" className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#0EA5E9] text-white text-sm font-medium hover:bg-[#0284C7] transition-colors">
-              <Mail className="w-4 h-4" />
-              Email Finance Team
+        {/* Finance CTA with Background Image */}
+      <section className="relative h-[40vh] overflow-hidden">
+        <img 
+            src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2011&q=80"
+            alt="Finance team providing clarity and support"
+            className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+          <div className="text-center text-white max-w-3xl px-6">
+             <h3 className="text-2xl font-bold mb-3">Have Questions About Our Finances?</h3>
+             <p className="text-white/90 text-sm mb-5">
+             We're here to provide clarity and answer any questions you may have.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <a 
+                href="mailto:finance@orphansofafrica21.org" 
+                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#0EA5E9] text-white text-sm font-medium hover:bg-[#0284C7] transition-colors"
+            >
+            <Mail className="w-4 h-4" />
+                Email Finance Team
             </a>
-            <a href="#" className="inline-flex items-center justify-center gap-2 px-5 py-2.5 border border-gray-300 text-gray-700 text-sm font-medium hover:bg-gray-50 transition-colors">
-              <Phone className="w-4 h-4" />
-              Schedule a Call
-            </a>
-          </div>
+            <a 
+                href="#" 
+                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 border border-white/70 text-white text-sm font-medium hover:bg-white/10 transition-colors"
+           >
+          <Phone className="w-4 h-4" />
+            Schedule a Call
+             </a>
+           </div>
+           </div>
         </div>
       </section>
-
+      
       <Footer />
       <ScrollToTopButton />
     </div>

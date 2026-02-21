@@ -414,7 +414,7 @@ export function ImpactStats() {
                   {/* Content */}
                   <motion.div 
                     className="text-3xl md:text-4xl font-bold mb-2"
-                    style={{ color: brandColor }}
+                    style={{ color: brandColor, fontFamily: 'Georgia, Times New Roman, serif' }}
                     whileHover={{ scale: 1.05 }}
                     transition={{ type: "spring", stiffness: 200 }}
                   >
@@ -453,31 +453,12 @@ export function ImpactStats() {
             whileInView={{ scale: 1 }}
             transition={{ duration: 0.6 }}
           >
-            <p className="text-2xl text-gray-400 mb-4 italic font-light leading-relaxed">
+            <p className="text-2xl text-gray-400 mb-4 italic font-light leading-relaxed" 
+               style={{ fontFamily: 'Georgia, Times New Roman, serif' }}>
               "Every number represents a life changed, a future transformed."
             </p>
           </motion.div>
-          
-          <motion.div 
-            className="flex items-center justify-center gap-2 text-sm text-gray-300"
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-          >
-            <span>—</span>
-            <span>Impact Report 2024</span>
-            <span>—</span>
-          </motion.div>
-          
-          {/* Fine print */}
-          <motion.p 
-            className="text-xs text-gray-300 mt-12"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-          >
-            All figures verified as of December 2024. Full impact reports available upon request.
-          </motion.p>
+
         </motion.div>
 
       </div>

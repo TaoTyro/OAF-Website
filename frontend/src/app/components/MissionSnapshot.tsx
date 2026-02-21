@@ -106,13 +106,14 @@ export function MissionSnapshot() {
         >          
           <h2 
             className="text-5xl md:text-6xl font-bold text-[#5AAFD1] mb-6 tracking-tight"
-            style={{ fontFamily: 'Poppins, sans-serif' }}
+            style={{ fontFamily: 'Georgia, Times New Roman, serif' }}
           >
             Our Mission
           </h2>
           
           <motion.p 
             className="text-xl text-gray-500 leading-relaxed"
+            style={{ fontFamily: 'Georgia, Times New Roman, serif' }}
             variants={textRevealVariants}
             initial="hidden"
             animate={headerInView ? "visible" : "hidden"}
@@ -246,7 +247,7 @@ export function MissionSnapshot() {
                   {/* Title */}
                   <motion.h3
                     className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight"
-                    style={{ fontFamily: 'Poppins, sans-serif' }}
+                    style={{ color:brandColor, fontFamily: 'Georgia, Times New Roman, serif' }}
                     initial={{ opacity: 0, y: 30 }}
                     animate={contentInView ? { 
                       opacity: 1, 
@@ -282,7 +283,7 @@ export function MissionSnapshot() {
                   >
                     <span 
                       className="text-sm font-semibold tracking-wider uppercase"
-                      style={{ color: brandColor }}
+                      style={{ color: brandColor, fontFamily: 'Georgia, Times New Roman, serif' }}
                     >
                       Impact: {mission.stats}
                     </span>
@@ -313,20 +314,14 @@ export function MissionSnapshot() {
           className="mt-40 text-center max-w-4xl mx-auto"
         >
           <div className="relative">
-            {/* Decorative lines */}
-            <motion.div 
-              className="absolute left-1/2 -translate-x-1/2 -top-12 w-24 h-px"
-              style={{ backgroundColor: brandColor }}
-              initial={{ scaleX: 0 }}
-              animate={statementInView ? { scaleX: 1 } : {}}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            />
+            
             
             <motion.p 
               className="text-2xl md:text-3xl font-light text-gray-700 leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={statementInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.3 }}
+              style={{ fontFamily: 'Georgia, Times New Roman, serif' }}
             >
               Together, we're building a future where every child has access to 
               <span className="font-semibold" style={{ color: brandColor }}> education</span>, 
@@ -344,6 +339,7 @@ export function MissionSnapshot() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="mt-32 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-gray-100 pt-16"
+          style={{ color: brandColor, fontFamily: 'Georgia, Times New Roman, serif' }}
         >
           {[
             { number: '1,500+', label: 'Students', description: 'Supported through education programs' },
@@ -375,18 +371,6 @@ export function MissionSnapshot() {
             </motion.div>
           ))}
         </motion.div>
-
-        {/* Fine Print */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-16 text-center text-xs text-gray-300"
-        >
-          <p>All figures verified as of December 2024. Each number represents real lives changed.</p>
-        </motion.div>
-
       </div>
     </section>
   );

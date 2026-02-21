@@ -445,7 +445,7 @@ export default function PartnersSponsors() {
                     <motion.div
                       key={partner.id}
                       variants={itemVariants}
-                      className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100"
+                      className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow border-1 border-gray-100"
                     >
                       <div className="flex items-start gap-4">
                         {/* Small Logo Placeholder */}

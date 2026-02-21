@@ -145,17 +145,9 @@ export function ImpactStats() {
           animate={headerInView ? "visible" : "hidden"}
           className="text-center max-w-3xl mx-auto mb-32"
         >
-          {/* Brand color accent line with animation */}
-          <motion.div 
-            className="w-24 h-0.5 mx-auto mb-8"
-            style={{ backgroundColor: brandColor }}
-            initial={{ scaleX: 0 }}
-            animate={headerInView ? { scaleX: 1 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          />
-          
+             
           <h1 
-            className="text-5xl md:text-6xl lg:text-7xl font-light text-gray-900 mb-6 tracking-tight"
+            className="text-5xl md:text-6xl lg:text-7xl font-light text-[#5AAFD1] mb-6 tracking-tight"
             style={{ fontFamily: 'Georgia, Times New Roman, serif' }}
           >
             Our Impact

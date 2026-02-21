@@ -49,7 +49,11 @@ import {
   Network,
   Zap,
 } from 'lucide-react';
-import pupils from '../../assets/pupils.jpg';
+
+// Contact details
+const PHONE_NUMBER = '+265886691492';
+const PHONE_FORMATTED = '+265 886 69 14 92';
+const EMAIL = 'mwale7410@gmail.com';
 
 // Brand Colors
 const brandColors = {
@@ -207,14 +211,22 @@ export function LeadershipPage() {
               {/* Contact Info */}
               <div className="bg-gray-50 p-6 rounded-xl space-y-4">
                 <h3 className="font-semibold text-gray-900">Contact</h3>
-                <div className="flex items-center gap-3 text-sm">
+                <button 
+                  onClick={() => window.location.href = 'mailto:mwale7410@gmail.com'}
+                  className="flex items-center gap-3 text-sm hover:text-[#F97316] transition-colors group cursor-pointer bg-transparent border-none p-0"
+                >
                   <Mail className="w-4 h-4 text-[#F97316]" />
-                  <span className="text-gray-600">mwale7410@gmail.com</span>
-                </div>
-                <div className="flex items-center gap-3 text-sm">
+                  <span className="text-gray-600 group-hover:underline">{EMAIL}</span>
+                </button>
+                <a 
+                  href={`https://wa.me/${PHONE_NUMBER.replace(/\D/g, '')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 text-sm hover:text-[#0EA5E9] transition-colors group cursor-pointer"
+                >
                   <Phone className="w-4 h-4 text-[#0EA5E9]" />
-                  <span className="text-gray-600">+265 886 69 14 92</span>
-                </div>
+                  <span className="text-gray-600 group-hover:underline">{PHONE_FORMATTED}</span>
+                </a>
                 <div className="flex items-center gap-3 text-sm">
                   <MapPin className="w-4 h-4 text-[#22C55E]" />
                   <span className="text-gray-600">Malawi</span>
@@ -222,14 +234,27 @@ export function LeadershipPage() {
                 
                 {/* Social Links */}
                 <div className="flex gap-3 pt-4">
+                  <button 
+                    onClick={() => window.location.href = 'mailto:mwale7410@gmail.com'}
+                    className="w-8 h-8 bg-white rounded-full flex items-center justify-center hover:shadow-md hover:bg-[#FFF5F0] transition-all cursor-pointer border-none" 
+                    title="Send Email"
+                  >
+                    <Mail className="w-4 h-4 text-[#F97316]" />
+                  </button>
+                  <a 
+                    href={`https://wa.me/${PHONE_NUMBER.replace(/\D/g, '')}`} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 bg-white rounded-full flex items-center justify-center hover:shadow-md hover:bg-[#F0FDF4] transition-all" 
+                    title="WhatsApp Message"
+                  >
+                    <MessageCircle className="w-4 h-4 text-[#22C55E]" />
+                  </a>
                   <a href="#" className="w-8 h-8 bg-white rounded-full flex items-center justify-center hover:shadow-md">
                     <Linkedin className="w-4 h-4 text-[#0EA5E9]" />
                   </a>
                   <a href="#" className="w-8 h-8 bg-white rounded-full flex items-center justify-center hover:shadow-md">
                     <Twitter className="w-4 h-4 text-[#F97316]" />
-                  </a>
-                  <a href="#" className="w-8 h-8 bg-white rounded-full flex items-center justify-center hover:shadow-md">
-                    <MessageCircle className="w-4 h-4 text-[#22C55E]" />
                   </a>
                 </div>
 
@@ -453,7 +478,7 @@ export function LeadershipPage() {
       <section 
         className="py-16 relative overflow-hidden"
         style={{
-          backgroundImage: `url(${pupils})`,
+          backgroundImage: "url('/images/pupils.jpg')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
@@ -467,10 +492,25 @@ export function LeadershipPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <p className="text-white text-lg mb-4 font-medium">For partnerships, speaking engagements, or collaboration</p>
-            <button className="px-8 py-3 border text-white rounded-lg font-semibold hover:-translate-y-1 transition-all duration-300">
-              Contact Timothy
-            </button>
+            <p className="text-white text-lg mb-6 font-medium">For partnerships, speaking engagements, or collaboration</p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <button
+                onClick={() => window.location.href = 'mailto:mwale7410@gmail.com'}
+                className="px-8 py-3 bg-gradient-to-r from-[#F97316] to-orange-500 text-white rounded-lg font-semibold hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex items-center gap-2 cursor-pointer border-none"
+              >
+                <Mail className="w-5 h-5" />
+                Send Email
+              </button>
+              <a
+                href={`https://wa.me/${PHONE_NUMBER.replace(/\D/g, '')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-3 bg-gradient-to-r from-green-500 to-[#22C55E] text-white rounded-lg font-semibold hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex items-center gap-2"
+              >
+                <MessageCircle className="w-5 h-5" />
+                WhatsApp
+              </a>
+            </div>
           </motion.div>
         </div>
       </section>

@@ -137,8 +137,8 @@ export function Navbar() {
           <div className="flex items-center gap-4">
             <button 
               onClick={() => setIsDonateModalOpen(true)}
-              className="px-6 py-2 rounded-lg text-white transition-all hover:opacity-90 whitespace-nowrap"
-              style={{ backgroundColor: '#1B82F1' }}
+              className="px-6 py-2 rounded-lg text-white font transition-all hover:opacity-90 whitespace-nowrap"
+              style={{ backgroundColor: '#0EA5E9' }}
             >
               Donate
             </button>

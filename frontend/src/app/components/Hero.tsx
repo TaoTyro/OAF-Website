@@ -29,7 +29,7 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden " id="hero">
+    <section className="relative py-40 px-4 sm:px-6 lg:px-8 overflow-hidden " id="hero">
       <UpcomingEventsSidebar />
       
       {/* Background Image Container */}

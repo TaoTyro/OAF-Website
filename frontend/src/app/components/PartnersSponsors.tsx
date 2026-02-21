@@ -184,6 +184,17 @@ const heroBackgroundImages = [
   'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1200&h=600&fit=crop' // Children education
 ];
 
+// Partnership Category Images
+const partnershipImages = {
+  health: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=500&h=400&fit=crop', // Healthcare
+  education: 'https://images.unsplash.com/photo-1427504494785-cddb76a7d516?w=500&h=400&fit=crop', // Education/books
+  sports: 'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=500&h=400&fit=crop', // Sports/children
+  university: 'https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=500&h=400&fit=crop', // University/learning
+};
+
+// CTA Background Image
+const ctaBackgroundImage = 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=600&fit=crop';
+
 export default function PartnersSponsors() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -233,7 +244,7 @@ export default function PartnersSponsors() {
     <section className="min-h-screen bg-white">
       {/* Hero Section */}
       <div 
-        className="relative bg-gradient-to-b from-gray-50 to-white py-20 overflow-hidden bg-cover bg-center transition-all duration-1000"
+        className="relative bg-gradient-to-b from-gray-50 to-white py-40 overflow-hidden bg-cover bg-center transition-all duration-1000"
         style={{
           backgroundImage: `url('${heroBackgroundImages[currentImageIndex]}')`,
           backgroundAttachment: 'fixed',
@@ -542,28 +553,44 @@ export default function PartnersSponsors() {
             >
               {/* Partnership Images Placeholder */}
               <div className="space-y-4">
-                <div className="bg-gradient-to-br from-[#F97316] to-[#0EA5E9] h-40 rounded-xl flex items-center justify-center text-white text-center p-4">
-                  <div>
+                <div 
+                  className="bg-cover bg-center h-40 rounded-xl flex items-center justify-center text-white text-center p-4 relative overflow-hidden"
+                  style={{ backgroundImage: `url('${partnershipImages.health}')` }}
+                >
+                  <div className="absolute inset-0 bg-black/40" />
+                  <div className="relative z-10">
                     <Heart className="w-8 h-8 mx-auto mb-2" />
                     <p className="text-sm">Health Partners</p>
                   </div>
                 </div>
-                <div className="bg-gradient-to-br from-[#22C55E] to-[#10B981] h-40 rounded-xl flex items-center justify-center text-white text-center p-4">
-                  <div>
+                <div 
+                  className="bg-cover bg-center h-40 rounded-xl flex items-center justify-center text-white text-center p-4 relative overflow-hidden"
+                  style={{ backgroundImage: `url('${partnershipImages.education}')` }}
+                >
+                  <div className="absolute inset-0 bg-black/40" />
+                  <div className="relative z-10">
                     <BookOpen className="w-8 h-8 mx-auto mb-2" />
                     <p className="text-sm">Education Partners</p>
                   </div>
                 </div>
               </div>
               <div className="space-y-4 mt-8">
-                <div className="bg-gradient-to-br from-[#0EA5E9] to-[#22C55E] h-40 rounded-xl flex items-center justify-center text-white text-center p-4">
-                  <div>
+                <div 
+                  className="bg-cover bg-center h-40 rounded-xl flex items-center justify-center text-white text-center p-4 relative overflow-hidden"
+                  style={{ backgroundImage: `url('${partnershipImages.sports}')` }}
+                >
+                  <div className="absolute inset-0 bg-black/40" />
+                  <div className="relative z-10">
                     <Trophy className="w-8 h-8 mx-auto mb-2" />
                     <p className="text-sm">Sports Partners</p>
                   </div>
                 </div>
-                <div className="bg-gradient-to-br from-[#F97316] to-[#22C55E] h-40 rounded-xl flex items-center justify-center text-white text-center p-4">
-                  <div>
+                <div 
+                  className="bg-cover bg-center h-40 rounded-xl flex items-center justify-center text-white text-center p-4 relative overflow-hidden"
+                  style={{ backgroundImage: `url('${partnershipImages.university}')` }}
+                >
+                  <div className="absolute inset-0 bg-black/40" />
+                  <div className="relative z-10">
                     <GraduationCap className="w-8 h-8 mx-auto mb-2" />
                     <p className="text-sm">University Partners</p>
                   </div>
@@ -575,8 +602,12 @@ export default function PartnersSponsors() {
       </div>
 
       {/* CTA Section */}
-      <div className="py-20 bg-gradient-to-r from-[#F97316] to-[#0EA5E9]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+      <div 
+        className="py-20 bg-cover bg-center relative overflow-hidden"
+        style={{ backgroundImage: `url('${ctaBackgroundImage}')` }}
+      >
+        <div className="absolute inset-0 bg-black/60" />
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -590,7 +621,7 @@ export default function PartnersSponsors() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-3 bg-white text-[#F97316] rounded-lg font-semibold hover:shadow-xl transition-all hover:scale-105 flex items-center justify-center gap-2">
+              <button className="px-8 py-3 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition-all hover:scale-105 flex items-center justify-center gap-2">
                 <Mail className="w-5 h-5" />
                 Become a Partner
               </button>

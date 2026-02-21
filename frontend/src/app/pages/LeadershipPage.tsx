@@ -49,6 +49,7 @@ import {
   Network,
   Zap,
 } from 'lucide-react';
+import pupils from '../../assets/pupils.jpg';
 
 // Brand Colors
 const brandColors = {
@@ -443,12 +444,28 @@ export function LeadershipPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-8 bg-gradient-to-r from-[#F97316] to-[#0EA5E9]">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <p className="text-white text-lg mb-4">For partnerships, speaking engagements, or collaboration</p>
-          <button className="px-6 py-2 bg-white text-[#F97316] rounded-lg font-medium hover:shadow-lg transition-shadow">
-            Contact Timothy
-          </button>
+      <section 
+        className="py-16 relative overflow-hidden"
+        style={{
+          backgroundImage: `url(${pupils})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black/60" />
+        
+        <div className="max-w-7xl mx-auto px-4 text-center relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <p className="text-white text-lg mb-4 font-medium">For partnerships, speaking engagements, or collaboration</p>
+            <button className="px-8 py-3 border text-white rounded-lg font-semibold hover:-translate-y-1 transition-all duration-300">
+              Contact Timothy
+            </button>
+          </motion.div>
         </div>
       </section>
 

@@ -2,100 +2,432 @@ import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
 import ScrollToTopButton from '../components/ScrollToTopButton';
 import { motion } from 'motion/react';
-import { TrendingUp, PieChart, DollarSign } from 'lucide-react';
+import { useInView } from 'react-intersection-observer';
+import {
+  Shield,
+  Eye,
+  FileText,
+  Download,
+  CheckCircle,
+  Users,
+  HandHeart,
+  Award,
+  Scale,
+  FileCheck,
+  Landmark,
+  Mail,
+  BookOpen,
+  Heart,
+  Target,
+  AlertCircle,
+  Info,
+  Lock,
+  Globe,
+  Clock,
+  ArrowRight,
+  ExternalLink,
+  Phone,
+  MapPin,
+  UserCheck,
+  HelpCircle,
+  FileSignature,
+  Printer,
+  FolderOpen,
+  Search,
+  ThumbsUp,
+  HeartHandshake,
+  Sparkles,
+  Lightbulb,
+  TrendingUp,
+  BarChart3,
+  PieChart,
+  DollarSign
+} from 'lucide-react';
+
+// Brand Colors
+const brandColors = {
+  orange: "#F97316",
+  lightBlue: "#0EA5E9",
+  brightGreen: "#22C55E",
+  green: "#10B981",
+};
 
 export function FundingTransparencyPage() {
+  const [heroRef, heroInView] = useInView({ threshold: 0.1 });
+
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950 transition-colors duration-300">
+    <div className="min-h-screen bg-white">
       <Navbar />
-      
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
-        className="pt-20 pb-20 px-4 sm:px-6 lg:px-8"
-      >
-        <div className="max-w-5xl mx-auto">
-          <h1 style={{ fontFamily: 'Poppins, sans-serif' }} className="text-4xl md:text-5xl font-bold text-blue-400 dark:text-white mb-6">
-            Funding Transparency
-          </h1>
-          
-          <p className="text-lg text-gray-700 dark:text-gray-300 mb-12">
-            We believe in full transparency regarding our funding sources and how we allocate resources to maximize impact.
-          </p>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            {[
-              { icon: DollarSign, label: 'Funding Sources', desc: 'Donations, Grants, Partnerships' },
-              { icon: PieChart, label: 'Budget Allocation', desc: 'Transparent spending breakdown' },
-              { icon: TrendingUp, label: 'Impact Metrics', desc: 'Measurable outcomes reported' }
-            ].map((item, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: idx * 0.1 }}
-                className="bg-blue-50 dark:bg-gray-800 p-6 rounded-lg"
-              >
-                <item.icon className="w-10 h-10 text-blue-400 mb-4" />
-                <h3 className="font-bold text-lg text-gray-900 dark:text-white mb-2">{item.label}</h3>
-                <p className="text-gray-700 dark:text-gray-300">{item.desc}</p>
-              </motion.div>
-            ))}
-          </div>
+      {/* Hero Section with Unsplash Image */}
+      <section className="relative h-[60vh] flex items-center overflow-hidden">
+        {/* Unsplash Image - Transparency/Glass concept */}
+        <div className="absolute inset-0">
+          <img 
+            src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+            alt="Transparent glass building representing clarity and openness"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#F97316]/90 to-[#0EA5E9]/90 mix-blend-multiply" />
+        </div>
 
+        {/* Hero Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-white">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="bg-gradient-to-r from-orange-50 to-transparent dark:from-gray-800 dark:to-gray-900 p-8 rounded-lg mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-3xl"
           >
-            <h2 style={{ fontFamily: 'Poppins, sans-serif' }} className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-              2024 Budget Overview
-            </h2>
-            <div className="space-y-4">
-              {[
-                { category: 'Programs & Services', percentage: 70 },
-                { category: 'Administrative', percentage: 15 },
-                { category: 'Fundraising', percentage: 10 },
-                { category: 'Other', percentage: 5 }
-              ].map((item, idx) => (
-                <div key={idx}>
-                  <div className="flex justify-between mb-2">
-                    <span className="font-semibold text-gray-900 dark:text-white">{item.category}</span>
-                    <span className="text-orange-500 font-semibold">{item.percentage}%</span>
-                  </div>
-                  <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      whileInView={{ width: `${item.percentage}%` }}
-                      transition={{ duration: 1, delay: idx * 0.1 }}
-                      className="bg-gradient-to-r from-blue-400 to-orange-500 h-2 rounded-full"
-                    />
-                  </div>
-                </div>
-              ))}
+            <div className="flex gap-2 mb-6">
+              <div className="w-12 h-1 bg-white rounded-full" />
+              <div className="w-12 h-1 bg-white rounded-full opacity-70" />
+              <div className="w-12 h-1 bg-white rounded-full opacity-50" />
             </div>
-          </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.6 }}
-            className="bg-green-50 dark:bg-gray-800 p-8 rounded-lg"
-          >
-            <h2 style={{ fontFamily: 'Poppins, sans-serif' }} className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-              Annual Reports & Audits
-            </h2>
-            <p className="text-gray-700 dark:text-gray-300 mb-4">
-              Our annual financial reports and independent audits are available upon request, demonstrating our commitment to accountability and transparency.
-            </p>
-            <p className="text-gray-700 dark:text-gray-300">
-              Contact us at <span className="font-semibold">finance@orphansofafrica21.org</span> for detailed financial documents.
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">
+              Funding Transparency
+            </h1>
+
+            <p className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-2xl">
+              We believe trust is built through openness. Here's how we manage and report our finances.
             </p>
           </motion.div>
         </div>
-      </motion.div>
+      </section>
+
+      {/* Our Commitment Statement */}
+      <section className="py-16 border-b border-gray-100">
+        <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#F97316]/10 mb-6">
+              <HeartHandshake className="w-8 h-8 text-[#F97316]" />
+            </div>
+            
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Commitment to You</h2>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              Every donation, regardless of size, is handled with the utmost care and integrity. 
+              We provide clear, accessible information about our funding sources and how resources 
+              are used to serve orphans and vulnerable children in Malawi.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* How We Handle Funds - Three Principles */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid md:grid-cols-3 gap-12">
+            {[
+              {
+                icon: Shield,
+                title: "Independent Oversight",
+                description: "Our finances are reviewed quarterly by an independent finance committee and annually by external auditors.",
+                color: brandColors.lightBlue
+              },
+              {
+                icon: Eye,
+                title: "Clear Documentation",
+                description: "All transactions are documented and available for donor review upon reasonable request.",
+                color: brandColors.orange
+              },
+              {
+                icon: Users,
+                title: "Community Reporting",
+                description: "We share financial summaries with community leaders and stakeholders during quarterly meetings.",
+                color: brandColors.brightGreen
+              }
+            ].map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <Icon className="w-10 h-10 mb-4" style={{ color: item.color }} />
+                  <h3 className="text-xl font-semibold text-gray-900 mb-3">{item.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{item.description}</p>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Funding Sources - Ethical Disclosure */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">Where Our Funding Comes From</h2>
+              <p className="text-gray-700 mb-6">
+                We believe in transparency about our funding sources. Here are the types of organizations 
+                and individuals who support our work:
+              </p>
+              
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <div className="w-6 h-6 rounded-full bg-[#0EA5E9]/10 flex items-center justify-center mt-0.5">
+                    <Users className="w-3 h-3 text-[#0EA5E9]" />
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-gray-900">Individual Donors</h4>
+                    <p className="text-sm text-gray-600">People like you who believe in our mission</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3">
+                  <div className="w-6 h-6 rounded-full bg-[#F97316]/10 flex items-center justify-center mt-0.5">
+                    <Landmark className="w-3 h-3 text-[#F97316]" />
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-gray-900">Grant-Making Foundations</h4>
+                    <p className="text-sm text-gray-600">Organizations that fund specific programs</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3">
+                  <div className="w-6 h-6 rounded-full bg-[#22C55E]/10 flex items-center justify-center mt-0.5">
+                    <HandHeart className="w-3 h-3 text-[#22C55E]" />
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-gray-900">Corporate Partners</h4>
+                    <p className="text-sm text-gray-600">Businesses that support community development</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3">
+                  <div className="w-6 h-6 rounded-full bg-[#10B981]/10 flex items-center justify-center mt-0.5">
+                    <Globe className="w-3 h-3 text-[#10B981]" />
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-gray-900">Government Grants</h4>
+                    <p className="text-sm text-gray-600">Public funding for specific development projects</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="mt-8 p-5 bg-blue-50 border-l-4 border-[#0EA5E9]">
+                <p className="text-sm text-gray-700">
+                  <span className="font-semibold">Note:</span> We do not accept funding from tobacco, alcohol, 
+                  or arms industries. All donors agree to our ethical partnership policy.
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="relative h-96"
+            >
+              <img 
+                src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2011&q=80"
+                alt="Diverse group of people collaborating"
+                className="w-full h-full object-cover rounded-lg shadow-lg"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent rounded-lg" />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Financial Accountability */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="order-2 lg:order-1"
+            >
+              <img 
+                src="https://images.unsplash.com/photo-1554224154-39132dabc1b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80"
+                alt="Financial documents and calculator representing accountability"
+                className="w-full h-80 object-cover rounded-lg shadow-lg"
+              />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="order-1 lg:order-2"
+            >
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">How We Ensure Accountability</h2>
+              
+              <div className="space-y-5">
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-[#22C55E] mt-0.5 flex-shrink-0" />
+                  <div>
+                    <h4 className="font-medium text-gray-900">Annual External Audit</h4>
+                    <p className="text-sm text-gray-600">Conducted by an independent Malawian audit firm</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-[#22C55E] mt-0.5 flex-shrink-0" />
+                  <div>
+                    <h4 className="font-medium text-gray-900">Board Finance Committee</h4>
+                    <p className="text-sm text-gray-600">Meets quarterly to review all financial transactions</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-[#22C55E] mt-0.5 flex-shrink-0" />
+                  <div>
+                    <h4 className="font-medium text-gray-900">Segregation of Duties</h4>
+                    <p className="text-sm text-gray-600">No single person controls all aspects of any transaction</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-[#22C55E] mt-0.5 flex-shrink-0" />
+                  <div>
+                    <h4 className="font-medium text-gray-900">Monthly Reconciliation</h4>
+                    <p className="text-sm text-gray-600">Bank statements reconciled by independent staff member</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Transparency in Action - Unsplash Image */}
+      <section className="relative h-[40vh] overflow-hidden">
+        <img 
+          src="https://images.unsplash.com/photo-1573164713988-9665fc3c4c27?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80"
+          alt="Business professionals reviewing documents together"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+          <div className="text-center text-white max-w-3xl px-6">
+            <Eye className="w-12 h-12 mx-auto mb-4 text-white/80" />
+            <h2 className="text-3xl font-bold mb-4">Open Book Policy</h2>
+            <p className="text-lg text-white/90">
+              Donors are welcome to request information about how their contributions are used.
+              We respond to all inquiries within 10 business days.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Documents Available */}
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Documents Available for Review</h2>
+            <p className="text-gray-600">The following documents can be requested via email</p>
+          </motion.div>
+
+          <div className="grid sm:grid-cols-2 gap-4">
+            {[
+              { icon: FileText, name: "Annual Financial Statements", desc: "Audited statements from past fiscal year" },
+              { icon: FileCheck, name: "Auditor's Report", desc: "Independent auditor's opinion" },
+              { icon: FolderOpen, name: "Board Financial Policies", desc: "Our internal financial governance" },
+              { icon: FileSignature, name: "Donor Privacy Policy", desc: "How we protect donor information" },
+              { icon: Printer, name: "Annual Report", desc: "Program and financial highlights" },
+              { icon: Search, name: "Expenditure Guidelines", desc: "How we approve spending" }
+            ].map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.05 }}
+                  className="flex items-start gap-3 p-4 border border-gray-100 hover:border-[#0EA5E9] transition-colors"
+                >
+                  <Icon className="w-5 h-5 text-[#F97316] mt-0.5 flex-shrink-0" />
+                  <div>
+                    <h4 className="font-medium text-gray-900 text-sm">{item.name}</h4>
+                    <p className="text-xs text-gray-500 mt-1">{item.desc}</p>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-8 p-5 bg-gray-50 text-center"
+          >
+            <p className="text-gray-700 text-sm mb-3">
+              To request any of these documents, please contact our finance team:
+            </p>
+            <div className="flex items-center justify-center gap-2 text-[#0EA5E9]">
+              <Mail className="w-4 h-4" />
+              <span className="font-medium">finance@orphansofafrica21.org</span>
+            </div>
+            <p className="text-xs text-gray-400 mt-3">
+              We aim to respond to all requests within 10 business days.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Ethics Statement */}
+      <section className="py-12 bg-gray-50 border-y border-gray-100">
+        <div className="max-w-4xl mx-auto px-6 lg:px-8">
+          <div className="flex items-start gap-4">
+            <div className="w-10 h-10 rounded-full bg-[#F97316]/10 flex items-center justify-center flex-shrink-0">
+              <Scale className="w-5 h-5 text-[#F97316]" />
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-900 mb-2">Our Ethical Promise</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                We promise to use every contribution ethically and effectively. If at any time you have 
+                questions about our finances, we welcome your inquiry. We believe that transparency 
+                isn't just about sharing numbers—it's about building relationships based on trust.
+              </p>
+              <p className="text-sm font-medium text-gray-800 mt-3">
+                — The OAF Leadership Team
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Simple CTA */}
+      <section className="py-12 bg-white">
+        <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
+          <h3 className="text-xl font-bold text-gray-900 mb-3">Have Questions About Our Finances?</h3>
+          <p className="text-gray-600 text-sm mb-5">
+            We're here to provide clarity and answer any questions you may have.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <a href="mailto:finance@orphansofafrica21.org" className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#0EA5E9] text-white text-sm font-medium hover:bg-[#0284C7] transition-colors">
+              <Mail className="w-4 h-4" />
+              Email Finance Team
+            </a>
+            <a href="#" className="inline-flex items-center justify-center gap-2 px-5 py-2.5 border border-gray-300 text-gray-700 text-sm font-medium hover:bg-gray-50 transition-colors">
+              <Phone className="w-4 h-4" />
+              Schedule a Call
+            </a>
+          </div>
+        </div>
+      </section>
 
       <Footer />
       <ScrollToTopButton />

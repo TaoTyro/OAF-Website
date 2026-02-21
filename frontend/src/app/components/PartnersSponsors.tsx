@@ -613,7 +613,7 @@ export default function PartnersSponsors() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-3xl md:text-4xl text-[#0EA5E9] font-bold mb-6">
               Join Our Partnership Network
             </h2>
             <p className="text-xl mb-8 text-white/90">

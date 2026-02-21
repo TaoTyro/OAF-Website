@@ -169,11 +169,11 @@ export function LeadershipPage() {
               className="md:col-span-1"
             >
               {/* Image Placeholder */}
-              <div className="bg-gradient-to-br from-[#F97316] to-[#0EA5E9] rounded-xl aspect-square mb-6 flex items-center justify-center">
+              <div className="bg-gradient-to-br from-[#F97316] to-[#0EA5E9] rounded-xl aspect-square mb-6 overflow-hidden">
                 <img 
-                src="/images/leadership/timothy-mwale.jpg" 
-                alt="Timothy Mwale"
-                className="w-full h-full object-cover rounded-xl"
+                  src="/images/leadership/timothy-mwale.jpg" 
+                  alt="Timothy Mwale"
+                  className="w-full h-full object-cover rounded-xl"
                 />
               </div>
 

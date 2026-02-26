@@ -39,7 +39,7 @@ export function Navbar() {
       label: 'Our Work',
       href: null,
       dropdown: [
-        { label: 'Our Mission', href: '#about' },
+        { label: 'Our Mission', href: '/our-mission' },
         { label: 'Programs', href: '/programs' },
         { label: 'Gallery', href: '/gallery' },
       ]
@@ -50,7 +50,7 @@ export function Navbar() {
       dropdown: [
         { label: 'Our Projects', href: '/projects' },
         { label: 'Impact Statistics', href: '/metrics' },
-        { label: 'Success Stories', href: '#success-stories' },
+        { label: 'Success Stories', href: '/success-stories' },
         { label: 'Blog', href: '/blog' },
       ]
     },
@@ -67,7 +67,7 @@ export function Navbar() {
       label: 'Contact Details',
       href: null,
       dropdown: [
-        { label: 'Our Contacts', href: '#contact' },
+        { label: 'Our Contacts', href: '/contact' },
       ]
     },
   ];

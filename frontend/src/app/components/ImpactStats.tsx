@@ -134,7 +134,7 @@ export function ImpactStats() {
   const [milestonesRef, milestonesInView] = useInView({ triggerOnce: true, threshold: 0.2 });
 
   return (
-    <section className="py-32 px-6 sm:px-8 lg:px-12 bg-white" id="impact-stats">
+    <section className="py-32 px-6 sm:px-8 lg:px-12 bg-blue" id="impact-stats">
       <div className="max-w-7xl mx-auto">
         
         {/* Newspaper-style Header */}

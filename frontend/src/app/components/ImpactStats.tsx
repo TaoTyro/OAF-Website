@@ -1,38 +1,49 @@
 import { useEffect, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import childrenImg from "../../assets/childrenImg.jpeg";
+import communityImg from "../../assets/communityImg.jpg";
+import universityImg from "../../assets/universityImg.jpg";
+import donorsImg from "../../assets/donorImg.jpg";
+import classroomImg from "../../assets/classroom.jpg";
+import birthingImg from "../../assets/birthing1.jpg";
+import teacherImg from "../../assets/teacher.jpg";
 
 // Brand Color - Single consistent color
 const brandColor = "#5AAFD1";
 
 // Stats data
 const stats = [
-  {
-    value: 150,
-    label: 'Children Supported',
-    description: 'Orphans and vulnerable children receiving education, healthcare, and emotional support.',
-    imageUrl: 'https://images.unsplash.com/photo-1488521787991-1c523e642b17?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    altText: 'Children smiling in Malawi'
-  },
-  {
+
+   {
     value: 50,
     label: 'Communities Reached',
     description: 'Villages and communities across Malawi where we have active programs and partnerships.',
-    imageUrl: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    imageUrl: communityImg,
     altText: 'Rural community gathering'
   },
+
   {
     value: 100,
     label: 'University Students Supported',
     description: 'Scholarships and educational support for orphans pursuing higher education.',
-    imageUrl: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    imageUrl: universityImg,
     altText: 'University students studying'
   },
+
+  {
+    value: 150,
+    label: 'Children Supported',
+    description: 'Orphans and vulnerable children receiving education, healthcare, and emotional support.',
+    imageUrl: childrenImg,
+    altText: 'Children smiling in Malawi'
+  },
+  
   {
     value: 12,
     label: 'Global Donors',
     description: 'International partners and organizations funding our mission.',
-    imageUrl: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    imageUrl: donorsImg,
     altText: 'Global partnership meeting'
   }
 ];
@@ -43,21 +54,21 @@ const impactHighlights = [
     stat: '45% → 75%',
     label: 'Increase in primary school pass rates',
     description: 'Across 8 partner schools since 2020',
-    imageUrl: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    imageUrl: classroomImg,
     altText: 'Children in classroom'
   },
   {
     stat: '7,500+',
     label: 'Clean birthing kits distributed',
     description: 'To expectant mothers in rural communities',
-    imageUrl: 'https://images.unsplash.com/photo-1584515933487-779824d29309?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    imageUrl: birthingImg,
     altText: 'Healthcare worker with mother'
   },
   {
     stat: '4',
     label: 'Former orphans now qualified teachers',
     description: 'Returning to teach in their home communities',
-    imageUrl: 'https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    imageUrl: teacherImg,
     altText: 'Teacher in classroom'
   }
 ];

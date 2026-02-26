@@ -39,7 +39,7 @@ export function Navbar() {
       label: 'Our Work',
       href: null,
       dropdown: [
-        { label: 'Our Mission', href: '#about' },
+        { label: 'Our Mission', href: '/our-mission' },
         { label: 'Programs', href: '/programs' },
         { label: 'Gallery', href: '/gallery' },
       ]
@@ -50,7 +50,7 @@ export function Navbar() {
       dropdown: [
         { label: 'Our Projects', href: '/projects' },
         { label: 'Impact Statistics', href: '/metrics' },
-        { label: 'Success Stories', href: '#success-stories' },
+        { label: 'Success Stories', href: '/success-stories' },
         { label: 'Blog', href: '/blog' },
       ]
     },
@@ -67,7 +67,7 @@ export function Navbar() {
       label: 'Contact Details',
       href: null,
       dropdown: [
-        { label: 'Our Contacts', href: '#contact' },
+        { label: 'Our Contacts', href: '/contact' },
       ]
     },
   ];
@@ -98,7 +98,7 @@ export function Navbar() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
             <img src={logoImg} alt="Orphans of Africa" className="w-10 h-10 rounded-full object-cover" />
-            <span className="font-semibold text-gray-900 dark:text-white hidden sm:inline" style={{ fontFamily: 'Poppins, sans-serif' }}>Orphans of Africa</span>
+            <span className="font-semibold text-gray-900 dark:text-white hidden sm:inline" style={{ fontFamily: 'Poppins, sans-serif' }}>Orphans of Africa Foundation</span>
           </Link>
 
           {/* Navigation Links - Desktop */}

@@ -26,6 +26,9 @@ import { MetricsPage } from './pages/MetricsPage';
 import { VolunteerPage } from './pages/VolunteerPage';
 import { BecomeDonorPage } from './pages/BecomeDonorPage';
 import { BecomePartnerPage } from './pages/BecomePartnerPage';
+import { OurMissionPage } from './pages/OurMissionPage';
+import { SuccessStoriesPage } from './pages/SuccessStoriesPage';
+import { ContactPage } from './pages/ContactPage';
 
 // Lazy load components for homepage
 const Hero = lazy(() => import('./components/Hero').then(m => ({ default: m.Hero })));
@@ -150,6 +153,9 @@ export default function App() {
       </AnimatePresence>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/our-mission" element={<OurMissionPage />} />
+        <Route path="/success-stories" element={<SuccessStoriesPage />} />
+        <Route path="/contact" element={<ContactPage />} />
         <Route path="/about-us" element={<AboutUsPage />} />
         <Route path="/leadership" element={<LeadershipPage />} />
         <Route path="/executive-staff" element={<ExecutiveStaffPage />} />

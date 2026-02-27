@@ -276,7 +276,7 @@ export function SuccessStories() {
                     viewport={{ once: true, margin: "-150px" }}
                     className="mt-3 flex items-center gap-2 text-sm"
                   >
-                    <span className="text-gray-400">—</span>
+                    
                     <span style={{ color: brandColor }}>Photograph</span>
                     <span className="text-gray-400">| {story.location}</span>
                   </motion.div>
@@ -296,7 +296,7 @@ export function SuccessStories() {
                     className="text-sm text-gray-400 mb-3 flex items-center gap-2"
                   >
                     <span>STUDENT PROFILE</span>
-                    <span className="w-8 h-px bg-gray-300" />
+                    <span className="w-8 h-px bg-[#5AAFD1]" />
                     <span>{story.location}</span>
                   </motion.div>
 

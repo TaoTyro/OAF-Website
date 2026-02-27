@@ -273,7 +273,7 @@ export function ImpactStats() {
                     } : {}}
                   >
                     
-                    <span style={{ color: brandColor }}>Impact</span>
+                    <span style={{ color: brandColor }}>Credits</span>
                     <span className="text-gray-400">|</span>
                     <span className="text-gray-500">{stat.label}</span>
                   </motion.div>
@@ -370,7 +370,8 @@ export function ImpactStats() {
             </motion.h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12 md:gap-8">
+          <div className="grid md:grid-cols-2 gap-12 md:gap-8" 
+          >
             {impactHighlights.map((item, index) => {
               const [highlightRef, highlightInView] = useInView({
                 triggerOnce: true,
@@ -450,13 +451,15 @@ export function ImpactStats() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8 }}
           className="max-w-4xl mx-auto text-center pt-24 border-t border-gray-100"
+          
         >
           <motion.div
             initial={{ scale: 0.95 }}
             whileInView={{ scale: 1 }}
             transition={{ duration: 0.6 }}
           >
-            <p className="text-2xl text-gray-400 italic font-bold leading-relaxed" 
+            
+            <p className="text-4xl italic text-gray-500 font-bold leading-relaxed" 
                style={{ fontFamily: 'Georgia, Times New Roman, serif' }}>
               "Every number represents a life changed, a future transformed."
             </p>

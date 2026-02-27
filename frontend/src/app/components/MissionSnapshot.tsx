@@ -2,6 +2,10 @@ import { BookOpen, Heart, Scale, Leaf } from 'lucide-react';
 import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import literacyImg from "../../assets/literacy.jpg";
+import healthcareImg from "../../assets/health.jpg";
+import justiceImg from "../../assets/justice.jpg";
+import climateImg from "../../assets/climate.jpg";
 
 // Single brand color
 const brandColor = "#5AAFD1";
@@ -13,7 +17,7 @@ const missions = [
     icon: BookOpen,
     title: 'Literacy Education',
     description: 'Providing quality education, learning materials, and scholarships to orphans and vulnerable children in rural Malawi.',
-    imageUrl: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2022&q=80',
+    imageUrl: literacyImg,
     altText: 'Children reading books in classroom',
     stats: '1,500+ students supported',
   },
@@ -22,7 +26,7 @@ const missions = [
     icon: Heart,
     title: 'Health Care',
     description: 'Ensuring access to maternal health, clean birthing kits, and reproductive health education for rural communities.',
-    imageUrl: 'https://images.unsplash.com/photo-1584515933487-779824d29309?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+    imageUrl: healthcareImg,
     altText: 'Healthcare worker with mother and child',
     stats: '7,000+ birthing kits distributed',
   },
@@ -31,7 +35,7 @@ const missions = [
     icon: Scale,
     title: 'Social Justice',
     description: 'Advocating for gender equality, preventing GBV, and protecting the rights of vulnerable children and women.',
-    imageUrl: 'https://images.unsplash.com/photo-1526676037777-05a232554f77?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+    imageUrl: justiceImg,
     altText: 'Community gathering advocating for rights',
     stats: '42 villages reached',
   },
@@ -40,7 +44,7 @@ const missions = [
     icon: Leaf,
     title: 'Sustainable Climate Solutions',
     description: 'Creating environmental resilience through tree planting, sustainable agriculture, and climate education.',
-    imageUrl: 'https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+    imageUrl: climateImg,
     altText: 'Children planting trees',
     stats: '1,000+ trees planted',
   },

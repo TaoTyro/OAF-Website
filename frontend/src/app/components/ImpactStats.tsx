@@ -272,7 +272,7 @@ export function ImpactStats() {
                       transition: { duration: 0.6, delay: 0.3 }
                     } : {}}
                   >
-                    <span className="text-gray-400">—</span>
+                    
                     <span style={{ color: brandColor }}>Impact</span>
                     <span className="text-gray-400">|</span>
                     <span className="text-gray-500">{stat.label}</span>

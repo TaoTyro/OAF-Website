@@ -374,17 +374,6 @@ export function MissionSnapshot() {
           ))}
         </motion.div>
 
-        {/* Fine Print */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-16 text-center text-xs text-gray-300"
-        >
-          <p>All figures verified as of December 2024. Each number represents real lives changed.</p>
-        </motion.div>
-
       </div>
     </section>
   );

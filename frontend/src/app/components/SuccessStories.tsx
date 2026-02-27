@@ -161,14 +161,9 @@ export function SuccessStories() {
           transition={{ duration: 0.8 }}
           className="text-center mb-20 max-w-3xl mx-auto"
         >
-          {/* Brand color accent line */}
-          <div 
-            className="w-24 h-0.5 mx-auto mb-8"
-            style={{ backgroundColor: brandColor }}
-          />
           
           <h1 
-            className="text-5xl md:text-6xl font-bold text-gray-900 mb-6"
+            className="text-5xl md:text-6xl font-bold text-[#5AAFD1] mb-6"
             style={{ fontFamily: 'Poppins, sans-serif' }}
           >
             Success Stories
@@ -178,8 +173,6 @@ export function SuccessStories() {
             Real transformations, real lives changed
           </p>
           
-          {/* Decorative line */}
-          <div className="w-16 h-0.5 bg-gray-200 mx-auto mt-8" />
         </motion.div>
 
         {/* Stories Grid - Card-free, newspaper style */}

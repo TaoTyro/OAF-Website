@@ -126,13 +126,7 @@ export function MissionSnapshot() {
             for children and communities across Malawi.
           </motion.p>
           
-          {/* Decorative line */}
-          <motion.div 
-            className="w-16 h-0.5 bg-gray-200 mx-auto mt-8"
-            initial={{ opacity: 0 }}
-            animate={headerInView ? { opacity: 1 } : {}}
-            transition={{ delay: 0.5 }}
-          />
+          
         </motion.div>
 
         {/* Mission Articles - Newspaper Feature Style */}
@@ -221,7 +215,7 @@ export function MissionSnapshot() {
                       transition: { duration: 0.6, delay: 0.2 }
                     } : {}}
                   >
-                    <span className="text-gray-400">—</span>
+                    
                     <span style={{ color: brandColor }}>Feature</span>
                     <span className="text-gray-400">|</span>
                     <span className="text-gray-500">{mission.stats}</span>
@@ -243,7 +237,7 @@ export function MissionSnapshot() {
                       transition: { duration: 0.6, delay: 0.1 }
                     } : {}}
                   >
-                    <span className="w-8 h-px bg-gray-300" />
+                    
                     <span>MISSION {index + 1} OF 4</span>
                   </motion.div>
 

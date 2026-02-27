@@ -5,7 +5,7 @@ import { useInView } from 'react-intersection-observer';
 import literacyImg from "../../assets/literacy.jpg";
 import healthcareImg from "../../assets/health.jpg";
 import justiceImg from "../../assets/justice.jpg";
-import climateImg from "../../assets/climate.jpg";
+import climateImg from "../../assets/climate1.jpg";
 
 // Single brand color
 const brandColor = "#5AAFD1";
@@ -98,8 +98,8 @@ export function MissionSnapshot() {
   });
 
   return (
-    <section className="py-32 px-6 sm:px-8 lg:px-12 bg-white">
-      <div className="max-w-6xl mx-auto">
+    <section className="py-24 px-6 sm:px-8 lg:px-12 bg-white">
+      <div className="max-w-7xl mx-auto">
         {/* Header - Newspaper Style */}
         <motion.div
           ref={headerRef}

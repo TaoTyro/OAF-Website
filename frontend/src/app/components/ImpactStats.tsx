@@ -145,7 +145,7 @@ export function ImpactStats() {
   const [milestonesRef, milestonesInView] = useInView({ triggerOnce: true, threshold: 0.2 });
 
   return (
-    <section className="py-32 px-6 sm:px-8 lg:px-12 bg-blue" id="impact-stats">
+    <section className="py-24 px-6 sm:px-8 lg:px-12 bg-blue" id="impact-stats">
       <div className="max-w-7xl mx-auto">
         
         {/* Newspaper-style Header */}
@@ -173,14 +173,6 @@ export function ImpactStats() {
           >
             Measuring the difference we make together
           </motion.p>
-          
-          {/* Decorative line */}
-          <motion.div 
-            className="w-16 h-0.5 bg-gray-200 mx-auto mt-8"
-            initial={{ opacity: 0 }}
-            animate={headerInView ? { opacity: 1 } : {}}
-            transition={{ delay: 0.5 }}
-          />
         </motion.div>
 
         {/* Main Stats - Full bleed newspaper feature */}
@@ -281,7 +273,7 @@ export function ImpactStats() {
                     } : {}}
                   >
                     <span className="text-gray-400">—</span>
-                    <span style={{ color: brandColor }}>Impact Feature</span>
+                    <span style={{ color: brandColor }}>Impact</span>
                     <span className="text-gray-400">|</span>
                     <span className="text-gray-500">{stat.label}</span>
                   </motion.div>
@@ -297,7 +289,7 @@ export function ImpactStats() {
                     animate={statInView ? "visible" : "hidden"}
                     custom={0.1}
                   >
-                    <span className="w-8 h-px bg-gray-300" />
+                   
                     <span>IMPACT METRIC {index + 1} OF 4</span>
                   </motion.div>
 
@@ -378,7 +370,7 @@ export function ImpactStats() {
             </motion.h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-12 md:gap-8">
+          <div className="grid md:grid-cols-2 gap-12 md:gap-8">
             {impactHighlights.map((item, index) => {
               const [highlightRef, highlightInView] = useInView({
                 triggerOnce: true,
@@ -464,7 +456,7 @@ export function ImpactStats() {
             whileInView={{ scale: 1 }}
             transition={{ duration: 0.6 }}
           >
-            <p className="text-2xl text-gray-400 mb-4 italic font-light leading-relaxed" 
+            <p className="text-2xl text-gray-400 italic font-bold leading-relaxed" 
                style={{ fontFamily: 'Georgia, Times New Roman, serif' }}>
               "Every number represents a life changed, a future transformed."
             </p>

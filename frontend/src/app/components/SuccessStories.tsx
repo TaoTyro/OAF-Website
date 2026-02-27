@@ -278,7 +278,7 @@ export function SuccessStories() {
                   >
                     
                     <span style={{ color: brandColor }}>Photograph</span>
-                    <span className="text-gray-400">| {story.location}</span>
+                    <span className="text-gray-400">| Scholarship Beneficiary</span>
                   </motion.div>
                 </div>
 
@@ -460,14 +460,14 @@ export function SuccessStories() {
           className="text-center mt-24 pt-8 border-t border-gray-100"
         >
           <motion.p 
-            className="text-xs text-gray-400"
+            className="text-4xl text-bold text-gray-600"
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
           >
-            {stories.length} students currently supported through our scholarship program
+            27+ Students currently supported through our scholarship program
           </motion.p>
           <motion.p 
-            className="text-xs text-gray-300 mt-1"
+            className="text-4xl text-bold text-gray-500 mt-1"
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.1 }}
           >

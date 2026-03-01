@@ -256,7 +256,7 @@ function StudentCard({ student, onReadMore, onDonate }: StudentCardProps) {
           <div className="flex justify-between items-center text-xs mb-1">
             <span className="text-gray-500">Progress</span>
             <span className="font-medium" style={{ color: brandColor }}>
-              ${student.amountRaised} / ${student.amountNeeded}
+              MWK{student.amountRaised} / MWK{student.amountNeeded}
             </span>
           </div>
           <div className="w-full h-1.5 bg-gray-100 overflow-hidden">
@@ -282,7 +282,8 @@ function StudentCard({ student, onReadMore, onDonate }: StudentCardProps) {
             <ChevronRight className="w-4 h-4" />
           </button>
           <button
-            onClick={() => onDonate(student, `I would like to support ${student.name} (${student.age}) from ${student.location}.`)}
+            onClick={() => onDonate(student, `Hello! I'm a donor interested in supporting ${student.name} (${student.age}) from ${student.location}. 
+                              I've been redirected from orphans-of-africa.org and would like to contribute to their ${student.needs[0].toLowerCase()}. Please let me know how I can help!`)}
             className="flex-1 px-3 py-2 text-white text-sm font-medium hover:opacity-90 transition-opacity flex items-center justify-center gap-1"
             style={{ backgroundColor: brandColor }}
           >
@@ -487,7 +488,7 @@ export function SupportStudentPage({ isOpen = false, onClose }: SupportStudentPa
   const [footerRef, footerInView] = useInView({ triggerOnce: true, threshold: 0.2 });
 
   // WhatsApp contact details
-  const PHONE_NUMBER = '+265886691492';
+  const PHONE_NUMBER = '+265893474465';
   const WHATSAPP_LINK = `https://wa.me/${PHONE_NUMBER.replace(/\D/g, '')}`;
 
   const handleReadMore = (student: typeof students[0]) => {

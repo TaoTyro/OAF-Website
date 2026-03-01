@@ -282,8 +282,8 @@ function StudentCard({ student, onReadMore, onDonate }: StudentCardProps) {
             <ChevronRight className="w-4 h-4" />
           </button>
           <button
-            onClick={() => onDonate(student, `Hello! I'm a donor interested in supporting ${student.name} (${student.age}) from ${student.location}. 
-                              I've been redirected from orphans-of-africa.org and would like to contribute to their ${student.needs[0].toLowerCase()}. Please let me know how I can help!`)}
+            onClick={() => onDonate(student, `Hello! I'm a donor interested in supporting ${student.name} (${student.age}) from ${student.location}.   
+          I've been redirected from orphans-of-africa.org and would like to contribute to their ${student.needs[0].toLowerCase()}. Please let me know how I can help!`)}
             className="flex-1 px-3 py-2 text-white text-sm font-medium hover:opacity-90 transition-opacity flex items-center justify-center gap-1"
             style={{ backgroundColor: brandColor }}
           >
@@ -528,18 +528,12 @@ export function SupportStudentPage({ isOpen = false, onClose }: SupportStudentPa
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url('/images/paths/to/your/image.jpg')`,
-            // REPLACE WITH YOUR IMAGE: use images from src/assets folder
-            // Example options:
-            // - '/images/students/classroom.jpg'
-            // - '/images/projects/education.jpg'
-            // - '/images/leadership/impact.jpg'
-            // Or import and use: backgroundImage: `url(${yourImportedImage})`
+            backgroundImage: `url('/images/funding.jpg')`,
           }}
         />
         
         {/* Overlay Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-blue-900/70 via-blue-900/60 to-white/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-4000/70 via-blue-900/60 to-white/20" />
         
         {/* Header Content */}
         <div className="relative h-full flex flex-col items-center justify-center px-6" ref={headerRef}>

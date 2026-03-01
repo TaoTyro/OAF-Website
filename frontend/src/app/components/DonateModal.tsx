@@ -34,121 +34,121 @@ const students = [
   {
     id: 1,
     name: "Jane Mwale",
-    age: 14,
+    age: 19,
     location: "Mzimba, Malawi",
-    school: "Chikwina Primary School",
+    school: "Mzuzu University", // Placeholder school name
     image: "/images/students/student7.jpeg", // Placeholder path
     problem: "Jane lost both parents to malaria in 2020. She lives with her elderly grandmother and struggles to afford school fees and basic necessities.",
     amountNeeded: 450,
     amountRaised: 275,
     story: "Jane is a bright student who dreams of becoming a teacher. Despite her circumstances, she ranks in the top 5 of her class. Her grandmother, aged 72, sells vegetables at the local market but cannot afford Jane's secondary school fees. Your support would cover her school fees, uniform, and learning materials for the next academic year.",
     needs: [
-      "School fees: $200 per term",
-      "Uniform and shoes: $85",
-      "Books and supplies: $75",
-      "Nutrition support: $90"
+      "School fees: MWK200 per term",
+      "Uniform and shoes: MWK85",
+      "Books and supplies: MWK75",
+      "Nutrition support: MWK90"
     ],
-    grade: "Standard 7",
+    year: "2",
     favoriteSubject: "Mathematics"
   },
   {
     id: 2,
     name: "Chikumbutso Banda",
-    age: 16,
+    age: 26,
     location: "Mzuzu, Malawi",
-    school: "Mzuzu Secondary School",
+    school: "Mzuzu University",
     image: "/images/students/student1.jpeg", // Placeholder path
     problem: "Chikumbutso's father abandoned the family, and his mother struggles with illness. He often misses school to care for his younger siblings.",
     amountNeeded: 650,
     amountRaised: 320,
     story: "Chikumbutso is the eldest of four children. His mother's HIV-positive status requires regular clinic visits, and Chikumbutso often takes on the role of caretaker. Despite these challenges, he maintains excellent grades and is the captain of the school's football team. Support would cover his school fees, transportation to school, and help his family with basic needs.",
     needs: [
-      "School fees: $300 per term",
-      "Transportation: $120",
-      "Family food support: $150",
-      "School supplies: $80"
+      "School fees: MWK300 per term",
+      "Transportation: MWK120",
+      "Family food support: MWK150",
+      "School supplies: MWK80"
     ],
-    grade: "Form 2",
+    year: "2",
     favoriteSubject: "Science"
   },
   {
     id: 3,
     name: "Bernadettah Phiri",
-    age: 12,
+    age: 22,
     location: "Lilongwe, Malawi",
-    school: "Area 25 Primary School",
+    school: "Mzuzu University",
     image: "/images/students/student2.jpeg", // Placeholder path
     problem: "Bernadettah was orphaned at age 8 and now lives in a child-headed household with her two younger siblings.",
     amountNeeded: 380,
     amountRaised: 150,
     story: "Bernadettah became the head of her household at just 10 years old when her grandmother passed away. She wakes at 4 AM daily to prepare her siblings for school before walking 3 kilometers to her own school. Despite these hardships, she dreams of becoming a nurse to help others in her community. Your support would provide school fees, food, and basic necessities for her family.",
     needs: [
-      "School fees: $180 per term",
-      "Food for family: $120",
-      "Clothing and blankets: $50",
-      "School supplies: $30"
+      "School fees: MWK180 per term",
+      "Food for family: MWK120",
+      "Clothing and blankets: MWK50",
+      "School supplies: MWK30"
     ],
-    grade: "Standard 6",
+    year: "3",
     favoriteSubject: "Science"
   },
   {
     id: 4,
     name: "Archangel Chagwa",
-    age: 15,
+    age: 19,
     location: "Blantyre, Malawi",
-    school: "Soche Secondary School",
+    school: "Mzuzu University",
     image: "/images/students/student3.jpeg", // Placeholder path
     problem: "Archangel's father is disabled and cannot work. His mother passed away last year, leaving the family in financial crisis.",
     amountNeeded: 520,
     amountRaised: 210,
     story: "Archangel helps support his family by working at a local market on weekends. His father's disability means he cannot contribute financially, and Archangel often goes without meals to ensure his younger siblings eat. He is an exceptional student who wants to study engineering at the university. Support would cover his school fees and help stabilize his family's situation.",
     needs: [
-      "School fees: $250 per term",
-      "Family support: $150",
-      "School materials: $70",
-      "Uniform: $50"
+      "School fees: MWK250 per term",
+      "Family support: MWK150",
+      "School materials: MWK70",
+      "Uniform: MWK50"
     ],
-    grade: "Form 3",
+    year: "3",
     favoriteSubject: "Mathematics"
   },
   {
     id: 5,
     name: "Chimwemwe Duwa",
-    age: 10,
+    age: 19,
     location: "Karonga, Malawi",
-    school: "Kaporo Primary School",
+    school: "Mzuzu University",
     image: "/images/students/student5.jpeg", // Placeholder path
     problem: "Chimwemwe is visually impaired and requires special learning materials that her guardians cannot afford.",
     amountNeeded: 420,
     amountRaised: 180,
     story: "Chimwemwe was born with visual impairment, but she hasn't let that stop her love for learning. She reads Braille and is one of the top students in her class. Her guardians are farmers who struggle to afford the specialized materials she needs. Your support would provide Braille books, a white cane, and school fees for the upcoming year.",
     needs: [
-      "Braille books and materials: $180",
-      "School fees: $150",
-      "White cane and mobility training: $60",
-      "Nutrition support: $30"
+      "Braille books and materials: MWK180",
+      "School fees: MWK150",
+      "White cane and mobility training: MWK60",
+      "Nutrition support: MWK30"
     ],
-    grade: "Standard 4",
+    year: "4",
     favoriteSubject: "Reading"
   },
   {
     id: 6,
     name: "Ivy Chrispin",
-    age: 13,
+    age: 23,
     location: "Mchinji, Malawi",
-    school: "Mchinji Girls Primary School",
+    school: "Mzuzu University",
     image: "/images/students/student6.jpeg", // Placeholder path
     problem: "Ivy was forced into child labor after her father's death but has returned to school with community support.",
     amountNeeded: 480,
     amountRaised: 290,
     story: "After her father passed away, Ivy was sent to work at a tobacco farm to help support her family. Community members helped rescue her and return her to school. She is now catching up on lost time and dreams of becoming a lawyer to protect children's rights. Support would cover her school fees, catch-up tutoring, and basic needs.",
     needs: [
-      "School fees: $200 per term",
-      "Catch-up tutoring: $120",
-      "School supplies: $80",
-      "Nutrition support: $80"
+      "School fees: MKW200 per term",
+      "Catch-up tutoring: MWK120",
+      "School supplies: MWK80",
+      "Nutrition support: MWK80"
     ],
-    grade: "Standard 5",
+    year: "3",
     favoriteSubject: "English"
   }
 ];
@@ -282,8 +282,7 @@ function StudentCard({ student, onReadMore, onDonate }: StudentCardProps) {
             <ChevronRight className="w-4 h-4" />
           </button>
           <button
-            onClick={() => onDonate(student, `Hello! I'm a donor interested in supporting ${student.name} (${student.age}) from ${student.location}.   
-          I've been redirected from orphans-of-africa.org and would like to contribute to their ${student.needs[0].toLowerCase()}. Please let me know how I can help!`)}
+            onClick={() => onDonate(student, `Hello! I'm a donor interested in supporting ${student.name} (${student.age}) from ${student.location}. I've been redirected from orphans-of-africa.org and would like to contribute to their ${student.needs[0].toLowerCase()}. Please let me know how I can help!`)}
             className="flex-1 px-3 py-2 text-white text-sm font-medium hover:opacity-90 transition-opacity flex items-center justify-center gap-1"
             style={{ backgroundColor: brandColor }}
           >
@@ -367,8 +366,8 @@ function StudentModal({ student, onClose, onDonate }: StudentModalProps) {
               <div className="font-medium text-gray-900 text-sm">{student.school}</div>
             </div>
             <div className="text-center">
-              <div className="text-sm text-gray-500 mb-1">Grade</div>
-              <div className="font-medium text-gray-900">{student.grade}</div>
+              <div className="text-sm text-gray-500 mb-1">Year</div>
+              <div className="font-medium text-gray-900">{student.year}</div>
             </div>
             <div className="text-center">
               <div className="text-sm text-gray-500 mb-1">Favorite Subject</div>

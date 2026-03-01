@@ -30,7 +30,8 @@ export function Hero({ onDonateClick }: { onDonateClick?: () => void }) {
 
   return (
     <section className="relative py-40 px-4 sm:px-6 lg:px-8 overflow-hidden " id="hero">
-      <UpcomingEventsSidebar />
+      {/* <UpcomingEventsSidebar /> */}
+      {/* TODO: Re-enable UpcomingEventsSidebar when ready to implement event modal */}
       
       {/* Background Image Container */}
       <div className="absolute inset-0">

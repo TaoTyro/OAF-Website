@@ -3,15 +3,23 @@ import { Footer } from '../components/Footer';
 import ScrollToTopButton from '../components/ScrollToTopButton';
 import { motion } from 'motion/react';
 import { Heart, Users, Award, Clock } from 'lucide-react';
+import {
+  BookOpen,
+  HeartPulse,
+  PartyPopper,
+  GraduationCap,
+  Briefcase,
+  Target
+} from 'lucide-react';
 
 export function VolunteerPage() {
   const opportunities = [
-    { title: 'Teaching & Tutoring', desc: 'Share knowledge with students needing academic support', icon: '📚' },
-    { title: 'Healthcare Support', desc: 'Assist in health clinics and awareness campaigns', icon: '⚕️' },
-    { title: 'Community Events', desc: 'Help organize and execute community programs', icon: '🎉' },
-    { title: 'Mentoring', desc: 'Provide guidance and support to young people', icon: '🎓' },
-    { title: 'Administrative', desc: 'Support office operations and program coordination', icon: '💼' },
-    { title: 'Fundraising', desc: 'Help raise awareness and funds for our programs', icon: '🎯' }
+    { title: 'Teaching & Tutoring', desc: 'Share knowledge with students needing academic support', icon: BookOpen },
+    { title: 'Healthcare Support', desc: 'Assist in health clinics and awareness campaigns', icon: HeartPulse },
+    { title: 'Community Events', desc: 'Help organize and execute community programs', icon: PartyPopper },
+    { title: 'Mentoring', desc: 'Provide guidance and support to young people', icon: GraduationCap },
+    { title: 'Administrative', desc: 'Support office operations and program coordination', icon: Briefcase },
+    { title: 'Fundraising', desc: 'Help raise awareness and funds for our programs', icon: Target }
   ];
 
   return (
@@ -42,7 +50,7 @@ export function VolunteerPage() {
                 transition={{ delay: idx * 0.1 }}
                 className="bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all p-8 border border-gray-200 dark:border-gray-700"
               >
-                <div className="text-4xl mb-4">{opp.icon}</div>
+                <opp.icon className="w-10 h-10 text-blue-400 mb-4 group-hover:scale-110 transition-transform duration-300" />
                 <h3 className="font-bold text-xl text-gray-900 dark:text-white mb-2">{opp.title}</h3>
                 <p className="text-gray-700 dark:text-gray-300">{opp.desc}</p>
               </motion.div>

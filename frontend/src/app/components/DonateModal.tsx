@@ -37,7 +37,7 @@ const students = [
     age: 14,
     location: "Mzimba, Malawi",
     school: "Chikwina Primary School",
-    image: "/images/students/jane-mwale.jpg", // Placeholder path
+    image: "/images/students/student7.jpeg", // Placeholder path
     problem: "Jane lost both parents to malaria in 2020. She lives with her elderly grandmother and struggles to afford school fees and basic necessities.",
     amountNeeded: 450,
     amountRaised: 275,
@@ -57,7 +57,7 @@ const students = [
     age: 16,
     location: "Mzuzu, Malawi",
     school: "Mzuzu Secondary School",
-    image: "/images/students/chikumbutso-banda.jpg", // Placeholder path
+    image: "/images/students/student1.jpeg", // Placeholder path
     problem: "Chikumbutso's father abandoned the family, and his mother struggles with illness. He often misses school to care for his younger siblings.",
     amountNeeded: 650,
     amountRaised: 320,
@@ -77,7 +77,7 @@ const students = [
     age: 12,
     location: "Lilongwe, Malawi",
     school: "Area 25 Primary School",
-    image: "/images/students/bernadettah-phiri.jpg", // Placeholder path
+    image: "/images/students/student2.jpeg", // Placeholder path
     problem: "Bernadettah was orphaned at age 8 and now lives in a child-headed household with her two younger siblings.",
     amountNeeded: 380,
     amountRaised: 150,
@@ -97,7 +97,7 @@ const students = [
     age: 15,
     location: "Blantyre, Malawi",
     school: "Soche Secondary School",
-    image: "/images/students/archangel-chagwa.jpg", // Placeholder path
+    image: "/images/students/student3.jpeg", // Placeholder path
     problem: "Archangel's father is disabled and cannot work. His mother passed away last year, leaving the family in financial crisis.",
     amountNeeded: 520,
     amountRaised: 210,
@@ -117,7 +117,7 @@ const students = [
     age: 10,
     location: "Karonga, Malawi",
     school: "Kaporo Primary School",
-    image: "/images/students/chimwemwe-duwa.jpg", // Placeholder path
+    image: "/images/students/student5.jpeg", // Placeholder path
     problem: "Chimwemwe is visually impaired and requires special learning materials that her guardians cannot afford.",
     amountNeeded: 420,
     amountRaised: 180,
@@ -137,7 +137,7 @@ const students = [
     age: 13,
     location: "Mchinji, Malawi",
     school: "Mchinji Girls Primary School",
-    image: "/images/students/ivy-chrispin.jpg", // Placeholder path
+    image: "/images/students/student6.jpeg", // Placeholder path
     problem: "Ivy was forced into child labor after her father's death but has returned to school with community support.",
     amountNeeded: 480,
     amountRaised: 290,
@@ -212,7 +212,16 @@ function StudentCard({ student, onReadMore, onDonate }: StudentCardProps) {
     >
       {/* Image Container */}
       <div className="relative aspect-[4/3] overflow-hidden bg-gray-100">
-        <div className="w-full h-full bg-gradient-to-br from-[#5AAFD1] to-[#3A8FB1] flex items-center justify-center">
+        <img
+          src={student.image}
+          alt={student.name}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          onError={(e) => {
+            (e.target as HTMLImageElement).style.display = 'none';
+          }}
+        />
+        {/* Fallback gradient if image fails to load */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#5AAFD1] to-[#3A8FB1] flex items-center justify-center" style={{ display: 'none' }}>
           <div className="text-center text-white">
             <Heart className="w-8 h-8 mx-auto mb-2" />
             <p className="text-sm">Student Image</p>
@@ -322,19 +331,16 @@ function StudentModal({ student, onClose, onDonate }: StudentModalProps) {
 
         {/* Header Image */}
         <div className="relative h-64 bg-gray-200">
-          {/*
-            REPLACE WITH ACTUAL STUDENT IMAGE:
-            <img 
-              src={student.image} 
-              alt={student.name}
-              className="w-full h-full object-cover"
-            />
-          */}
-          <div className="w-full h-full bg-gradient-to-br from-[#5AAFD1] to-[#3A8FB1] flex items-center justify-center">
+          <img
+            src={student.image}
+            alt={student.name}
+            className="w-full h-full object-cover"
+          />
+          {/* Fallback gradient if image fails */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#5AAFD1] to-[#3A8FB1] flex items-center justify-center hidden">
             <div className="text-center text-white">
               <Heart className="w-12 h-12 mx-auto mb-2" />
               <p className="text-lg font-medium">{student.name}</p>
-              <p className="text-sm opacity-80">Image: {student.image}</p>
             </div>
           </div>
           

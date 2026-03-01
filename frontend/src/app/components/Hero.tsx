@@ -9,7 +9,7 @@ const backgroundImages = [
   'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1200&h=600&fit=crop'
 ];
 
-export function Hero() {
+export function Hero({ onDonateClick }: { onDonateClick?: () => void }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [nextImageIndex, setNextImageIndex] = useState(1);
   const [fadeOut, setFadeOut] = useState(false);
@@ -75,7 +75,7 @@ export function Hero() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button 
-              onClick={() => navigate('/#contact')}
+              onClick={onDonateClick}
               className="px-8 py-3 rounded-lg text-white transition-all hover:opacity-85 shadow-lg"
               style={{ backgroundColor: 'var(--primary-orange)' }}
             >

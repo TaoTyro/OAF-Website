@@ -6,6 +6,7 @@ import { ContactForm } from './components/ContactForm';
 import ScrollToTopButton from './components/ScrollToTopButton';
 import { PageLoader } from './components/PageLoader';
 import { SkeletonSection, SkeletonImpact } from './components/Skeleton';
+import { DonateModal } from './components/DonateModal';
 import { useTheme } from '../hooks/useTheme';
 import { ProgramsPage } from './pages/ProgramsPage';
 import { BlogPage } from './pages/BlogPage';
@@ -37,7 +38,12 @@ const ImpactStats = lazy(() => import('./components/ImpactStats').then(m => ({ d
 const SuccessStories = lazy(() => import('./components/SuccessStories').then(m => ({ default: m.SuccessStories })));
 const Footer = lazy(() => import('./components/Footer').then(m => ({ default: m.Footer })));
 
-function HomePage() {
+interface HomePageProps {
+  isDonateModalOpen: boolean;
+  setIsDonateModalOpen: (value: boolean) => void;
+}
+
+function HomePage({ isDonateModalOpen, setIsDonateModalOpen }: HomePageProps) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -45,8 +51,8 @@ function HomePage() {
       transition={{ duration: 0.5 }}
       className="min-h-screen bg-white dark:bg-gray-950 transition-colors duration-300"
     >
-      <Navbar />
-      <Hero />
+      <Navbar isDonateModalOpen={isDonateModalOpen} setIsDonateModalOpen={setIsDonateModalOpen} />
+      <Hero onDonateClick={() => setIsDonateModalOpen(true)} />
 
       <motion.div
         custom={1}
@@ -131,6 +137,7 @@ function HomePage() {
 export default function App() {
   const { isDark } = useTheme();
   const [isPageLoading, setIsPageLoading] = useState(false);
+  const [isDonateModalOpen, setIsDonateModalOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -151,8 +158,9 @@ export default function App() {
       <AnimatePresence mode="wait">
         {isPageLoading && <PageLoader key="loader" />}
       </AnimatePresence>
+      <DonateModal isOpen={isDonateModalOpen} onClose={() => setIsDonateModalOpen(false)} />
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<HomePage isDonateModalOpen={isDonateModalOpen} setIsDonateModalOpen={setIsDonateModalOpen} />} />
         <Route path="/our-mission" element={<OurMissionPage />} />
         <Route path="/success-stories" element={<SuccessStoriesPage />} />
         <Route path="/contact" element={<ContactPage />} />

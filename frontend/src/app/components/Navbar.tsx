@@ -6,9 +6,8 @@ import logoImg from '../../assets/logo.png';
 import { DonateModal } from './DonateModal';
 import { motion, AnimatePresence } from 'motion/react';
 
-export function Navbar() {
+export function Navbar({ isDonateModalOpen, setIsDonateModalOpen }: { isDonateModalOpen: boolean; setIsDonateModalOpen: (value: boolean) => void }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDonateModalOpen, setIsDonateModalOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const navigate = useNavigate();
 
@@ -92,8 +91,9 @@ export function Navbar() {
   };
 
   return (
-    <nav className="bg-white/50 backdrop-blur-md dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 sticky top-0 z-50 transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <>
+      <nav className="bg-white/50 backdrop-blur-md dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 sticky top-0 z-40 transition-colors duration-300">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
@@ -207,9 +207,8 @@ export function Navbar() {
             </motion.div>
           )}
         </AnimatePresence>
-
-        <DonateModal isOpen={isDonateModalOpen} onClose={() => setIsDonateModalOpen(false)} />
       </div>
     </nav>
+    </>
   );
 }

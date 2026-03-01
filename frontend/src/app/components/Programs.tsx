@@ -268,7 +268,7 @@ export function Programs() {
                       transition: { duration: 0.6, delay: 0.1 }
                     } : {}}
                   >
-                    <span className="w-8 h-px bg-gray-300" />
+                    
                     <span>INITIATIVE</span>
                   </motion.div>
 

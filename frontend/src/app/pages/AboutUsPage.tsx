@@ -325,7 +325,7 @@ export function AboutUsPage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
-            src={storyImages.children}
+            src="images/classroom.jpg"
             alt="Children in Malawi"
             className="w-full h-full object-cover"
           />
@@ -340,17 +340,11 @@ export function AboutUsPage() {
             transition={{ duration: 0.8 }}
             className="max-w-3xl"
           >
-            {/* Brand indicator */}
-            <div className="flex gap-2 mb-6">
-              <div className="w-12 h-1 bg-[#F97316] rounded-full" />
-              <div className="w-12 h-1 bg-[#0EA5E9] rounded-full" />
-              <div className="w-12 h-1 bg-[#22C55E] rounded-full" />
-              <div className="w-12 h-1 bg-[#10B981] rounded-full" />
-            </div>
+            
 
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
               Transforming Lives in
-              <span className="block text-[#F97316]">Rural Malawi</span>
+              <span className="block text-[#F97316]">Malawi and across Africa</span>
             </h1>
 
             <p className="text-xl text-gray-200 mb-8 leading-relaxed max-w-2xl">
@@ -366,8 +360,8 @@ export function AboutUsPage() {
                 <div className="text-sm text-gray-300">Founded</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-[#0EA5E9]">42</div>
-                <div className="text-sm text-gray-300">Villages</div>
+                <div className="text-3xl font-bold text-[#0EA5E9]">42+</div>
+                <div className="text-sm text-gray-300">Villages reached</div>
               </div>
               <div>
                 <div className="text-3xl font-bold text-[#22C55E]">1500+</div>
@@ -376,17 +370,6 @@ export function AboutUsPage() {
             </div>
           </motion.div>
         </div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        >
-          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-white/60 rounded-full mt-2" />
-          </div>
-        </motion.div>
       </section>
 
       {/* Mission Statement - Clean and Impactful */}

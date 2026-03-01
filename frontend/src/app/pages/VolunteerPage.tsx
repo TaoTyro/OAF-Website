@@ -88,7 +88,7 @@ export function VolunteerPage() {
             <p className="text-gray-700 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
               Join our volunteer community and be part of creating meaningful change. Whether you have a few hours or want to commit long-term, there's a place for you.
             </p>
-            <button className="px-8 py-3 bg-gradient-to-r from-blue-400 to-orange-400 text-white rounded-lg font-semibold hover:shadow-lg transition-all">
+            <button className="px-8 py-3 bg-blue-400 text-white rounded-lg font-semibold hover:shadow-lg transition-all">
               Apply to Volunteer
             </button>
           </motion.div>

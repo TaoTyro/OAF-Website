@@ -1,11 +1,18 @@
 import { Mail, Linkedin, Twitter } from 'lucide-react';
+import timothy from "../../assets/timothy-mwale.jpg";
+import communityImg from "../../assets/communityImg.jpg";
+import universityImg from "../../assets/universityImg.jpg";
+import donorsImg from "../../assets/donorImg.jpg";
+import classroomImg from "../../assets/classroom.jpg";
+import birthingImg from "../../assets/birthing1.jpg";
+import teacherImg from "../../assets/teacher.jpg";
 
 const teamMembers = [
   {
     name: 'Timothy Mwale',
     role: 'Executive Director',
     bio: 'With 10 years of experience in humanitarian work, Timothy leads our mission in Malawi and across Africa.',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.0.3&q=80&w=400',
+    image: timothy,
     email: 'sarah@orphansofafrica.org',
     linkedin: 'https://linkedin.com',
     twitter: 'https://twitter.com'

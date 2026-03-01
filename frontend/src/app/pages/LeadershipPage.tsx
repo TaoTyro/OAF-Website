@@ -171,8 +171,10 @@ export function LeadershipPage() {
       <Navbar />
 
       {/* Header */}
-      <section className="pt-24 pb-12 bg-gradient-to-b from-white to-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">   
+      <section className="pt-24 pb-12 bg-gradient-to-b from-white to-gray-50"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+        >   
           <h1 className="text-4xl md:text-5xl font-bold text-gray-600 mb-4">Timothy Mwale</h1>
           <p className="text-xl text-[#5AAFD1] font-medium mb-2">Founder & Executive Director</p>
           <p className="text-gray-600 max-w-3xl">Orphans of Africa Foundation (OAF)</p>

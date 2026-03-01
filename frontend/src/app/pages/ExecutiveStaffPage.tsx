@@ -5,7 +5,7 @@ import { motion } from 'motion/react';
 
 export function ExecutiveStaffPage() {
   const staff = [
-    {
+    { 
       title: 'Executive Team',
       description: 'Our dedicated staff members work tirelessly to implement our programs and serve the communities we support.',
       members: [

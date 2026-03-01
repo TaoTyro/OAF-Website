@@ -97,7 +97,7 @@ export function BecomePartnerPage() {
                 { num: 4, title: 'Evaluate', desc: 'Measure impact and celebrate wins' }
               ].map((step, idx) => (
                 <div key={idx} className="text-center">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-400 to-orange-400 text-white font-bold text-lg flex items-center justify-center mx-auto mb-3">
+                  <div className="w-12 h-12 rounded-full bg-blue-400 text-white font-bold text-lg flex items-center justify-center mx-auto mb-3">
                     {step.num}
                   </div>
                   <h3 className="font-bold text-gray-900 dark:text-white mb-2">{step.title}</h3>
@@ -138,7 +138,7 @@ export function BecomePartnerPage() {
             <p className="text-gray-700 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
               We're excited to explore how we can collaborate to create sustainable, transformative change in our communities.
             </p>
-            <button className="px-8 py-3 bg-gradient-to-r from-blue-400 to-orange-400 text-white rounded-lg font-semibold hover:shadow-lg transition-all">
+            <button className="px-8 py-3 bg-blue-400 text-white rounded-lg font-semibold hover:shadow-lg transition-all">
               Start Partnership Conversation
             </button>
           </motion.div>

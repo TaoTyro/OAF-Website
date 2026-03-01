@@ -72,7 +72,7 @@ export function GalleryPage() {
             <p className="text-gray-700 dark:text-gray-300 mb-6">
               Have photos or videos of our programs? We'd love to feature your contributions in our gallery.
             </p>
-            <button className="px-8 py-3 bg-gradient-to-r from-blue-400 to-orange-400 text-white rounded-lg font-semibold hover:shadow-lg transition-all">
+            <button className="px-8 py-3 bg-blue-400 text-white rounded-lg font-semibold hover:shadow-lg transition-all">
               Submit Photos
             </button>
           </motion.div>

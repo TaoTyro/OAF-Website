@@ -52,13 +52,37 @@ interface Partner {
 // Partners Data
 const partners: Partner[] = [
   {
+    id: 9,
+    name: 'Malawi Ministry of Health',
+    logoPlaceholder: '/images/partners/health1.png',
+    initials: '',
+    description: 'Government partnership supporting healthcare initiatives and maternal health programs.',
+    impact: 'Partner on birthing kit distribution and SRHR campaigns',
+    partnershipSince: '2025',
+    category: 'government',
+    featured: true,
+  },
+
+  {
+    id: 5,
+    name: 'Mzuzu University',
+    logoPlaceholder: '/images/partners/mzuni-logo.png',
+    initials: '',
+    description: 'Higher education partnership supporting scholarships and academic development for orphans.',
+    impact: '27+ students supported through university education',
+    partnershipSince: '2025',
+    category: 'university',
+    featured: true,
+  },
+
+  {
     id: 1,
     name: 'Birthing Kits Foundation Australia',
     logoPlaceholder: '/images/partners/birthing-kit-foundation.jpg',
     initials: '',
     description: 'Providing clean birthing kits to improve maternal and neonatal health outcomes in rural Malawi.',
     impact: '7,500+ birthing kits distributed to expectant mothers',
-    partnershipSince: '2021',
+    partnershipSince: '2025',
     category: 'health',
     featured: true,
   },
@@ -68,8 +92,8 @@ const partners: Partner[] = [
     logoPlaceholder: '/images/partners/international-book-project.png',
     initials: '',
     description: 'Supplying educational books and resources to schools and libraries in underserved communities.',
-    impact: '5,000+ books distributed across 8 primary schools',
-    partnershipSince: '2020',
+    impact: '5,000+ books distributed across 8 primary schools in the northern region of Malawi',
+    partnershipSince: '2025',
     category: 'education',
     featured: true,
   },
@@ -80,7 +104,7 @@ const partners: Partner[] = [
     initials: '',
     description: 'Supporting children through sport, promoting health, education, and social inclusion.',
     impact: '42 villages reached with inclusive sports initiatives',
-    partnershipSince: '2022',
+    partnershipSince: '2025',
     category: 'sports',
     featured: true,
   },
@@ -91,20 +115,9 @@ const partners: Partner[] = [
     initials: '',
     description: 'Providing sports equipment and organizing inclusive activities for children with disabilities.',
     impact: '500+ children reached with Mini Blind Balls',
-    partnershipSince: '2022',
+    partnershipSince: '2025',
     category: 'sports',
     featured: false,
-  },
-  {
-    id: 5,
-    name: 'Mzuzu University',
-    logoPlaceholder: '/images/partners/mzuni-logo.png',
-    initials: '',
-    description: 'Higher education partnership supporting scholarships and academic development for orphans.',
-    impact: '27 students supported through university education',
-    partnershipSince: '2021',
-    category: 'university',
-    featured: true,
   },
   {
     id: 6,
@@ -113,7 +126,7 @@ const partners: Partner[] = [
     initials: '',
     description: 'Providing nutritious meals to vulnerable children to support their health and education.',
     impact: '10,000+ meals provided to school children',
-    partnershipSince: '2022',
+    partnershipSince: '2025',
     category: 'health',
     featured: false,
   },
@@ -124,7 +137,7 @@ const partners: Partner[] = [
     initials: '',
     description: 'Supplying braille books to ensure visually impaired children have access to education.',
     impact: '200+ braille books for visually impaired students',
-    partnershipSince: '2023',
+    partnershipSince: '2025',
     category: 'education',
     featured: false,
   },
@@ -135,21 +148,11 @@ const partners: Partner[] = [
     initials: '',
     description: 'Shipping educational materials and books to support literacy across African communities.',
     impact: '3,000+ educational materials distributed',
-    partnershipSince: '2020',
+    partnershipSince: '2025',
     category: 'education',
     featured: false,
   },
-  {
-    id: 9,
-    name: 'Malawi Ministry of Health',
-    logoPlaceholder: '/images/partners/malawi-ministry-of-health.jpg',
-    initials: '',
-    description: 'Government partnership supporting healthcare initiatives and maternal health programs.',
-    impact: 'Partner on birthing kit distribution and SRHR campaigns',
-    partnershipSince: '2021',
-    category: 'government',
-    featured: true,
-  },
+  
 ];
 
 // Category Icons
@@ -644,7 +647,7 @@ export default function PartnersSponsors() {
           <p className="text-center text-sm text-gray-500 mb-6">Trusted by these organizations</p>
           <div className="flex flex-wrap justify-center gap-8">
             {partners.map((partner) => (
-              <div key={partner.id} className="w-22 h-22 bg-white rounded-lg shadow-sm flex items-center justify-center p-2">
+              <div key={partner.id} className="w-24 h-24 bg-white rounded-lg shadow-sm flex items-center justify-center p-2">
                 <img 
                   src={partner.logoPlaceholder} 
                   alt={partner.name}

@@ -61,30 +61,26 @@ export function BecomeDonorPage() {
             Donation Levels
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-16">
+          <div className="grid md:grid-cols-2 bg-gradient-to-r from-blue-50 to-transparent gap-8 mb-16">
             {donationLevels.map((level, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.1 }}
-                className={`rounded-lg p-8 border-2 transition-all hover:shadow-2xl ${
-                  idx === 0 
-                    ? 'border-orange-400 bg-orange-50 dark:bg-gray-800' 
-                    : 'border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800'
-                }`}
+                className={`rounded-lg p-8 border-[#0EA5E9] transition-all hover:shadow-2xl hover:bg-white/50 `}
               >
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{level.level}</h3>
                 <p className="text-3xl font-bold mb-6" style={{ color: 'var(--primary-orange)' }}>{level.amount}</p>
                 <ul className="space-y-3">
                   {level.benefits.map((benefit, bidx) => (
                     <li key={bidx} className="flex items-start gap-3 text-gray-700 dark:text-gray-300">
-                      <Heart className="w-5 h-5 text-orange-500 mt-0.5 flex-shrink-0" />
+                      <Heart className="w-5 h-5 text-[#0EA5E9] mt-0.5 flex-shrink-0" />
                       <span>{benefit}</span>
                     </li>
                   ))}
                 </ul>
-                <button className="w-full mt-6 px-6 py-2 bg-gradient-to-r from-blue-400 to-orange-400 text-white rounded-lg font-semibold hover:shadow-lg transition-all">
+                <button className="w-full mt-6 px-6 py-2 bg-[#0EA5E9] text-white rounded-lg font-semibold hover:shadow-lg transition-all">
                   Donate Now
                 </button>
               </motion.div>
@@ -108,23 +104,6 @@ export function BecomeDonorPage() {
                 <p className="text-gray-700 dark:text-gray-300">{option.desc}</p>
               </div>
             ))}
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.6 }}
-            className="bg-green-50 dark:bg-gray-800 p-12 rounded-lg text-center"
-          >
-            <h2 style={{ fontFamily: 'Poppins, sans-serif' }} className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-              Tax Deductible Donations
-            </h2>
-            <p className="text-gray-700 dark:text-gray-300 mb-6">
-              We are a registered nonprofit organization. Your donation may be tax deductible. Please consult with a tax professional.
-            </p>
-            <p className="text-gray-700 dark:text-gray-300 font-semibold">
-              Registration Number: [Your Org Number]
-            </p>
           </motion.div>
         </div>
       </motion.div>

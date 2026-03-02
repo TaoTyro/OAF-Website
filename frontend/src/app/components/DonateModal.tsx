@@ -48,6 +48,7 @@ const students = [
       "Rentals: Any Amount towards this will be appreciated"
     ],
     year: "2",
+    character: "Hardworking and determined"
   },
   {
     id: 2,
@@ -62,9 +63,12 @@ const students = [
     story: "Chisomo Namaja, a Level 3 student pursuing a Bachelor of Education in Sciences at Mzuzu University. I'm from Phalombe district, a community that's already facing economic challenges. Due to some personal struggles, including illness, I wasn't able to prepare adequately for my exams, which led to my withdrawal from Semester 2. My relatives back home in Phalombe are struggling to make ends meet, let alone support my education. They're finding it tough to source money, and I'm in urgent need of assistance to cover tuition fees and upkeep costs. I'm seeking help from well-wishers to support me through this tough time. Any contribution, big or small, will go a long way in helping me achieve my academic goals and repeat the semester.",
     needs: [
       "Tuition fee: MWK600,000, MWK325,000 per semester",
-      "Upkeep costs: Any Amount towards this will be appreciated"
+      "Upkeep costs: Any Amount towards this will be appreciated",
+      "School supplies: Any Amount towards this will be appreciated",
+      "Food and other essentials: Any Amount towards this will be appreciated"
     ],
     year: "3",
+    character: "Hardworking and determined"
   },
   {
     id: 3,
@@ -84,6 +88,7 @@ const students = [
       "Food and other essentials: Any Amount towards this will be appreciated"
     ],
     year: "Not disclosed",
+    character: "Hardworking and determined"
   },
   {
     id: 4,
@@ -92,58 +97,98 @@ const students = [
     location: "Mwanza, Malawi",
     school: "Mzuzu University",
     image: "/images/students/stella.png", // Placeholder path
-    problem: "Archangel's father is disabled and cannot work. His mother passed away last year, leaving the family in financial crisis.",
+    problem: "Lacks tuition fees and basic necessities. Her parents are unemployed, and she has struggled to stay in school due to financial hardships.",
     amountNeeded: 650000,
     amountRaised: 0,
     story: "Stellah Luckius, from Mwanza, Golowa. Parents are not working, she's currently at Mzuzu University.  She dropped primary school then resumed due to lack of fees. Secondary too was hard for her. Form 2 there was no fees (MWK10,000), form 2-3 a certain NGO helped but later dropped her. In form 3-4 parents tried their best by doing piece works. BSc. Education Sciences ODL. Lacks tuition fees (MWK325,000.00) and other basic necessities. She's a hard working student and needs help to continue with her education.",
     needs: [
-      "School fees: MWK250 per term",
-      "Family support: MWK150",
-      "School materials: MWK70",
-      "Uniform: MWK50"
+      "Tuition fees: MWK325,000 per semester",
+      "Rent: Any Amount towards this will be appreciated",
+      "School supplies: Any Amount towards this will be appreciated",
+      "Food and other essentials: Any Amount towards this will be appreciated"
     ],
-    year: "3",
-    favoriteSubject: "Mathematics"
+    year: "Not disclosed",
+    character: "Hardworking and determined"
   },
   {
     id: 5,
-    name: "Chimwemwe Duwa",
+    name: "Glory Mvula",
     age: 19,
-    location: "Karonga, Malawi",
+    location: "Kasungu, Malawi",
     school: "Mzuzu University",
-    image: "/images/students/student5.jpeg", // Placeholder path
-    problem: "Chimwemwe is visually impaired and requires special learning materials that her guardians cannot afford.",
-    amountNeeded: 420,
-    amountRaised: 180,
-    story: "Chimwemwe was born with visual impairment, but she hasn't let that stop her love for learning. She reads Braille and is one of the top students in her class. Her guardians are farmers who struggle to afford the specialized materials she needs. Your support would provide Braille books, a white cane, and school fees for the upcoming year.",
+    image: "/images/students/glory.png", // Placeholder path
+    problem: "Lacks tuition fees, rent, and food.",
+    amountNeeded: 650000,
+    amountRaised: 0,
+    story: "Glory is from Kasungu and doing Bachelor of Education, Arts, ODL at Mzuzu University and in level 1. She lacks Tuition, Rent, Food.Her Mother prepares and sells local beer to support her studies. She is determined to graduate and support her family.",
     needs: [
-      "Braille books and materials: MWK180",
-      "School fees: MWK150",
-      "White cane and mobility training: MWK60",
-      "Nutrition support: MWK30"
+      "Tuition fees: MWK325,000 per semester",
+      "Rent: Any Amount towards this will be appreciated",
+      "School supplies: Any Amount towards this will be appreciated",
+      "Food and other essentials: Any Amount towards this will be appreciated"
     ],
-    year: "4",
-    favoriteSubject: "Reading"
+    year: "1",
+    character: "Hardworking and determined"
   },
   {
     id: 6,
-    name: "Ivy Chrispin",
-    age: 23,
-    location: "Mchinji, Malawi",
+    name: "Patience Nyirenda",
+    age: 20,
+    location: "Lilongwe, Malawi",
     school: "Mzuzu University",
-    image: "/images/students/student6.jpeg", // Placeholder path
-    problem: "Ivy was forced into child labor after her father's death but has returned to school with community support.",
-    amountNeeded: 480,
-    amountRaised: 290,
-    story: "After her father passed away, Ivy was sent to work at a tobacco farm to help support her family. Community members helped rescue her and return her to school. She is now catching up on lost time and dreams of becoming a lawyer to protect children's rights. Support would cover her school fees, catch-up tutoring, and basic needs.",
+    image: "/images/students/patience.png", // Placeholder path
+    problem: "In need of Tuition fees, rent, food and other basic necessities.",
+    amountNeeded: 650000,
+    amountRaised: 0,
+    story: "Patience is doing BSc. Library and information Sciencies at Mzuzu University. She lacks Tuition Fees, Food, Rentals, Groceries. She's currently in Level 1.",
     needs: [
-      "School fees: MKW200 per term",
-      "Catch-up tutoring: MWK120",
-      "School supplies: MWK80",
-      "Nutrition support: MWK80"
+      "Tuition fees: MWK325,000 per semester",
+      "Rent: Any Amount towards this will be appreciated",
+      "School supplies: Any Amount towards this will be appreciated",
+      "Food and other essentials: Any Amount towards this will be appreciated"
     ],
-    year: "3",
-    favoriteSubject: "English"
+    year: "1",
+    character: "Hardworking and determined"
+  },
+  {
+    id: 7,
+    name: "Gersome Alickson",
+    age: 20,
+    location: "Ntchisi, Malawi",
+    school: "Mzuzu University",
+    image: "/images/students/geresom.png", // Placeholder path
+    problem: "In need of Tuition fees, rent, food and other basic necessities.",
+    amountNeeded: 650000,
+    amountRaised: 0,
+    story: "Geresome lacks Tuition Fees, Food, Rentals, Groceries. He has a single parent, and his Mother can't afford to sustain him",
+    needs: [
+      "Tuition fees: MWK325,000 per semester",
+      "Rent: Any Amount towards this will be appreciated",
+      "School supplies: Any Amount towards this will be appreciated",
+      "Food and other essentials: Any Amount towards this will be appreciated"
+    ],
+    year: "Not disclosed",
+    character: "Hardworking and determined"
+  },
+  {
+    id: 6,
+    name: "Getrude and her brother Phiri",
+    age: 20,
+    location: "Mzimba, Malawi",
+    school: "Mzuzu University",
+    image: "/images/students/getrude&brother.jpeg", // Placeholder path
+    problem: "They both lack Tuition fees, Laptops, Smart phones, rent, food and other basic necessities.",
+    amountNeeded: 650000,
+    amountRaised: 0,
+    story: "Getrude is pursuing a Degree in History and Heritage Studies and her brother. They both lack tuition fees, laptops, smartphones, food, rentals and other basics. They're both in level one",
+    needs: [
+      "Tuition fees: MWK325,000 per semester",
+      "Rent: MWK85,000. MWK45000 for Getrude and MWK40000 for her brother.",
+      "School supplies: Any Amount towards this will be appreciated",
+      "Food and other essentials: Any Amount towards this will be appreciated"
+    ],
+    year: "1",
+    character: "Hardworking and determined"
   }
 ];
 
@@ -297,7 +342,7 @@ interface StudentModalProps {
 }
 
 function StudentModal({ student, onClose, onDonate }: StudentModalProps) {
-  const [donationMessage, setDonationMessage] = useState(`I would like to support ${student.name} (${student.age} years old) from ${student.location}. I'd like to contribute to their ${student.needs[0].toLowerCase()}.`);
+  const [donationMessage, setDonationMessage] = useState(`Hello I'm a donor. I would like to support ${student.name} (${student.age} years old) from ${student.location}. I'd like to contribute to their ${student.needs[0].toLowerCase()}. I've been redirected from orphans-of-africa.org.`);
 
   return (
     <motion.div
@@ -364,8 +409,8 @@ function StudentModal({ student, onClose, onDonate }: StudentModalProps) {
               <div className="font-medium text-gray-900">{student.year}</div>
             </div>
             <div className="text-center">
-              <div className="text-sm text-gray-500 mb-1">Favorite Subject</div>
-              <div className="font-medium text-gray-900">{student.favoriteSubject}</div>
+              <div className="text-sm text-gray-500 mb-1">Character</div>
+              <div className="font-medium text-gray-900">{student.character}</div>
             </div>
           </div>
 
@@ -401,7 +446,7 @@ function StudentModal({ student, onClose, onDonate }: StudentModalProps) {
             <div className="flex justify-between items-center mb-2">
               <span className="text-sm font-medium text-gray-700">Funding Progress</span>
               <span className="text-sm" style={{ color: brandColor }}>
-                ${student.amountRaised} raised of ${student.amountNeeded} goal
+                MWK{student.amountRaised} raised of MWK{student.amountNeeded} goal
               </span>
             </div>
             <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
@@ -452,7 +497,7 @@ function StudentModal({ student, onClose, onDonate }: StudentModalProps) {
           <div className="flex flex-col sm:flex-row gap-3">
             <button
               onClick={() => onDonate(student, donationMessage)}
-              className="flex-1 px-6 py-3 bg-[#5AAFD1] text-white rounded-lg font-medium hover:bg-[#4A9FC1] transition-colors flex items-center justify-center gap-2"
+              className="flex-1 px-6 py-3 bg-gradient-to-r from-green-500 to-[#22C55E] text-white rounded-lg font-semibold hover:shadow-2xl hover:-translate-y-1 transition-colors flex items-center justify-center gap-2"
             >
               <MessageCircle className="w-5 h-5" />
               Contact via WhatsApp
@@ -481,7 +526,7 @@ export function SupportStudentPage({ isOpen = false, onClose }: SupportStudentPa
   const [footerRef, footerInView] = useInView({ triggerOnce: true, threshold: 0.2 });
 
   // WhatsApp contact details
-  const PHONE_NUMBER = '+265893474465';
+  const PHONE_NUMBER = '+265886691492';
   const WHATSAPP_LINK = `https://wa.me/${PHONE_NUMBER.replace(/\D/g, '')}`;
 
   const handleReadMore = (student: typeof students[0]) => {
@@ -594,7 +639,7 @@ export function SupportStudentPage({ isOpen = false, onClose }: SupportStudentPa
                 transition={{ duration: 0.8, delay: 0.3 }}
               />
               
-              <div className="bg-gray-50 p-8">
+              <div className="bg-gray-50  p-8">
                 <div className="flex items-center justify-center gap-2 mb-4">
                   <AlertCircle className="w-5 h-5" style={{ color: brandColor }} />
                   <h3 className="text-lg font-semibold text-gray-900">Payment Processing in Development</h3>
@@ -609,14 +654,6 @@ export function SupportStudentPage({ isOpen = false, onClose }: SupportStudentPa
                   Thank you for having the spirit of donating and for your patience as we improve our platform!
                 </p>
               </div>
-
-              <motion.div 
-                className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-12 h-px"
-                style={{ backgroundColor: brandColor }}
-                initial={{ scaleX: 0 }}
-                animate={footerInView ? { scaleX: 1 } : {}}
-                transition={{ duration: 0.8, delay: 0.4 }}
-              />
             </div>
 
             {/* Contact Info */}
@@ -625,22 +662,22 @@ export function SupportStudentPage({ isOpen = false, onClose }: SupportStudentPa
                 href={`https://wa.me/${PHONE_NUMBER.replace(/\D/g, '')}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 hover:text-[#5AAFD1] transition-colors"
+                className="px-8 py-3 bg-gradient-to-r from-green-500 to-[#22C55E] text-white rounded-lg font-semibold hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex items-center gap-2"
               >
                 <MessageCircle className="w-4 h-4" />
-                WhatsApp: {PHONE_NUMBER}
+                WhatsApp
               </a>
               <a 
-                href="mailto:donations@orphansofafrica21.org"
-                className="flex items-center gap-2 hover:text-[#5AAFD1] transition-colors"
+                href="mailto:mwale7410@gmail.com"
+                className="px-8 py-3 bg-gradient-to-r from-[#F97316] to-orange-500 text-white rounded-lg font-semibold hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex items-center gap-2 cursor-pointer border-none"
               >
                 <Mail className="w-4 h-4" />
-                donations@orphansofafrica21.org
+                Send Email
               </a>
             </div>
 
             {/* Student Count */}
-            <p className="text-xs text-gray-400 mt-12">
+            <p className="text-xs text-gray-400 text-bold mt-12">
               {students.length} students currently waiting for sponsorship
             </p>
           </motion.div>

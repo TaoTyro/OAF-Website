@@ -57,12 +57,12 @@ const students = [
     location: "Phalombe, Malawi",
     school: "Mzuzu University",
     image: "/images/students/chisomo.jpg", // Placeholder path
-    problem: "Chikumbutso's father abandoned the family, and his mother struggles with illness. He often misses school to care for his younger siblings.",
+    problem: "He lacks tuition fees and upkeep costs. His relatives are struggling to support his education due to economic challenges in their community.",
     amountNeeded: 650000,
     amountRaised: 0,
     story: "Chisomo Namaja, a Level 3 student pursuing a Bachelor of Education in Sciences at Mzuzu University. I'm from Phalombe district, a community that's already facing economic challenges. Due to some personal struggles, including illness, I wasn't able to prepare adequately for my exams, which led to my withdrawal from Semester 2. My relatives back home in Phalombe are struggling to make ends meet, let alone support my education. They're finding it tough to source money, and I'm in urgent need of assistance to cover tuition fees and upkeep costs. I'm seeking help from well-wishers to support me through this tough time. Any contribution, big or small, will go a long way in helping me achieve my academic goals and repeat the semester.",
     needs: [
-      "Tuition fee: MWK600,000, MWK325,000 per semester",
+      "Tuition fee: MWK650,000, MWK325,000 per semester",
       "Upkeep costs: Any Amount towards this will be appreciated",
       "School supplies: Any Amount towards this will be appreciated",
       "Food and other essentials: Any Amount towards this will be appreciated"

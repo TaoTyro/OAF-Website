@@ -52,7 +52,7 @@ const students = [
   {
     id: 2,
     name: "Chisomo Namaja",
-    age: 26,
+    age: 21,
     location: "Phalombe, Malawi",
     school: "Mzuzu University",
     image: "/images/students/chisomo.jpg", // Placeholder path
@@ -69,32 +69,33 @@ const students = [
   {
     id: 3,
     name: "Angelina",
-    age: 22,
+    age: 20,
     location: "Lilongwe, Malawi",
     school: "Mzuzu University",
     image: "/images/students/angelina.jpeg", // Placeholder path
     problem: "Lacks tuition fees for the upcoming semester.",
     amountNeeded: 650000,
     amountRaised: 0,
-    story: "Angelina made it to Mzuzu University… but surviving there is the hardest part. Her mother washes clothes in strangers’ homes to keep her in school. Piecework. House to house. Day by day. Tuition was somehow paid for this semester. However, next semester remains uncertain. But rent and food are now breaking them. Angelina is not lazy. She is not careless. She is just in need of your help, and still fighting. No student should drop out because of hunger or rent. If you can help; with rent, food, or sponsorship, please reach out.",
+    story: "Angelina made it to Mzuzu University… but surviving there is the hardest part. Her mother washes clothes in strangers’ homes to keep her in school, pieceworks and house to house works to sustain her. Day by day. Tuition was somehow paid for the previous semester. However, next semester remains uncertain. Angelina is not lazy. She is not careless. She is just in need of your help, and still fighting. No student should drop out because of hunger or rent. If you can help; with rent, food, or sponsorship, please reach out.",
     needs: [
       "Tuition fees: MWK325,000 per semester",
       "Rent: Any Amount towards this will be appreciated",
-      "School supplies: MWK30"
+      "School supplies: Any Amount towards this will be appreciated",
+      "Food and other essentials: Any Amount towards this will be appreciated"
     ],
-    year: "3",
+    year: "Not disclosed",
   },
   {
     id: 4,
-    name: "Archangel Chagwa",
+    name: "Stellah Luckius",
     age: 19,
-    location: "Blantyre, Malawi",
+    location: "Mwanza, Malawi",
     school: "Mzuzu University",
-    image: "/images/students/student3.jpeg", // Placeholder path
+    image: "/images/students/stella.png", // Placeholder path
     problem: "Archangel's father is disabled and cannot work. His mother passed away last year, leaving the family in financial crisis.",
-    amountNeeded: 520,
-    amountRaised: 210,
-    story: "Archangel helps support his family by working at a local market on weekends. His father's disability means he cannot contribute financially, and Archangel often goes without meals to ensure his younger siblings eat. He is an exceptional student who wants to study engineering at the university. Support would cover his school fees and help stabilize his family's situation.",
+    amountNeeded: 650000,
+    amountRaised: 0,
+    story: "Stellah Luckius, from Mwanza, Golowa. Parents are not working, she's currently at Mzuzu University.  She dropped primary school then resumed due to lack of fees. Secondary too was hard for her. Form 2 there was no fees (MWK10,000), form 2-3 a certain NGO helped but later dropped her. In form 3-4 parents tried their best by doing piece works. BSc. Education Sciences ODL. Lacks tuition fees (MWK325,000.00) and other basic necessities. She's a hard working student and needs help to continue with her education.",
     needs: [
       "School fees: MWK250 per term",
       "Family support: MWK150",

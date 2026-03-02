@@ -33,63 +33,56 @@ const brandColor = "#5AAFD1";
 const students = [
   {
     id: 1,
-    name: "Jane Mwale",
-    age: 19,
-    location: "Mzimba, Malawi",
-    school: "Mzuzu University", // Placeholder school name
-    image: "/images/students/student7.jpeg", // Placeholder path
-    problem: "Jane lost both parents to malaria in 2020. She lives with her elderly grandmother and struggles to afford school fees and basic necessities.",
-    amountNeeded: 450,
-    amountRaised: 275,
-    story: "Jane is a bright student who dreams of becoming a teacher. Despite her circumstances, she ranks in the top 5 of her class. Her grandmother, aged 72, sells vegetables at the local market but cannot afford Jane's secondary school fees. Your support would cover her school fees, uniform, and learning materials for the next academic year.",
+    name: "Yohane Fonitala",
+    age: 20,
+    location: "Blantyre, Malawi",
+    school: "MUBAS", // Placeholder school name
+    image: "/images/students/yohane.jpg", // Placeholder path
+    problem: "Yohane lacks examination fees and learning materials, which puts his education at risk. He has a single mother and she's not working",
+    amountNeeded: 400000,
+    amountRaised: 0,
+    story: "Yohane P Fonitala, a second year student at MUBAS persuing community development and management. I'm reaching out to ask for support to cover my examination fees which is MWK400,000 and purchasea smartphone to aid my studies. I have been working a piece jobs to fund my education for last semesters but this semester is getting tough, my single mother who is not working also relies on me , I'm determined to succeed but I'm need a help from well wishers. I'm facing financial difficulties and this makes me to lack exams fees, rentals and smartphone used to studies but priority is exams fees. Your contribution will make a big chapter to my life. Finally I'm saying that your support will be appreciated and remembered for the throughout of my life. My phone number 0992411217 and 0897599335. If there is need to discuss with my lectures and my mother doors are open ",
     needs: [
-      "School fees: MWK200 per term",
-      "Uniform and shoes: MWK85",
-      "Books and supplies: MWK75",
-      "Nutrition support: MWK90"
+      "Exam fee: MWK400,000",
+      "Smartphone: Any Amount towards this will be appreciated",
+      "Rentals: Any Amount towards this will be appreciated"
     ],
     year: "2",
-    favoriteSubject: "Mathematics"
   },
   {
     id: 2,
-    name: "Chikumbutso Banda",
+    name: "Chisomo Namaja",
     age: 26,
-    location: "Mzuzu, Malawi",
+    location: "Phalombe, Malawi",
     school: "Mzuzu University",
-    image: "/images/students/student1.jpeg", // Placeholder path
+    image: "/images/students/chisomo.jpg", // Placeholder path
     problem: "Chikumbutso's father abandoned the family, and his mother struggles with illness. He often misses school to care for his younger siblings.",
-    amountNeeded: 650,
-    amountRaised: 320,
-    story: "Chikumbutso is the eldest of four children. His mother's HIV-positive status requires regular clinic visits, and Chikumbutso often takes on the role of caretaker. Despite these challenges, he maintains excellent grades and is the captain of the school's football team. Support would cover his school fees, transportation to school, and help his family with basic needs.",
+    amountNeeded: 650000,
+    amountRaised: 0,
+    story: "Chisomo Namaja, a Level 3 student pursuing a Bachelor of Education in Sciences at Mzuzu University. I'm from Phalombe district, a community that's already facing economic challenges. Due to some personal struggles, including illness, I wasn't able to prepare adequately for my exams, which led to my withdrawal from Semester 2. My relatives back home in Phalombe are struggling to make ends meet, let alone support my education. They're finding it tough to source money, and I'm in urgent need of assistance to cover tuition fees and upkeep costs. I'm seeking help from well-wishers to support me through this tough time. Any contribution, big or small, will go a long way in helping me achieve my academic goals and repeat the semester.",
     needs: [
-      "School fees: MWK300 per term",
-      "Transportation: MWK120",
-      "Family food support: MWK150",
-      "School supplies: MWK80"
+      "Tuition fee: MWK600,000, MWK325,000 per semester",
+      "Upkeep costs: Any Amount towards this will be appreciated"
     ],
-    year: "2",
-    favoriteSubject: "Science"
+    year: "3",
   },
   {
     id: 3,
-    name: "Bernadettah Phiri",
+    name: "Angelina",
     age: 22,
     location: "Lilongwe, Malawi",
     school: "Mzuzu University",
-    image: "/images/students/student2.jpeg", // Placeholder path
-    problem: "Bernadettah was orphaned at age 8 and now lives in a child-headed household with her two younger siblings.",
-    amountNeeded: 380,
-    amountRaised: 150,
-    story: "Bernadettah became the head of her household at just 10 years old when her grandmother passed away. She wakes at 4 AM daily to prepare her siblings for school before walking 3 kilometers to her own school. Despite these hardships, she dreams of becoming a nurse to help others in her community. Your support would provide school fees, food, and basic necessities for her family.",
+    image: "/images/students/angelina.jpeg", // Placeholder path
+    problem: "Lacks tuition fees for the upcoming semester.",
+    amountNeeded: 650000,
+    amountRaised: 0,
+    story: "Angelina made it to Mzuzu University… but surviving there is the hardest part. Her mother washes clothes in strangers’ homes to keep her in school. Piecework. House to house. Day by day. Tuition was somehow paid for this semester. However, next semester remains uncertain. But rent and food are now breaking them. Angelina is not lazy. She is not careless. She is just in need of your help, and still fighting. No student should drop out because of hunger or rent. If you can help; with rent, food, or sponsorship, please reach out.",
     needs: [
-      "School fees: MWK180 per term",
-      "Food for family: MWK120",
-      "Clothing and blankets: MWK50",
+      "Tuition fees: MWK325,000 per semester",
+      "Rent: Any Amount towards this will be appreciated",
       "School supplies: MWK30"
     ],
     year: "3",
-    favoriteSubject: "Science"
   },
   {
     id: 4,

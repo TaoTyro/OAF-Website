@@ -1,7 +1,6 @@
 import { motion } from 'motion/react';
 import { useNavigate } from 'react-router-dom';
 import { Home, AlertCircle, ArrowRight } from 'lucide-react';
-import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
 
 export function NotFoundPage() {
@@ -14,8 +13,6 @@ export function NotFoundPage() {
       transition={{ duration: 0.5 }}
       className="min-h-screen bg-white dark:bg-gray-950 transition-colors duration-300 flex flex-col"
     >
-      <Navbar />
-
       {/* 404 Content */}
       <div className="flex-grow flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20">
         <motion.div

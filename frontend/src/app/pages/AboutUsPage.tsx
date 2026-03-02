@@ -1,4 +1,3 @@
-import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import ScrollToTopButton from "../components/ScrollToTopButton";
 import { motion, useScroll, useTransform } from "motion/react";
@@ -318,8 +317,6 @@ export function AboutUsPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <Navbar />
-
       {/* Hero Section - Clean and Professional */}
       <section className="relative h-[90vh] flex items-center overflow-hidden">
         {/* Background Image */}

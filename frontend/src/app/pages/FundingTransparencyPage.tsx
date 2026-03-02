@@ -1,4 +1,3 @@
-import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
 import ScrollToTopButton from '../components/ScrollToTopButton';
 import { motion } from 'motion/react';
@@ -57,8 +56,6 @@ export function FundingTransparencyPage() {
 
   return (
     <div className="min-h-screen  bg-white">
-      <Navbar />
-
       {/* Hero Section with Unsplash Image */}
       <section className="relative h-[100vh] flex items-center overflow-hidden">
         {/* Unsplash Image - Transparency/Glass concept */}

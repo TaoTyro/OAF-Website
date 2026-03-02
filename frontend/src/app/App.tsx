@@ -38,12 +38,7 @@ const ImpactStats = lazy(() => import('./components/ImpactStats').then(m => ({ d
 const SuccessStories = lazy(() => import('./components/SuccessStories').then(m => ({ default: m.SuccessStories })));
 const Footer = lazy(() => import('./components/Footer').then(m => ({ default: m.Footer })));
 
-interface HomePageProps {
-  isDonateModalOpen: boolean;
-  setIsDonateModalOpen: (value: boolean) => void;
-}
-
-function HomePage({ isDonateModalOpen, setIsDonateModalOpen }: HomePageProps) {
+function HomePage({ onDonateClick }: { onDonateClick: () => void }) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -51,8 +46,7 @@ function HomePage({ isDonateModalOpen, setIsDonateModalOpen }: HomePageProps) {
       transition={{ duration: 0.5 }}
       className="min-h-screen bg-white dark:bg-gray-950 transition-colors duration-300"
     >
-      <Navbar isDonateModalOpen={isDonateModalOpen} setIsDonateModalOpen={setIsDonateModalOpen} />
-      <Hero onDonateClick={() => setIsDonateModalOpen(true)} />
+      <Hero onDonateClick={onDonateClick} />
 
       <motion.div
         custom={1}
@@ -155,12 +149,13 @@ export default function App() {
 
   return (
     <>
+      <Navbar isDonateModalOpen={isDonateModalOpen} setIsDonateModalOpen={setIsDonateModalOpen} />
       <AnimatePresence mode="wait">
         {isPageLoading && <PageLoader key="loader" />}
       </AnimatePresence>
       <DonateModal isOpen={isDonateModalOpen} onClose={() => setIsDonateModalOpen(false)} />
       <Routes>
-        <Route path="/" element={<HomePage isDonateModalOpen={isDonateModalOpen} setIsDonateModalOpen={setIsDonateModalOpen} />} />
+        <Route path="/" element={<HomePage onDonateClick={() => setIsDonateModalOpen(true)} />} />
         <Route path="/our-mission" element={<OurMissionPage />} />
         <Route path="/success-stories" element={<SuccessStoriesPage />} />
         <Route path="/contact" element={<ContactPage />} />

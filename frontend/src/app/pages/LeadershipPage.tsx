@@ -1,4 +1,3 @@
-import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
 import ScrollToTopButton from '../components/ScrollToTopButton';
 import { motion } from 'motion/react';
@@ -168,8 +167,6 @@ export function LeadershipPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <Navbar />
-
       {/* Header */}
       <section className="pt-24 pb-12 bg-gradient-to-b from-white to-gray-50"
       >

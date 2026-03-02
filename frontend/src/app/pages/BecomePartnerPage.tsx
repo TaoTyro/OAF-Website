@@ -1,4 +1,3 @@
-import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
 import ScrollToTopButton from '../components/ScrollToTopButton';
 import { motion } from 'motion/react';
@@ -40,7 +39,6 @@ export function BecomePartnerPage() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-950 transition-colors duration-300">
-      <Navbar />
       
       <motion.div
         initial={{ opacity: 0 }}

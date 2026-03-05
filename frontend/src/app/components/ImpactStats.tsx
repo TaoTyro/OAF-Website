@@ -146,7 +146,7 @@ export function ImpactStats() {
 
   return (
     <section className="py-24 px-6 sm:px-8 lg:px-12 bg-blue" id="impact-stats">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         
         {/* Newspaper-style Header */}
         <motion.div

@@ -35,7 +35,7 @@ export function Hero({ onDonateClick }: { onDonateClick?: () => void }) {
       <div className="absolute inset-0">
         {/* Current Image */}
         <div
-          className={`absolute inset-0 transition-opacity duration-1000 ${
+          className={`absolute inset-0 transition-discrete duration-1000 ${
             fadeOut ? 'opacity-0' : 'opacity-100'
           }`}
           style={{

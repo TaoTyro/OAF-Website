@@ -150,8 +150,8 @@ export function SuccessStories() {
   const hasMoreStories = stories.length > 4;
 
   return (
-    <section className="py-24 px-6 sm:px-8 lg:px-12 bg-white" id="success-stories">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-24 px-2 sm:px-8 lg:px-12 bg-white" id="success-stories">
+      <div className="max-w-6xl mx-auto">
         
         {/* Newspaper-style Header */}
         <motion.div

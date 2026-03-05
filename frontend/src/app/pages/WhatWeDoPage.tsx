@@ -179,8 +179,7 @@ export function WhatWeDoPage(): React.ReactElement {
         className="relative w-full"
         style={{
           backgroundColor: brand.palette8,
-          padding: 'clamp(2.5rem, 5vw, 5rem) clamp(1rem, 4vw, 2rem)',
-          fontFamily: 'Montserrat, sans-serif',
+          padding: 'clamp(3.5rem, 5vw, 5rem) clamp(1rem, 4vw, 2rem)',
           color: brand.palette4,
           lineHeight: 1.6,
           fontSize: 16,
@@ -378,9 +377,10 @@ export function WhatWeDoPage(): React.ReactElement {
                           style={{
                             margin: 0,
                             fontSize: 'clamp(1.2rem, 2vw, 1.6rem)',
+                            
                             fontWeight: 800,
                             color,
-                            lineHeight: 1.1,
+                            lineHeight: 1.5,
                           }}
                         >
                           {value}

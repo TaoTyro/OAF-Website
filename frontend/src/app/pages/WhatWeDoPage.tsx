@@ -324,7 +324,7 @@ export function WhatWeDoPage(): React.ReactElement {
                 <div>
                   <figure style={{ margin: 0, lineHeight: 0 }}>
                     <motion.img
-                      initial={{ opacity: 0, scale: 0.96 }}
+                      initial={{ opacity: 0, scale: 1.3 }}
                       animate={rightInView ? { opacity: 1, scale: 1 } : {}}
                       transition={{ duration: 0.8, ease: 'easeOut' }}
                       src="/images/pupils.jpg"
@@ -377,7 +377,6 @@ export function WhatWeDoPage(): React.ReactElement {
                           style={{
                             margin: 0,
                             fontSize: 'clamp(1.2rem, 2vw, 1.6rem)',
-                            
                             fontWeight: 800,
                             color,
                             lineHeight: 1.5,

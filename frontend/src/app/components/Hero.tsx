@@ -4,9 +4,9 @@ import { useNavigate } from 'react-router-dom';
 import { UpcomingEventsSidebar } from './UpcomingEventsSidebar';
 
 const backgroundImages = [
-  'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1200&h=600&fit=crop',
-  'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1200&h=600&fit=crop',
-  'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1200&h=600&fit=crop'
+  '/images/blind.jpg',
+  '/images/leon.jpg',
+  '/images/meet.jpg'
 ];
 
 export function Hero({ onDonateClick }: { onDonateClick?: () => void }) {
@@ -30,14 +30,12 @@ export function Hero({ onDonateClick }: { onDonateClick?: () => void }) {
 
   return (
     <section className="relative py-40 px-4 sm:px-6 lg:px-8 overflow-hidden " id="hero">
-      {/* <UpcomingEventsSidebar /> */}
-      {/* TODO: Re-enable UpcomingEventsSidebar when ready to implement event modal */}
       
       {/* Background Image Container */}
       <div className="absolute inset-0">
         {/* Current Image */}
         <div
-          className={`absolute inset-0 transition-opacity duration-1000 ${
+          className={`absolute inset-0 transition-discrete duration-1000 ${
             fadeOut ? 'opacity-0' : 'opacity-100'
           }`}
           style={{

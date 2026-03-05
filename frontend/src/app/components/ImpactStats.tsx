@@ -146,7 +146,7 @@ export function ImpactStats() {
 
   return (
     <section className="py-24 px-6 sm:px-8 lg:px-12 bg-blue" id="impact-stats">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         
         {/* Newspaper-style Header */}
         <motion.div
@@ -458,7 +458,6 @@ export function ImpactStats() {
             whileInView={{ scale: 1 }}
             transition={{ duration: 0.6 }}
           >
-            
             <p className="text-4xl italic text-gray-500 font-bold leading-relaxed" 
                style={{ fontFamily: 'Georgia, Times New Roman, serif' }}>
               "Every number represents a life changed, a future transformed."

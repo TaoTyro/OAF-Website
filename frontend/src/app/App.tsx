@@ -30,6 +30,7 @@ import { BecomePartnerPage } from './pages/BecomePartnerPage';
 import { OurMissionPage } from './pages/OurMissionPage';
 import { SuccessStoriesPage } from './pages/SuccessStoriesPage';
 import { ContactPage } from './pages/ContactPage';
+import { WhatWeDoPage } from './pages/WhatWeDoPage';
 
 // Lazy load components for homepage
 const Hero = lazy(() => import('./components/Hero').then(m => ({ default: m.Hero })));
@@ -47,6 +48,22 @@ function HomePage({ onDonateClick }: { onDonateClick: () => void }) {
       className="min-h-screen bg-white dark:bg-gray-950 transition-colors duration-300"
     >
       <Hero onDonateClick={onDonateClick} />
+
+
+      <motion.div
+        custom={1}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: '-100px' }}
+        variants={{
+          hidden: { opacity: 0, y: 20 },
+          visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+        }}
+      >
+        <Suspense fallback={<div className="py-20 px-4"><SkeletonImpact /></div>}>
+          <WhatWeDoPage />
+        </Suspense>
+      </motion.div>
 
       <motion.div
         custom={1}
@@ -178,6 +195,7 @@ export default function App() {
         <Route path="/partners" element={<PartnersPage />} />
         <Route path="/newsletter" element={<NewsletterPage />} />
         <Route path="*" element={<NotFoundPage />} />
+        <Route path="/what-we-do" element={<WhatWeDoPage />} />
       </Routes>
     </>
   );

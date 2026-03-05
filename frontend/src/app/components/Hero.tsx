@@ -7,7 +7,6 @@ const backgroundImages = [
   '/images/blind.jpg',
   '/images/leon.jpg',
   '/images/meet.jpg'
-
 ];
 
 export function Hero({ onDonateClick }: { onDonateClick?: () => void }) {
